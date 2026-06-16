@@ -1,0 +1,1148 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage[english]{babel}
+\usepackage{array}
+
+% For math equations
+\usepackage{amsmath}
+\usepackage{amssymb}
+\DeclareMathOperator*{\minimize}{minimize}
+\newcommand{\norm}[1]{\lVert#1\rVert_2}         % writing 2-norm easily
+\usepackage{multirow} % to write multiple things in single row
+
+% To add bullshit text
+\usepackage{blindtext}
+
+% To display code
+\usepackage{verbatim}
+\usepackage{listings}
+
+% To include hyperlinks from Table of Contents page
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=red,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=black
+}
+
+% To include citations
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=ynt
+]{biblatex}
+\addbibresource{references.bib}
+\usepackage{csquotes}                   % Include this package so that biblatex can quote according to the language
+                                        % Because of imported babel
+
+% Rename List of Figures and Tables, as well as the Table of Contents
+% \addto\captionsenglish is there because of the babel package for International Language Support
+\addto\captionsenglish{\renewcommand{\listfigurename}{List of Figures}}
+\addto\captionsenglish{\renewcommand{\listtablename}{List of Tables}}
+\addto\captionsenglish{\renewcommand*\contentsname{Table of Contents}}
+
+% Added for automatic newpage when section begins
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+
+% To be able to place figures side by side
+\usepackage{subcaption}
+
+% To be able to place figures and text side by side
+\usepackage{wrapfig}
+
+% Set initial page numbering to roman
+\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page
+\begin{titlepage}
+\centering
+\includegraphics[width=0.2\textwidth]{etf_logo}\par
+\vspace{1cm}
+{\scshape\LARGE Elektrotehnički Fakultet\par}
+{\scshape\LARGE Univerzitet u Beogradu\par}
+\vspace{1cm}
+{\scshape\Large Master Rad\par}
+\vspace{0.5cm}
+{\huge\bfseries Analiza Ljudskih Pokreta Upotrebom Inverznog Optimalnog Upravljanja\par}
+\vspace{2cm}
+{\large\itshape Filip Bečanović\par}
+{\large\itshape Broj Indeksa: 2019/3210\par}
+\vfill
+Mentor\par
+Dr.~Kosta \textsc{Jovanović}\par
+%Dr.~Vincent \textsc{Bonnet}\par
+\vfill
+{\large 4. Septembar 2020 \par}
+\end{titlepage}
+\begin{titlepage}
+\centering
+\includegraphics[width=0.2\textwidth]{etf_logo}\par
+\vspace{1cm}
+{\scshape\LARGE School of Electrical Engineering\par}
+{\scshape\LARGE University of Belgrade\par}
+\vspace{1cm}
+{\scshape\Large Master's Thesis\par}
+\vspace{0.5cm}
+{\huge\bfseries Analysing Human Motion Through Inverse Optimal Control\par}
+\vspace{2cm}
+{\large\itshape Filip Bečanović\par}
+{\large\itshape Student number: 2019/3210\par}
+\vfill
+Supervised by\par
+Dr.~Kosta \textsc{Jovanović}\par
+%Dr.~Vincent \textsc{Bonnet}\par
+\vfill
+{\large \today \par}
+\end{titlepage}
+
+\setcounter{page}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgements
+\addcontentsline{toc}{section}{Acknowledgements}
+\section*{Acknowledgements}
+I want to thank prof. Vincent Bonnet from Université Paris-Est Créteil, Paris, France for co-supervising my work, for providing the human data that was used in this work, but also for his numerous remarks and counsels he has given me both during the execution of the project and during the editing of this thesis.\par
+
+\noindent I also want to thank Petar Kovačević and Mohammed Adjel who have shared with me the hardships of working on human motion analysis and similar topics, but who have also been great friends and comrades to me.\par
+\noindent Finally I want to thank my family, who has been very supportive of me during the writing of this thesis, and my close friends Nika and Fedja who have helped me get through tough situations.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABLE OF CONTENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of contents
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introduction
+\section{Introduction}
+\pagenumbering{arabic}
+The problem of inverse optimal control falls under the broader category of apprenticeship learning problems. Apprenticeship learning, also known as imitation learning is the problem of learning to perform a certain task from a demonstration or multiple demonstrations of it being performed, and is the most common way humans learn to perform new tasks. When we model a task mathematically, we may treat the task execution as a single decision, a (discrete) sequence of decisions \cite{abbeel2004apprenticeship,ng2000algorithms} or a continual sequence of decisions \cite{mombaur2010human, johnson2013inverse} depending on the nature of the task. For simplicity, we will refer to either of those as taking an action. Many approaches have been taken to solve the problem of apprenticeship learning by mimicking the demonstrated actions and directly learning a policy (a mapping from system states to agent actions) from the data using supervised learning algorithms \cite{hayes1994robot, kuniyoshi1994learning, amit2002learning}.\par
+Be it human or animal motion \cite{alexander1996optima, uno1989formation}, or customer behaviour in economics \cite{keeney1993decisions, sargent1978estimation}, research has shown that the most powerful way to characterize demonstrated behaviour adopted by an intelligent agent throughout the execution of a given task is to model that task as an optimization problem and to subsequently use the acquired data to try and identify the objective function underlying the optimization, treating the data as an optimal demonstration.\par
+Inverse optimal control, in that sense, is the problem of imputing the objective function underlying a certain optimal control problem, from one or multiple demonstrations of that task from an expert \cite{keshavarz2011imputing}. This problem of inverse optimal control is also known under names such as inverse reinforcement learning, when the task is defined using the Markov Decision Process formalism, and the goal is to find the unknown reward function using observed behavior from an agent who is considered to be obeying an optimal policy \cite{abbeel2004apprenticeship, ng2000algorithms}.\par
+Methods of inverse optimal control are beginning to find widespread application in robotics, principally in motion analysis and human motion reproduction via humanoid robots.The benefits of inverse optimal control are twofold. Primarily, it allows for researchers to identify guiding principles that determine the behaviour of an expert during the execution of a task \cite{oguz2018inverse, puydupin2012convex, sylla2014human}. However, it also allows for the construction of an intelligent agent that can successfully perform that task in the environment \cite{mombaur2010human} by learning from the expert. This is the aspect we will be focusing on in this work.\par
+Other applications of inverse optimization include estimating the utility function of a consumer in economics, estimating the cost function in a shipment flow network or finding the value function in control problems.\par
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Related works ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+\begin{comment}
+%% Related works
+\subsection{Related works}
+Inverse optimal control dates back to the middle of the twentieth century when researchers were looking to infer the class of objective functions that makes a given control policy optimal \cite{kalman1964linear}, contrary to the data-driven approach where the control policy is not known but must be learned from observation of system behaviour.\par
+Solution methods for the control-theoretic inverse optimal control problem have been developed for linear systems with quadratic cost along with extensions to nonlinear and stochastic problems  These methods were first developed in the context of linear time-invariant regulation. In particular, this early work focused on determining the class of quadratic cost functions that makes a given linear controller optimal. An extension poses the problem of computing the plant (system model) whose H 2 or H controller is equal to a given controller .\par
+The data-driven formulation of the classical problem does not assume a given control policy, but instead learns the objective function of a system given observations of its behavior. In this context, inverse optimal control is often used as a solution approach to the more general problem of learning from demonstration.
+Some related works are \cite{mombaur2010human}, \cite{ng2000algorithms}, \cite{abbeel2004apprenticeship}.
+Some works from our group are \cite{sylla2014assessing}, \cite{sylla2014human}, \cite{panchea2015inverse}, \cite{panchea2015towards}, \cite{panchea2018human}.
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Outline & contributions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%% Outline and contributions
+\subsection{Outline and contributions}
+
+In section \ref{Inverse optimal control} we describe different approaches for the problem of inverse optimization, and we validate one approach on a path planning simulation with a unicycle model of a robot. In section \ref{Our approach} we describe in detail the steps we took and the tools we used to analyze human data.
+\end{comment}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Algorithmic Differentiation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorithmic differentiation} \label{section:AD}
+Algorithmic differentiation is a technique for evaluating derivatives of functions given by evaluation programs. When you compare it to \textbf{numerical differentiation} which intrinsically has truncation errors and may be slow to compute for functions with large input or output spaces, or with \textbf{symbolic differentiation} which can be very slow in a large number of computer algebra systems especially as the size of the function grows, you can definitely see the differences. Algorithmic differentiation is advantageous since derivatives can be evaluated efficiently and without truncation errors, as long as the original function or evaluation program is accurate (at least several significant digits) and as long as the function can be interpreted as a composition of basic arithmetical operations and a few intrinsic functions (e.g. $\sin, \cos, \exp, \ldots$).\par
+\subsection{How does it work?}
+Let us consider an example. Let $y=f(x_1, x_2)$ be a function of two variables, given inside the following equation.
+\begin{equation} \label{eq:ADexample}
+    y=(\sin(x_1/x_2)+x1/x2-\exp(x2)) \cdot (x1/x2-\exp(x_2))
+\end{equation}
+We can form a so-called \textbf{evaluation trace} of the function which corresponds to the way a computer would proceed during the evaluation of said function. The evaluation trace decomposes the function evaluation into multiple simpler steps which involve calculating function sub-expressions and storing them inside intermediate variables. The evaluation trace of the function inside Equation~\eqref{eq:ADexample} is given inside the Table~\ref{table:evaltrace}. Also we assume we are working with 4 decimal digits precision.\par
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|}
+         \hline
+         $v_{-1} = x_1 = 1.5000$\\
+         $v_0 = x_2 = 0.5000$\\
+         \hline
+         $v_1 = v_{-1}/v_0 = 1.5000 / 0.5000 = 3.0000$\\
+         $v_2 = \sin(v_1) = \sin(3.0000) = 0.1411$\\
+         $v_3 = \exp(v_0) = \exp(0.5000) = 1.6487$\\
+         $v_4 = v_1-v_3 = 3.0000 - 1.6487 = 1.3513$\\
+         $v_5 = v_2+v_4 = 0.1411 + 1.3513 = 1.4924$\\
+         $v_6 = v_5\cdot v_4 = 1.4924 \cdot 1.3513 = 2.0167$\\
+         \hline
+         $y = v_6 = 2.0167$\\
+         \hline
+    \end{tabular}
+    \caption{Evaluation trace of the example function.}
+    \label{table:evaltrace}
+\end{table}
+The evaluation trace leads to what we call a \textbf{computational graph}, which describes the relations between the inputs, intermediate variables and outputs using a graph. The graph of the example function is given inside Figure~\ref{fig:compgraph}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{ComputationalGraph.png}
+    \caption{Computational graph of the example function.}
+    \label{fig:compgraph}
+\end{figure}
+The main idea of \textbf{forward mode algorithmic differentiation} is to calculate forward sensitivities of all intermediate and output variables, in other words the sensitivities of all intermediate and output variables with respect to the input variables.  This is done by applying the chain rule to each single line of code inside the evaluation trace. Doing this we obtain the augmented or derived trace, which is for this function shown inside Table~\ref{table:augmentedtrace}. Inside the given augmented trace, forward sensitivity with respect to $x_1$ is associated to each intermediate variable $\dot{v}_i = \partial v_i / \partial x_1$. The derivatives are then propagated forward along with the function values. The same code can be used for calculating the output sensitivity with respect to x2, we only have to change the initialization to be $\dot{v}_{-1} = 0.0000$ and $\dot{v}_0 = 1.0000$.\par
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|}
+         \hline
+         $v_{-1} = x_1 = 1.5000$\\
+         $\dot{v}_{-1} = \dot{x}_1 = 1.0000$\\
+         $v_0 = x_2 = 0.5000$\\
+         $\dot{v}_0 = \dot{x}_2 = 0.0000$\\
+         \hline
+         $v_1 = v_{-1}/v_0 = 1.5000 / 0.5000 = 3.0000$\\
+         $\dot{v}_1 = (\dot{v}_{-1} - v_1 \cdot \dot{v}_0)/v_0 = 1.0000 / 0.5000 = 2.0000 $\\
+         $v_2 = \sin(v_1) = \sin(3.0000) = 0.1411$\\
+         $\dot{v}_2 = \cos(v_1) \cdot \dot{v}_1 = -0.9900 \cdot 2.0000 = -1.9800$\\
+         $v_3 = \exp(v_0) = \exp(0.5000) = 1.6487$\\
+         $\dot{v}_3 = v_3 \cdot \dot{v}_0 = 1.6457 \cdot 0.0000 = 0.0000 $\\
+         $v_4 = v_1-v_3 = 3.0000 - 1.6487 = 1.3513$\\
+         $\dot{v}_4 = \dot{v}_1 - \dot{v}_3= 2.0000 - 0.0000 = 2.0000$\\
+         $v_5 = v_2+v_4 = 0.1411 + 1.3513 = 1.4924$\\
+         $\dot{v}_5 = \dot{v}_2 + \dot{v}_4 = -1.9800 + 2.0000 = 0.0200$\\
+         $v_6 = v_5\cdot v_4 = 1.4924 \cdot 1.3513 = 2.0167$\\
+         $\dot{v}_6 = \dot{v}_5\cdot v_4 + v_5 \cdot \dot{v}_4 = 0.0200 \cdot 1.3513 + 1.4924 \cdot 2.0000 = 3.0118$\\
+         \hline
+         $y = v_6 = 2.0167$\\
+         $\dot{y} = \dot{v}_6 = 3.0118$\\
+         \hline
+    \end{tabular}
+    \caption{Augmented trace of the example function.}
+    \label{table:augmentedtrace}
+\end{table}
+There exists also a particular implementation of algorithmic differentiation called \textbf{reverse mode algorithmic differentiation}, which instead of calculating the sensitivity of all intermediate variables with respect to a single input, calculates the sensitivity of a single output w.r.t. all intermediate variables. This is done by applying the chain rule backwards starting from the chosen output, associating at each step an adjoint variable to each intermediate variable like this $\bar{v}_i = \partial y / \partial v_i$. This process is well described inside Griewank et al. \cite{griewank2008evaluating}.\par
+Algorithmic differentiation is implemented using either operator overloading or source-code transformation. The first is a simple way of implementing but requires later modifications of original code for compatibility. The second one is a complex way but allows for a large number of computational optimizations and does not require the modification of original code.\par
+
+\subsection{CasADi software}
+CasADi is a state-of-the-art open-source software tool for numerical optimization in general and optimal control (i.e. optimization involving differential equations) in particular, that was introduced in 2018 by Andersson and Gillis in \cite{Andersson2018}. It was written in self-contained C++, but is most conveniently used via full-featured interfaces to Python, MATLAB or Octave. According to the authors it has been used successfully for academic teaching as well as in applications from multiple fields, including process control, robotics and aerospace.\par
+One of its core capabilities is performing algorithmic differentiation, and it is implemented using a symbolic framework. This symbolic framework allows the user to construct symbolic expressions using a MATLAB inspired syntax, and later compute jacobians of those symbolic expressions. The algorithmic differentiation aspect of this is that the expressions are stored as \textbf{computational graphs} which is later leveraged during jacobian calculation. The SX symbolic framework allows for easy creation of variables and calculation of jacobians, as shown in the example below, where we are looking for the jacobian of a matrix-vector multiplication $A\cdot x$ with respect to the vector being multiplied $x$.\par
+\begin{lstlisting}[language=MATLAB]
+A = SX.sym('A',3,2);
+x = SX.sym('x',2);
+jacobian(A*x,x)
+__________________
+ans =
+[[A_0, A_3], 
+ [A_1, A_4], 
+ [A_2, A_5]]
+ 
+\end{lstlisting}
+CasADi also allows for the creation of \textbf{function objects} out of symbolic expressions, which allow the user to have an evaluation procedure for the symbolic expression. An example of function object creation is given below.
+\begin{lstlisting}[language=MATLAB]
+x = SX.sym('x',2);
+y = SX.sym('y');
+f = Function('f',{x,y},...
+           {x,sin(y)*x});
+disp(f)
+_________________
+f:(i0[2],i1)->(o0[2],o1[2]) SXFunction
+
+\end{lstlisting}
+We will be using these functionalities in the rest of this thesis, to calculate derivatives of complicated expressions and create function objects to pass into the optimization procedure.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPTIMAL CONTROL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Optimal Control
+\section{Inverse optimal control} \label{Inverse optimal control}
+In this section we are going to present two ways of solving the inverse optimal control problem. One is based on a two layer optimization, which is why we call it the bi-level approach, and the other is based on leveraging first-order necessary conditions for optimality given by the Karush-Kuhn-Tucker conditions to arrive at a single level optimization problem. Both ways have been utilized throughout literature. There are also alternative ways to approach these types of apprenticeship learning problems, most notably as reinforcement learning. However we will be focusing on methods that are in the context of the optimal control framework.
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Problem Statement ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%% Problem statement
+\subsection{Problem statement}
+More formally, let us state the following: the goal of \textbf{optimal control} is to determine the input and the state trajectories that minimize a given cost function. In contrast, the problem of \textbf{inverse optimal control} is to find a cost function with respect to which observed input and state trajectories are optimal.  In this section we will briefly describe and formalize mathematically what is meant by the previous statement.\par
+Consider the problem \eqref{eq:classicOptControlProblem}. This is a problem of fixed horizon optimal control where we are looking for \textbf{state and input trajectories} \( x = (x_0, \ldots, x_N)\) and \( u = (u_0,\ldots,u_{N-1})\) that minimize a given cost function \( f(x, u) \) such that some constraints \( h_1(x, u), \ldots, h_p(x, u) \) and  \( g_1(x, u), \ldots, g_q(x, u) \) are satisfied. The state variables are given by the following series of vectors \( x_i \in \mathbb{R}^n, \; i=0, \ldots, N \) while the control variables are  \( u_i \in \mathbb{R}^m, \; i=0, \ldots, N-1 \). The \textbf{objective function} and the \textbf{constraint functions} are mappings from the space of states and controls to the real numbers, meaning \( f: \mathbb{R}^{(N+1)\cdot n} \times \mathbb{R}^{N \cdot m} \mapsto \mathbb{R} \) is the mapping whose one-dimensional output is being minimized. The \textbf{equality constraints} can also be expressed like that \( h_i: \mathbb{R}^{(N+1)\cdot n} \times \mathbb{R}^{N \cdot m} \mapsto \mathbb{R}, \; i = 1,\ldots, p\) and they \textit{may represent the system dynamics}, otherwise called the \textit{state equations}, and possibly initial and final condition constraints. Finally the \textbf{inequality constraints} are \( g_i: \mathbb{R}^{(N+1)\cdot n} \times \mathbb{R}^{N \cdot m} \mapsto \mathbb{R}, \; i = 1,\ldots, q \), which \textit{may represent physical limitations} of the system, for example upper or lower bounds on the control or the states.
+\begin{equation} \label{eq:classicOptControlProblem}
+\begin{aligned}
+    & \minimize_{x_0, \ldots, x_N ; u_0,\ldots,u_{N-1}}   &   &f(x, u) \\
+    & \text{subject to} &   &h_i(x, u) = 0, \; i = 1,\ldots,p \\
+    &                   &   &g_i(x, u) \leq 0, \; i = 1,\ldots,q.
+\end{aligned}
+\end{equation}
+The solution we are looking for in \eqref{eq:classicOptControlProblem}, we label as  \( x^* = (x^*_0, \ldots, x^*_N ) \) and \( u^* = (u^*_0,\ldots,u^*_{N-1})\). We say these are the optimal state-control trajectories with respect to the cost function \( f(x, u) \) and the constraints \( h(x, u) \) and \( g(x, u) \), which are all known at the time of the problem solving. \par
+What we want to accomplish with \textbf{inverse optimal control} is in some sense the opposite. Let us assume that we have prior knowledge about the system dynamics and initial conditions given by the equality constraints (state equations) \( h(x,u) \) and about the systems physical limitations given by the inequality constraints \( g(x, u) \). Additionally we also have a set of measurements, which represent multiple demonstrations of the task being performed by an expert, possibly for different initial and final conditions. That set will be labeled as \( S = \{ ({x^*}^{(i)}, {u^*}^{(i)}) | \; i = 1, \ldots, M \} \). The problem of \textbf{inverse optimal control} boils down to \textbf{learning/estimating the cost function} \( f(x, u) \) for which the set of \textbf{observed trajectories \( S \) is optimal}. A cost function with respect to which the observed trajectories are indeed optimal is said to be \textbf{consistent} with the measurements.\par
+Sometimes, because of measurement or modelling error, we may find that there is no function with respect to which the observed measurements are optimal thus rendering them at best \textbf{approximately optimal}. There are different approaches to inverse optimal control and what differentiates them is principally the way that they interpret approximately optimal. Two of the most common ways to interpret approximately optimal will be described in sections \ref{Bi-level approach} and \ref{KKT approach}.\par
+When we have a large (often infinite, continuous) state space and/or action space, the usual approach is to adopt a finite dimensional parametric representation of \( f \) because a non-parametric representation can, and mostly will, be too computationally expensive to compute and store, because of the sheer dimensional size of the input space of \( f \). Moreover, we usually restrict ourselves to the finite dimensional affine parametric representation 
+\begin{equation} \label{eq:AffineParametricRepresentation}
+    f(x, u) = \sum_{i=1}^k c_i \cdot f_i(x, u), \; c = (c_1, c_2, \ldots, c_k)\in \mathcal{C}
+\end{equation}
+where \( f_i\;,\; i = 1,\ldots,k \) is a pre-selected basis of functions and \( \mathcal{C} \) is a convex subset of \( \mathbb{R}^k\). Our goal is to find \( c \in \mathcal{C} \) for which \( f \) is consistent (or approximately consistent) with the data, which will be formulated as a finite dimensional optimization problem with variable \( c \). Two approaches for solving the inverse optimal control will be presented in sections \ref{Bi-level approach} and \ref{KKT approach}, along with their respective interpretations of what approximately optimal measurements mean. \par
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Bi-level optimization ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%%% Bilevel Approach
+\subsection{Bi-level approach} \label{Bi-level approach}\
+This approach has been used in \cite{mombaur2010human, clever2016inverse, berret2011evidence, sylla2014human} and differs only in details and notation. The approach described below is most similar to \cite{mombaur2010human}. In this paper the inverse optimal control is used to understand and identify the underlying optimality criteria of biological motions based on measurements. The solution of this problem yields optimal control models that generate natural humanoid robot motion.\par
+The proposed approach is to pose the optimization problem as a continuous time optimization problem, as shown in \eqref{ctOptProb}. It's a problem of minimizing an integral cost function subject to a system of differential equations with boundary conditions on the state trajectory.
+\begin{equation} \label{ctOptProb}
+\begin{aligned}
+&\minimize_{x\in\mathcal{X}, u\in\mathcal{U}, T\in\mathbb{R}_+} & &\int_0^T \Phi(\alpha, x(t), u(t)) \> dt \\
+&\text{subject to}                                              & & \dot{x}(t) = f(t, x(t), u(t)) \\
+&                                                               & & x(0) = x_0 \\
+&                                                               & & x(T) = x_{end}.
+\end{aligned}
+\end{equation}\par
+ The optimization function in \eqref{ctOptProb} is the integral of an affine combination of basis cost functions given by \eqref{ctBasisFun}. It is assumed that the optimal trajectories \( x^*(t) = x_{obs}(t) \in \mathbb{R}^n \) and \( u^*(t) = u_{obs}(t) \in \mathbb{R}^m \) are known (as they are measured from demonstration) at N discrete points \( t_i\) and the optimal duration of the motion \( T^* \) is known.
+
+\begin{equation} \label{ctBasisFun}
+\begin{split}
+    \Phi(\alpha, x(t), u(t)) &= \sum_{i=0}^k \alpha_i \cdot \phi_i(x(t), u(t)) \\
+                             &= \alpha^T \cdot \phi(x(t), u(t))
+\end{split}
+\end{equation}\par
+Let us denote \( v(t) = \begin{bmatrix}
+x(t)^T & u(t)^T 
+\end{bmatrix}^T\), and label as $v^*(t_j, \alpha)$ the solution of problem in equation \eqref{ctOptProb}, for a given array of coefficients $\alpha$. The problem of inverse optimal control is then formulated as a search for a vector of coefficients \( \alpha \) that best fit the observed data $v_{obs}(t)$. That search is described by the following optimization problem
+\begin{equation} \label{mombaurIOC}
+\begin{aligned}
+&\min_{\alpha \in \mathcal{A}} & &\sum_{j=1}^N \norm{v^*(t_j, \alpha) - v_{obs}(t_j)}^2 \\
+&\text{subject to}                  & &\alpha_i \geq 0, \; i = 0, \ldots, k.
+\end{aligned}
+\end{equation}
+where \( v^*(t_j, \alpha) \) is the solution to the optimization problem \eqref{ctOptProb} with parameter values \( \alpha\) at time \( t_j\) and \(v_{obs}(t_j) \) is the vector of observations at time \( t_j\). The cost function represents the sum of squared differences of the observed $v_{obs}(t)$ and the computed trajectory $v^*(t, \alpha)$ at \( N\) discrete samples, which is an approximation of the \( L_2\) norm between these two continuous trajectories. We can reformulate  this search problem into words by saying we are looking for the array of coefficients $\alpha$ which produce, through forward optimization, the trajectory $v^*(t, \alpha)$ that has the lowest Root Mean Squared Error (RMSE) compared to the measured trajectory $v_{obs}(t)$. The interpretation of an \textbf{approximately optimal trajectory} here is the \textbf{trajectory produced by forward optimization with the lowest RMSE compared to the measurements}. \par
+Within this problem formulation, we are faced with a parameter identification problem. However, this is much harder than a standard identification problems since optimization and data fitting have to be handled simultaneously. This is why it is called the \textbf{bilevel approach}. While solving the optimization problem \eqref{mombaurIOC}, each time we want to evaluate the cost function for a set of parameters \( \alpha\) we are forced to solve the optimal control problem \eqref{ctOptProb} to obtain \( v^*(t_j, \alpha) \), which is the optimal trajectory corresponding to the weights \( \alpha \). So what we are essentially doing is solving a two level optimization.\par
+The so called \textbf{upper level} optimization consists of performing a derivative free optimization with respect to the cost function parameters \( \alpha\),  while the \textbf{lower level} is focused on solving an optimal control problem of type \eqref{ctOptProb}, using a numerical optimal control method. The typical starting point for derivative free optimization would be the Nelder-Mead simplex algorithm, however \cite{mombaur2010human} propose a computationally more efficient method based on quadratic approximations. For solving the optimal control problem a direct multiple shooting method or collocation can be used.\par
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KKT Formulation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%%% Approximately inverse formulation using KKT
+\subsection{KKT approach} \label{KKT approach}
+This approach first presented inside \cite{keshavarz2011imputing} allows us to bypass a two level optimization, by utilizing necessary conditions of optimality given by the Karush-Kuhn-Tucker conditions. This method however, theoretically works only when the KKT conditions are sufficient conditions for optimality, that means, when the cost function and the constraints are convex. Let us pose the classical optimization problem in equation \eqref{eq:classicOptProblem} 
+\begin{equation} \label{eq:classicOptProblem}
+\begin{aligned}
+    & \minimize_{x\in\mathcal{X}}   &   &f(x) \\
+    & \text{subject to} &   &h_i(x) = 0, \; i = 1,\ldots,q \\
+    &                   &   &g_i(x) \leq 0, \; i = 1,\ldots,m.
+\end{aligned}
+\end{equation}
+We can then form the Lagrangian \eqref{eq:Lagrangian} of the optimization problem, which is a subject of the KKT conditions and we will use it further in the text.
+\begin{equation} \label{eq:Lagrangian}
+    L(x, \lambda, \mu) = f(x) + \sum_{i=1}^q \lambda_i \cdot h_i(x) + \sum_{i=1}^m \mu_i \cdot g_i(x)
+\end{equation}
+
+%%% Posing the KKT conditions
+\subsubsection{KKT conditions}
+The KKT conditions are first-order necessary conditions for a solution in nonlinear programming to be optimal, provided that regularity conditions are satisfied (The gradients of the active inequality constraints and the gradients of the equality constraints are linearly independent at \(x^{*}\)), which we will suppose to be the case. \par
+Suppose that the objective function \( f : \mathbb{R}^n \mapsto \mathbb{R} \) and the constraints \(g_i : \mathbb{R}^n \mapsto \mathbb{R} \) and \( h_j : \mathbb{R}^n \mapsto \mathbb{R} \) are continuously differentiable at a point \( x^* \). If \( x^*\) is a local minimum and the regularity conditions are satisfied then there exists a set of constants \( \mu_i \) and \( \lambda_j \) called \textbf{KKT multipliers} such that the equations in \eqref{eq:KKTconditions} hold. We are going to exploit the fact that these conditions must hold for a local minimum in order to reformulate the problem of inverse optimal control.
+\begin{subequations} \label{eq:KKTconditions}
+    \begin{align}
+    &\nabla_x L(x^*, \lambda^*, \mu^*) = 0 & & \label{eq:Stationarity}\\
+    &h_i(x^*) = 0 & & i=1,\ldots,q \label{eq:PrimalFeasibilityEq}\\
+    &g_i(x^*) \leq 0 & & i=1,\ldots,m \label{eq:PrimalFeasibilityIneq}\\
+    &\mu_i^* \geq 0 & & i=1,\ldots,m \label{eq:DualFeasibility}\\
+    &\mu_i^* \cdot g_i(x^*) = 0 & & i=1,\ldots,m \label{eq:ComplementarySlackness}
+    \end{align}
+\end{subequations}
+When we are searching for an optimal point using the KKT conditions, both \( x^*\) as well as the KKT multipliers \( \mu^*\) and \( \lambda^*\) are unknown. It is for that reason that we call \( x^*\) the vector of primal variables (\textbf{primal variables} for short) and \( \mu^*\) and \( \lambda^*\) the vectors of dual variables (\textbf{dual variables} for short). The condition \eqref{eq:Stationarity} can be derived as a necessary condition for optimality and is called the \textbf{stationarity} condition; it implies that the gradient of the cost function at the optimal point can be obtained as the sum of a linear combination of equality constraint gradients and a negative conical combination of inequality constraint gradients. As an insurance that the optimal primal variable \( x^*\) indeed satisfies the posed constraints, meaning it is in the \textbf{feasible set}, we have conditions \eqref{eq:PrimalFeasibilityEq} and \eqref{eq:PrimalFeasibilityIneq} that are called the \textbf{primal feasibility} conditions. We also have the \textbf{complementary slackness} condition \eqref{eq:ComplementarySlackness} in addition to the \textbf{dual feasibility} condition \eqref{eq:DualFeasibility} that insure that only so-called \textbf{active inequality constraints} affect the Lagrangian. Active constraints are those for which \( g_i(x^*)=0 \), meaning that we are at the border of the feasible set precisely because of those constraints, thus we should pay attention to not violate them by looking for a better solution in the local vicinity. In contrast, \textbf{inactive inequality constraints} are those for which \( g_i(x^*) < 0 \), meaning that they don't actually affect the solution nor restrict it in any way, hence the name inactive. This implies that we would obtain the same solution if the inactive constraints were discarded. \par
+
+%%% Approximately inverse formulation using KKT
+\subsubsection{Residual functions}
+We have to recall that the goal of inverse optimal control is to retrieve a cost function from a set of data measurements (we will pack the control and state samples inside one vector) \( S = \{ {x^*}^{(i)} | \; i = 1, \ldots, M \} \), where each measurement is a set of vectors measured at different times \( x^* = (x^*_0, \ldots, x^*_N ) \) . The hypothesis being that those measurements should achieve or \textbf{approximately} achieve the minimum of a cost function. In other words \textbf{the measurements must satisfy, or approximately satisfy, the KKT conditions}.\par
+Let us also recall that we cannot adhere to a non-parametric function representation for inverse optimal control because of large input space dimensionality \( n\) that may occur in \( f : \mathbb{R}^n \mapsto \mathbb{R} \). We thus limit ourselves to the case where the adopted function representation is an affine parametric combination of basis cost functions as shown in \eqref{eq:AffineParametricRepresentation2}.
+\begin{equation} \label{eq:AffineParametricRepresentation2}
+    f(x) = \sum_{i=1}^k c_i \cdot f_i(x), \; c \in \mathcal{C}
+\end{equation}
+With the function represented that way, we can write the gradient of the Lagrangian in terms of the parametrized cost function, now adding a dependency with respect to the parameters, like shown in \eqref{eq:gradientOfLagrangian}.
+\begin{equation} \label{eq:gradientOfLagrangian}
+    \nabla_x L(c, x, \lambda, \mu) = \sum_{i=1}^k c_i \cdot \nabla_x f_i(x) + \sum_{i=1}^q \lambda_i \cdot \nabla_x h_i(x) + \sum_{i=1}^m \mu_i \cdot \nabla_x g_i(x)
+\end{equation}
+Keep in mind that we are aware of the optimal solution \( x^*\) to the problem, but we are looking for the unknown parametrization \( c\). Meanwhile, in the KKT conditions, appear also the \textbf{dual variables}, that in this case are also unknown. So if we are to utilize the KKT conditions for inverse optimal control, we have to treat them as they are: unknown, and include them in the search.\par
+Consequently, we want to conduct a search of the parameters \( c \in \mathcal{C}\), \(\lambda \in \mathbb{R}^p\) and \(\mu \in \mathbb{R}_+^q\) which best satisfy the KKT conditions. For that purpose, we will define what we call the residual functions inside equation \eqref{eq:Residuals}. We only have two residual functions as only two of the KKT conditions depend on our inverse optimization variables $c$, $\lambda$ and $\mu$. However we first must verify that \textbf{primal feasibility} conditions are satisfied by the measured trajectory, otherwise our model of the forward optimization problem is not correct and we will have to go back to fixing the model. If the primal feasibility conditions pose no problem, then we turn our attention to those conditions that include the unknown parameters \(c\) as well as the dual variables \(\lambda\) and \(\mu\). Those are the \textbf{stationarity} condition and the \textbf{complementary slackness} condition alongside the \textbf{dual feasibility} condition. The dual feasibility condition has already been incorporated into the domain of \( \mu \in \mathbb{R}^q_+\), as according to the dual feasibility condition, all the components of $\mu$ must be positive. The residuals we define in \eqref{eq:StationarityResidual} and \eqref{eq:ComplementaryResidual} will directly relate to the values of the left hand side of the conditions given by equation \eqref{eq:Stationarity} and equation \eqref{eq:ComplementarySlackness}.
+\begin{subequations} \label{eq:Residuals}
+\begin{align}
+    &r_{stat}(c, x^*, \lambda^*, \mu^*) = \nabla_x L(c, x^*, \lambda^*, \mu^*) & & \label{eq:StationarityResidual}\\
+    &{r_{comp}}_i(x^*, \mu^*) = \mu_i^* \cdot g_i(x^*) & & i = 1,\dots, m \label{eq:ComplementaryResidual}
+\end{align}
+\end{subequations}
+Since both right hand sides in equations \eqref{eq:Stationarity} and \eqref{eq:ComplementarySlackness} are equal to zero, then we can say that if the vector residuals defined in equation \eqref{eq:Residuals} are approximately equal to zero, we have a parameter vector \( c\) that makes the observations approximately optimal. We can then conclude that our goal is to minimize the residuals. To that end, we will try to minimize the square of the \( L_2\) norm of those vectors to try and obtain a solution closest to zero. That problem is posed in the next subsection.\par
+%%% KKT inverse optimal control
+\subsubsection{Inverse problem formulation}
+In the previous section we have deduced the problem of inverse optimal control to be the problem of minimizing the square of the \( L_2\) norm of the KKT condition residuals, so we can try to obtain parameter values for which the measured data is approximately optimal.\par
+To ensure the convexity of the overall cost function, we limit ourselves to discussing cost functions given as conical combinations of convex basis functions, thus \( \mathcal{C} = \mathbb{R}_+^k\). For normalization and to avoid trivial solutions to the problem the sum of elements of vector \( c\) should be equal to one. The search is performed over \( (c, \lambda, \mu) \). and is given in equation \eqref{eq:ResidualMinimization}.
+\begin{equation} \label{eq:ResidualMinimization}
+    \begin{aligned}
+    &\min_{c, \lambda, \mu} & & \norm{r_{stat}(c, x^*, \lambda, \mu)}^2 + \norm{{r_{comp}}(x^*, \mu)}^2 \\
+    &\text{subject to} & & c_i \geq 0, \; i = 1,\dots,k\\
+    &                  & & \mu_i \geq 0, \; i = 1,\ldots,q \\
+    &                  & & \sum_{i=1}^k c_i = 1
+    \end{aligned}
+\end{equation}
+The residuals of stationarity and complementary slackness are actually linear in the cost function weights and the dual variables. Consequently, we can reformulate this as a least square problem, by re-framing the problem in matrix form. First let us define the optimization vector that will be a concatenation of the variables \( (c, \lambda, \mu) \).
+\begin{equation} \label{eq:OptimizationVectorIOC}
+z = 
+\begin{bmatrix}
+c_1  & \ldots & c_k & \lambda_1  & \ldots & \lambda_q & \mu_1 & \ldots & \mu_m
+\end{bmatrix}^T
+\end{equation}
+We can see in the equation below that the stationarity residual is a linear combination of the gradients of the cost and constraint functions parametrized by the elements of the vector \( z\). As such we can write \( r_{stat} \) as a matrix-vector product, like is demonstrated in equation \eqref{eq:StationarityResidualMatrix}.
+\begin{equation} \label{eq:StationarityResidualMatrix}
+\begin{aligned}
+    r_{stat}(c, x^*, \lambda, \mu) =& \; \nabla_x L(c, x^*, \lambda, \mu) \\
+    =& \; c_1 \cdot \nabla_x f_1(x^*) + \ldots + c_k \cdot \nabla_x f_k(x^*) \\
+    +& \; \lambda_1 \cdot \nabla_x h_1(x^*) + \ldots + \lambda_p \cdot \nabla_x h_p(x^*)  \\
+    +& \; \mu_1 \cdot \nabla_x g_1(x^*) + \ldots + \mu_q \cdot \nabla_x g_q(x^*)\\
+    =& \; A_0 \cdot z
+\end{aligned}
+\end{equation}
+Where the matrix \( A_0 \), expressed in equation \eqref{eq:MatrixA0}, is the matrix whose columns are the gradients of the cost functions, the equality constraints and the inequality constraints (the order corresponding to the order of variables in the vector \( z\)).
+\begin{equation} \label{eq:MatrixA0}
+\resizebox{0.9\hsize}{!}{$
+A_0 = 
+    \begin{bmatrix}
+    \nabla f_1(x^*) & \ldots & \nabla f_k(x^*) & \nabla h_1(x^*)  & \ldots & \nabla h_p(x^*) & \nabla g_1(x^*) & \ldots & \nabla g_q(x^*)
+    \end{bmatrix}
+$
+}
+\end{equation}
+The complementary slackness residual is an element-wise product of inequality constraint values and inequality dual variables. That element-wise product can be naturally expressed as a diagonal matrix-vector multiplication, and can be extended to a matrix-vector multiplication  as shown in equation \eqref{eq:ComplementaryResidualMatrix}.
+\begin{equation} \label{eq:ComplementaryResidualMatrix}
+\begin{split}
+    r_{comp}(x^*, \mu) &= 
+    \begin{bmatrix}
+    \mu_1 \cdot g_1(x^*)\\
+    \mu_2 \cdot g_2(x^*)\\
+    \vdots\\
+    \mu_q \cdot g_q(x^*)
+    \end{bmatrix}\\
+    &= \begin{bmatrix}
+    g_1(x^*) & 0 & \dots & 0 \\
+    0 & g_2(x^*) & \ldots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \ldots & g_q(x^*)
+    \end{bmatrix}
+    \cdot 
+    \begin{bmatrix}
+    \mu_1 \\
+    \mu_2 \\
+    \vdots \\
+    \mu_q
+    \end{bmatrix}
+    \\
+    &= B_0 \cdot z
+\end{split}
+\end{equation}
+Where \( B_0\), shown in equation \eqref{eq:MatrixB0}, is the same diagonal matrix shown in the second line of equation \eqref{eq:ComplementaryResidualMatrix}, but with an added zero padding to the first \( k+p \) columns, corresponding to the columns getting multiplied by \( c\)'s and \(\lambda\)'s.
+\begin{equation} \label{eq:MatrixB0}
+    B_0 =
+    \begin{bmatrix}
+    0 & \ldots & 0 & g_1(x^*) & 0 & \ldots & 0 \\
+    0 & \ldots & 0 & 0 & g_2(x^*) & \dots & 0 \\
+    \vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
+    0 & \ldots & 0 & 0 & 0 & \ldots & g_q(x^*)
+    \end{bmatrix}
+\end{equation}
+We can then reformulate the objective function of inverse optimal control as follows
+\begin{equation} \label{eq:ResidualMatrixForm}
+\begin{split}
+    \norm{r_{stat}(c, x^*, \lambda, \mu)}^2 + \norm{{r_{comp}}(x^*, \mu)}^2 &= \norm{A_0 \cdot z}^2 + \norm{B_0 \cdot z}^2 \\
+    &= \norm{C_0 \cdot z}^2
+\end{split}
+\end{equation}
+Where we can get the new matrix \( C_0 \), from equation \eqref{eq:MatrixC0}, by stacking the matrices \( A_0\) \eqref{eq:MatrixA0} and \( B_0\) \eqref{eq:MatrixB0} vertically. We have now reformulated the objective function representing the \textbf{KKT residual minimization} objective, as a square of a vector norm. With this, we have effectively obtained a least squares formulation of the inverse optimal control problem, and as we will immediately uncover, it is subject to linear equality and inequality constraints.
+\begin{equation}\label{eq:MatrixC0}
+C_0 = 
+    \begin{bmatrix}
+    A_0 \\
+    B_0
+    \end{bmatrix}
+\end{equation}
+The inequality constraints inside the problem \eqref{eq:ResidualMinimization} concern the multipliers of the basis cost functions $c$'s, and the inequality dual variables from the forward optimization problem $\mu$'s. Since we want both of them, \(c\)'s and \(\mu\)'s, to be greater than 0, we also have inequality constraints on our variables in the inverse optimization problem. Since we are formulating the inequalities in the standard "less than" framework, we can express the inequalities with the following matrix inequality described in \eqref{eq:IOCineqconstraints}.
+\begin{equation} \label{eq:IOCineqconstraints}
+    A \cdot z \leq 0
+\end{equation}
+Where the matrix \( A\) given in the equation \eqref{eq:IOCineqmatrix}, is a block matrix of negative identity and zero matrices. It is of size \((k+q) \times (k+p+q)\) and is essentially composed of a negative identity matrix of size \( k \times k\) in the upper-left corner, and a negative identity matrix of size \( q \times q\) in the lower-right corner.
+\begin{equation} \label{eq:IOCineqmatrix}
+    A = \begin{bmatrix}
+            -I & \mathcal{O} & \mathcal{O} \\
+            \mathcal{O} & \mathcal{O} & -I
+        \end{bmatrix}
+\end{equation}
+To avoid trivial solutions like \( z = 0\) (because every solution is a local minimum for $f(x)=0$), we pose the constraint that \( \sum_{i=1}^k c = 1\). In matrix form that gives
+\begin{equation}
+    A_{eq} \cdot z = 1
+\end{equation}
+where \(A_{eq}\) is given by the following equation
+\begin{equation} \label{eq:IOCeqmatrix}
+A_{eq} = \begin{bmatrix}
+1 & 1 & \ldots & 1 & 0 & \dots & 0
+\end{bmatrix}
+\end{equation}
+The final form of the \textbf{KKT residual minimization} approach to inverse optimization can be written in matrix form as a least squares problem, and is shown in the following equation
+\begin{equation} \label{eq:ResidualMinimizationMatrixForm}
+    \begin{aligned}
+    &\min_{z} & & \norm{ C_0 \cdot z}^2 \\
+    &\text{subject to} & & A \cdot z \leq 0 \\
+    &                  & & A_{eq} \cdot z = 1
+    \end{aligned}
+\end{equation}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulated data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%% Simulation 
+\subsection{Validation with simulated unicycle model}
+In this section we will validate the KKT approach to inverse optimal control in a simplified simulation setting. We will determine criteria used during the trajectory planning of a unicycle robot. This model is chosen because it is simple enough for implementation and illustrating the principles of inverse optimal control, and because it has been used with both the Bi-level approach \cite{mombaur2010human} and the KKT approach \cite{puydupin2012convex}.\par
+The unicycle model has a 3-dimensional state where \( x_1\) represents the position of the robot along the abscissa axis, \( x_2\) represents the position along ordinate axis, while \( x_3\) represents the orientation of the robot expressed as an angle with respect to the abscissa axis. We have a 2-dimensional control vector where \( u_1\) is the linear/forward velocity while \( u_2\) represents the angular velocity of the robot.\par
+The trajectory generation problem for a discretized unicycle robot model is formulated as an optimization problem in equation \eqref{eq:UnicycleModel}. As mentioned, the cost function is represented as a conical combination of basis cost functions, the equality constraints represent the system dynamics, while the inequality constraints represent system limitations. The optimization problem is
+\begin{equation} \label{eq:UnicycleModel}
+    \begin{aligned}
+    &\min_{x, u} & & \sum_{i=1}^k c_i \cdot f_i(x, u) \\
+    &\text{subject to} & & x_1^{i+1} = x_1^i + \tau u_1^i \cos(x_3^i) \\
+    &                  & & x_2^{i+1} = x_2^i + \tau u_1^i \sin(x_3^i) \\
+    &                  & & x_3^{i+1} = x_3^i + \tau u_2^i             \\
+    &                  & & x^0 = x_{start} \\
+    &                  & & x^{N-1} = x_{goal} \\
+    &                  & & 0 \leq u_1^i \\
+    &                  & & i = 0, \ldots, N-1
+    \end{aligned}
+\end{equation}
+where \( \tau \) is the discretization step, \(  i\) is the time step going from \( 0\) to \( N-1\). The optimization variables are \( x = (x^0, \ldots, x^N)\) and \( u = (u^0,\ldots,u^{N-1})\), where $x^i$ and $u^i$ are the state and control vectors at time $i$. The equality constraints represent the dynamical model of the unicycle robot alongside the boundary conditions for the trajectory. The inequality constraints are added for demonstration's sake and represent a lower bound on the linear velocity, as we want to consider a robot that is only able to move forward.\par
+
+The chosen basis of cost functions is presented in equation \eqref{eq:UnicycleBasis}. The idea is to minimize amplitude of the control signals at each time step, meaning the linear and angular velocity (given by 1 and 2). We also want to minimize the differential of the control signals at each time step, meaning linear and angular acceleration (given by 3 and 4). Also we want to minimize the difference between the current and the reference state at each time step (given by 5, 6 and 7).
+\begin{equation} \label{eq:UnicycleBasis}
+    \begin{aligned}
+    &f_1(x, u) = \sum_{i=0}^{N-1} {u_1^i}^2 & & f_2(x, u) = \sum_{i=0}^{N-1} {u_2^i}^2 \\
+    &f_3(x, u) = \sum_{i=0}^{N-2} (u_1^{i+1}-u_1^i)^2 & & f_4(x, u) = \sum_{i=0}^{N-2} (u_2^{i+1}-u_2^i)^2 \\
+    &f_5(x, u) = \sum_{i=0}^{N-1} (x_1^i - {x_{goal}}_1)^2 & & f_6(x, u) = \sum_{i=0}^{N-1} (x_2^i - {x_{goal}}_2)^2 \\
+    &f_7(x, u) = \sum_{i=0}^{N-1} (x_3^i - {x_{goal}}_3)^2 & &
+    \end{aligned}
+\end{equation}
+We then also set \(x_{goal}\), \(x_{start}\) and the weights $c_1, c_2, \ldots, c_7$ and run the optimization. Upon the completion of the optimization, we can use the results inside the inverse optimal control problem formulation and retrieve weights. We will try to retrieve weights with noise in measurements as well.\par
+In this example, we have selected the optimization parameters as follows. The goal robot position is \(x_{goal}=(X_{goal}, Y_{goal}, \theta_{goal})=(-4, 8, \pi)\) while the starting position is \(x_{start} = (X_{start}, Y_{start}, \theta_{start}) = (1, 1, 1)\). Also, the sampling rate is $T_s = 0.1s$ and the duration of the movement is fixed to $T_f = 3s$, so we have $30$ samples for each control and state variable, meaning we have a total of 150 optimization variables, $3\cdot30$ state variables and $2\cdot30$ control variables. The chosen weights for the basis cost functions are $(c_1, c_2, c_3, c_4, c_5, c_6, c_7) = (0.3565,0.0374,0,0.3565,0.0357,0.0357,0.1783)$.
+\begin{wrapfigure}{r}{5.5cm}
+\includegraphics[width=0.5\textwidth]{planar_traj.jpg}
+\caption{Example of a planar trajectory of a unicycle robot.}\label{fig:UnicycleRobotPlanarTraj}
+\end{wrapfigure}
+The forward optimization is performed using the MATLAB optimization toolbox for constrained non-linear programming, via the function \textit{fmincon}, which handles the optimization pretty rapidly ($2.23 \pm 0.30s$ across 20 runs). The result of the optimization is given inside Figure~\ref{fig:UnicycleRobotPlanarTraj}. As we can see, we obtain a smooth curve trajectory in the two dimensional $X-Y$ plane.\par
+The evolution of states throughout time, meaning the $X$ and $Y$ coordinates and the robot's orientation $\theta$, are given inside Figure~\ref{fig:UnicycleRobotStateTrajectories}, while the evolution of the controls, $u_1=v$ representing forward velocity and $u_2=\omega$ representing angular velocity, throughout time is given inside Figure~\ref{fig:UnicycleRobotControlProfiles}. \par
+\begin{figure}\label{fig:UnicycleStateControlProfiles}
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{state_profiles.jpg}
+        \caption{State profiles}
+        \label{fig:UnicycleRobotStateTrajectories}
+  \end{subfigure}
+  %
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{control_profiles.jpg}
+    \caption{Control Profiles}
+    \label{fig:UnicycleRobotControlProfiles}
+  \end{subfigure}
+\end{figure}
+Using the obtained data from forward optimization we can retrieve the weights. The procedure to do that can be summarized in the next few steps:
+\begin{itemize}
+    \item Evaluate the gradients of the cost function basis and the optimization constraints for the obtained trajectory, and arrange them into the matrix $A_0$ from equation \eqref{eq:MatrixA0}.
+    \item Evaluate the inequality constraints for the obtained trajectory, and arrange them into the matrix $B_0$ from equation \eqref{eq:MatrixB0}.
+    \item Compose the matrices $A_0$ and $B_0$ into the matrix $C_0$ from equation \eqref{eq:MatrixC0}, generate matrix $A$ from equation~\eqref{eq:IOCineqmatrix} and generate matrix $A_{eq}$ from equation~\eqref{eq:IOCeqmatrix} to form the least square optimization problem~\eqref{eq:ResidualMinimizationMatrixForm}.
+    \item Solve the optimization problem~\eqref{eq:ResidualMinimizationMatrixForm} to obtain $z$ and extract the retrieved weights $c$ and the Lagrangian multipliers $\lambda$ and $\mu$.
+\end{itemize}
+Following these steps and using the clean data, with no noise added, we obtain a \textbf{flawless result}. The retrieved weights are the same to the 4th decimal place.\par
+Adding noise of varying standard deviation upon all the optimization variables, the states and the controls, results in $X-Y$ plane trajectories like the ones you can see on Figure~\ref{fig:UnicycleRobotNoisyPlanarTraj}.\par
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{noisy_planar_trajectories.jpg}
+    \caption{Optimal trajectories with added noise.}
+    \label{fig:UnicycleRobotNoisyPlanarTraj}
+\end{figure}
+To asses the robustness of this technique, we have run the simulation multiple times while adding differing levels of white noise to the measurements. More precisely, we have run the simulation $r=20$ times for $m=70$ different values of the standard deviation, logarithmically distributed between $\sigma = 0.0001$ and $\sigma = 0.1$. We have tracked the effect of noise on the norm of the least square residual in equation~\eqref{eq:ResidualMinimizationMatrixForm} once the inverse optimization is effectuated. We have also tracked the $L_2$ norm between the retrieved vector of weights and the true vector of weights. Moreover, we have formed histograms of the retrieved weight values.\par
+The dependence of the residual norm upon the standard deviation of noise is shown inside Figure~\ref{fig:UnicycleRobotResidualNorm}, while the dependence of the norm of the difference between retrieved and true weights is shown inside Figure~\ref{fig:UnicycleRobotWeightDifference}. We can see that the dependence inside Figure~\ref{fig:UnicycleRobotResidualNorm} takes the shape of an exponential curve, however, since the $x$-axis is logarithmically scaled, we can deduce that the \textbf{relationship between the residual norm during inverse optimization and the standard deviation of noise is linear} in the case of this model. The \textbf{weight vector difference also follows a linear dependence} up to one point, where saturation seems to come into play. That saturation is caused by the fact that the weight vector is restricted to the part of the $\sum_{i=1}^k c_i = 1$ hyper-plane, that is located in $\mathbb{R}^k_+$, and thus the difference of 2 weight vectors from that hyper-plane cannot exceed a certain threshold. The match between the linear increase in residual norm and the weight vector difference norm strongly suggests that \textbf{the residual norm during inverse optimization is a good indicator of the quality of the retrieved weights}.\par
+\begin{figure}\label{fig:UnicycleResidualAndWeightDifferenceNorm}
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{residual_norm.jpg}
+        \caption{Residual norm}
+        \label{fig:UnicycleRobotResidualNorm}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{weight_difference_norm.jpg}
+    \caption{Weight vector difference norm}
+    \label{fig:UnicycleRobotWeightDifference}
+  \end{subfigure}
+  \centering
+  \caption{Dependence of weight retrieval quality indicators upon the standard deviation of noise added to the data}
+\end{figure}
+Concerning the distribution of the retrieved weights, we can analyse the histograms in Figure~\ref{fig:UnicycleHistogram-3} which were generated by running the simulation $r=20$ times with noisy measurements of deviation $\sigma=0.0001$, and the histograms in Figure~\ref{fig:UnicycleHistogram-1} generated by the same procedure except $\sigma$ is now $0.1$. It can be noted that the retrieved weights tend to take on the shapes of normal distributions which are not centered around the true value of the weights, and whose deviations seem to be scaled according to the estimated mean. This implies that when weights are estimated this way we may have a biased estimation.\par
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{weight_histogram_-3.jpg}
+    \caption{Histogram of weights recovered for $\sigma = 0.001$}
+    \label{fig:UnicycleHistogram-3}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{weight_histogram_-1.jpg}
+    \caption{Histogram of weights recovered for $\sigma = 0.1$}
+    \label{fig:UnicycleHistogram-1}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HUMAN BODY MODEL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The human body model
+\section{Human body model} \label{Our approach}
+Recently, a lot of research has been concerned with the problem of modeling human movement behaviors such as walking \cite{mombaur2010human, albrecht2012modeling, puydupin2012convex}, running \cite{park2013inverse} and grasping \cite{mainprice2016goal, sylla2014human, panchea2018human, panchea2015inverse, albrecht2012bilevel, berret2011evidence}. Particular interest has also been shown towards learning from demonstrations \cite{argall2009survey}. In this thesis, we will attempt to model the human \textbf{sit-to-stand transfer} which has been a subject of interest as a consequence of the need for assistive systems.\par
+\subsection{Sit-to-stand task}
+Even if they are an everyday common human task, sit-to-stand (STS) transfers involve very complex sensorimotor processes to control the highly nonlinear musculoskeletal system. Standing up from a chair is a basic but crucial task of daily living. A decrease in this ability, experienced by the elderly or individuals with sensory-motor deficiencies (Parkinson's Disease, medullar lesion, post-stroke hemiplegia, ...), limits their independence and can lead to institutionalization. The ability to realize a sit-to-stand task (STS) task has been related with an increased risk of falling and hip fracture. When rising up from a chair the hip joint torques can be larger than during other activities of daily living, such as walking and star climbing. Consequently, assessing lower body strength, and thus functional performance through STS test has been considered as a reliable way to differentiate between subjects with different functional levels.
+\subsection{Biomechanical model} \label{section:Biomechanical}
+Human motion quantitative analysis is often grounded in a constrained biomechanical model of the human body. A biomechanical model is constructed in order to provide a realistic and straightforward representation of the human body skeletal structure. It is a tool through which we can describe the motor coordination and the functional performance of the human locomotor system.
+Commonly the human body is described as multiple bone segments linked with joints, what is called multi-body model. Each joint consists of a number of Degrees-of-Freedom (DoF) indicating in how many different directions it can move. In general, the human body moves within three anatomical planes that are defined in Fig. \ref{fig:planes}: frontal, sagittal, and transverse.\par
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Planes-of-Motion.jpg}
+    \caption{Possible planes of human motion.}
+    \label{fig:planes}
+\end{figure}
+According to Zatsiorsky, the human body is comprised of 148 moving bone segments connected with 147 joints, which suggests there is a total of 244 Degrees-of-Freedom (DoF). It is thus common in the literature to simplify the human body skeleton to the most relevant segments and joints. Most of the biomechanical models describe the human body as a one or several kinematic chains of rigid bodies, representing bones as segments, linked with mechanical joints. These mechanical joints can be either prismatic or revolute, referring to 1 DoF translational or rotational movement, respectively.\par
+In reality, most of the human body joints are a combination of prismatic and revolute joints, called complex joints. Therefore, a biomechanical model is usually kinematically constrained to ensure realistic motions of the human body. An example of kinematic constraints is to assume the knee joint as a single DoF revolute joint, performing rotation in the sagittal plane.
+
+The model used here is a multi-body model represented as a single kinematic chain, and consisting of three segments that are in a planar configuration. During a sit-to-stand task multiple joints are involved, notably both ankles, both knees and the hip joint. The listed joints are the main driving power of the human sit-to-stand task, as they are controlling the rise of the body by their rotation in the sagittal plane. This model leverages the symmetry of the human body by treating the ankles and knees as a single joint in order to simplify the problem setting and obtain an easier to handle, less complex model of the sit-to-stand task.
+
+The resulting model is thus this simplified two-dimensional model in the sagittal plane, disposing of three degrees of freedom in the form of three revolute joints as shown in Figure~\ref{fig:SitToStand}. The degrees of freedom are represented by joint angles, the joints being the ankle ($\theta_1$), the knee ($\theta_2$) and the hip joint ($\theta_3$), while the segments are represented by their length, the segments being the shin ($l_1$), the thigh ($l_2$) and the whole upper body ($l_3$). Each body segment is defined using a local anatomical frame, i.e., Cartesian coordinate system.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\textwidth]{SitToStand.png}
+    \caption{Model of the human body during a sit-to-stand task.}
+    \label{fig:SitToStand}
+\end{figure}
+It is possible to calculate the global Cartesian position and orientation of each segment, by finding the transformation matrix between the desired segment frame and the global frame. Inside this simple model we can find each segment's global Cartesian state by projecting segment endpoints on the $X$ and $Y$ axes of the global reference frame. Those projections are clearly dependent upon the joint angles. For example we can find the head's global Cartesian state which is given inside the following equation.
+\begin{equation}
+    P_h = \begin{bmatrix}
+    x_h\\
+    y_h\\
+    \theta_h
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    l_1  \cos(q_1) + l_2  \cos(q_1 + q_2) + l_3  \cos(q_1 + q_2 + q_3)\\
+    l_1  \sin(q_1) + l_2  \sin(q_1 + q_2) + l_3  \sin(q_1 + q_2 + q_3)\\
+    q_1 + q_2 + q_3 
+    \end{bmatrix}
+\end{equation}
+
+\noindent The global Cartesian velocity can then be inferred by differentiation of the previous expression with respect to time. The result can be decomposed into a matrix vector product, between the so-called Jacobian $J_h(q)$ and the joint velocities, meaning that the Jacobian is the projection matrix from the space of joint velocities to the space of global Cartesian velocities and is a function of the joint angles $J_h(q)$. The global Cartesian velocity is given below.
+\begin{equation}
+    \dot{P}_h =
+    \begin{bmatrix}
+    \dot{x}_h\\
+    \dot{y}_h\\
+    \dot{\theta}_h
+    \end{bmatrix} \\
+    = J_h(q)   \dot{q}
+\end{equation}
+
+\noindent It is a convention in robotics to write trigonometric functions in the abbreviated way shown below, especially when dealing with projection matrices.
+\begin{align*}
+    C_1 &= \cos(q_1) & C_{12} &= \cos(q_1 + q_2) & C_{123} &= \cos(q_1 + q_2 + q_3)\\
+    S_1 &= \sin(q_1) & S_{12} &= \sin(q_1 + q_2) & S_{123} &= \sin(q_1 + q_2 + q_3)
+\end{align*}
+\noindent With that in mind, we can express the Jacobian in the following way.
+\begin{equation}
+    J_h = 
+    \begin{bmatrix}
+    -l_1   S_{1} - l_2   S_{12} - l_3   S_{123} & - l_2   S_{12} - l_3   S_{123} & - l_3   S_{123}\\
+    l_1   C_{1} + l_2   C_{12} + l_3   C_{123} & l_2   C_{12} + l_3   C_{123} & l_3   C_{123}\\
+    1 & 1 & 1\\
+    \end{bmatrix}
+\end{equation}
+
+\noindent In the same way, global Cartesian acceleration is inferred by differentiation the expression for global Cartesian velocity with respect to time, yielding the following result.
+\begin{equation}
+    \ddot{P}_h = 
+    \begin{bmatrix}
+    \ddot{x}_h\\
+    \ddot{y}_h\\
+    \ddot{\theta}_h
+    \end{bmatrix}
+    =
+    \dot{J}_h(q, \dot{q})\dot{q} + J_h(q) \ddot{q}
+\end{equation}
+
+\noindent A peculiar matrix shows up inside this expression, and it is the derivative of the Jacobian with respect to time $\dot{J}_h(q, \dot{q})$ which is a $(3\times3)$ matrix that originates from element-wise time derivation of the Jacobian. This matrix is not only a function of the joint positions but also the joint velocities, and portrays the effect the joint velocities have on the global Cartesian acceleration. Its mathematical expression is given column-wise inside the three following equations.
+
+\begin{equation}
+    \dot{J}_h(q, \dot{q})_{(:, 1)} = 
+    \begin{bmatrix}
+    -l_1   C_{1} \dot{q}_1 - l_2   C_{12} (\dot{q}_1 + \dot{q}_2) - l_3   C_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3}) \\
+    - l_1   S_{1} \dot{q}_1 - l_2   S_{12} (\dot{q}_1 + \dot{q}_2)  - l_3   S_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3})\\
+    0\\
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    \dot{J}_h(q, \dot{q})_{(:, 2)} = 
+    \begin{bmatrix}
+     - l_2   C_{12} (\dot{q}_1 + \dot{q}_2) - l_3   C_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3})\\
+     - l_2   S_{12} (\dot{q_1} + \dot{q}_2) - l_3   S_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3})\\
+     0\\
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    \dot{J}_h(q, \dot{q})_{(:, 3)} = 
+    \begin{bmatrix}
+    - l_3   C_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3})\\
+    - l_3   S_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3}) \\
+    0\\
+    \end{bmatrix}
+\end{equation}
+
+\begin{comment}
+\begin{equation}
+    \dot{J}_h(q, \dot{q})_{(:, 1)} = 
+    \begin{bmatrix}
+    -l_1   C_{1} \dot{q}_1 - l_2   C_{12} (\dot{q}_1 + \dot{q}_2) - l_3   C_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3}) & - l_2   C_{12} (\dot{q}_1 + \dot{q}_2) - l_3   C_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3}) & - l_3   C_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3})\\
+    - l_1   S_{1} \dot{q}_1 - l_2   S_{12} (\dot{q}_1 + \dot{q}_2)  - l_3   S_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3}) & - l_2   S_{12} (\dot{q_1} + \dot{q}_2) - l_3   S_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3}) & - l_3   S_{123} (\dot{q_1} + \dot{q}_2 + \dot{q_3}) \\
+    0 & 0 & 0\\
+    \end{bmatrix}
+\end{equation}
+\end{comment}
+
+\noindent In general, the dynamic equations of motion of a kinematic chain are governed by its base and body segments kinematics, kinetics, and Body Segment Inertial Parameters (BSIPs). BSIPs consist of ten parameters to be identified per each segment of the mechanical model being investigated, notably the mass of the segment (1$\times$1), the center of mass (CoM): a 3D position vector (3$\times$1), and an Inertia tensor (3$\times3$): a symmetric matrix with 6 independent parameters to be identified.\par
+The planar nature of the simplified model requires only a 2D position vector of the CoM ($2\times1$), and a single value for the moment of inertia of each segment around the $Z$-axis (perpendicular to the sagittal plane of motion). The BSIPs may be estimated according to the procedure described in \cite{bonnet2017optimal}.\par
+Once the BSIPs are known it is possible to determine the global Cartesian position, velocity and acceleration of the overall CoM of the model. Let the center of mass of the $i$-th segment be described by the two dimensional position vector $P_{COMi} = (x_i, y_i)$ with respect to the local coordinate system attached to that segment, and let the mass of the $i$-th segment be $m_i$ such that the overall mass is $m = m_1 + m_2 + m_3$. The global Cartesian position of the overall CoM of the model can then be expressed as:
+\begin{equation}
+\begin{split}
+    P_{COM} &= 
+    \begin{bmatrix}
+    x_{COM}\\
+    y_{COM}
+    \end{bmatrix}
+    \\
+    &= \frac{1}{m}
+    \begin{bmatrix}
+    (x_1 C_1 - y_1 S_1) m_1 + (x_2 C_{12} - y_2 S_{12}) m_2 + (x_3 C_{123} - y_3 S_{123}) m_3\\
+    (x_1 S_1 + y_1 C_1) m_1 + (x_2 S_{12} + y_2 C_{12}) m_2 + (x_3 S_{123} + y_3 C_{123}) m_3\\
+    \end{bmatrix}
+\end{split}
+\end{equation}
+
+\noindent Differentiating the previous equation with respect to time yields:
+\begin{equation}
+    \dot{P}_{COM} = 
+    \begin{bmatrix}
+    \dot{x}_{COM}\\
+    \dot{y}_{COM}
+    \end{bmatrix}
+    =
+    J_{COM}(q) \dot{q}
+\end{equation}
+\noindent where $J_{COM}(q)$ is the Jacobian of the CoM, meaning the projection from the space of joint velocities to the space of global Cartesian velocity of the CoM. This jacobian is presented below, one column at a time.
+\begin{equation}
+    J_{COM}(q)_{(:, 1)} = \frac{1}{m}
+    \begin{bmatrix}
+    (-x_1 S_1 - y_1 C_1)m_1 - (x_2 S_{12} - y_2 C_{12})m_2 - (x_3 S_{123} - y_3 C_{123})m_3\\
+    (x_1 C_1 - y_1 S_1)m_1 + (x_2 C_{12} - y_2 S_{12})m_2 + (x_3 C_{123} - y_3 S_{123})m_3
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    J_{COM}(q)_{(:, 2)} = \frac{1}{m}
+    \begin{bmatrix}
+    (- x_2 S_{12} - y_2 C_{12})m_2 - (x_3 S_{123} - y_3 C_{123})m_3\\
+    (x_2 C_{12} - y_2 S_{12})m_2 + (x_3 C_{123} - y_3 S_{123})m_3
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    J_{COM}(q)_{(:, 3)} = \frac{1}{m}
+    \begin{bmatrix}
+    (- x_3 S_{123} - y_3 C_{123})m_3\\
+    (x_3 C_{123} - y_3 S_{123})m_3
+    \end{bmatrix}
+\end{equation}
+These will be used in the next section where we formulate the cost functions.
+
+\subsection{Cost function basis} \label{costfnbasis}
+The human musculoskeletal system is a highly redundant actuated system with a large number of degrees of freedom, hence it may choose an actual movement in a very large number of possibilities. We assume that human movements possess motion invariants that are the results of an optimization process, involving one or more cost function(s), but where the actual objective functions remain unknown. What we want to solve is thus the problem of determining the objective cost function that may explain the observations of optimal expert trajectories, known as Inverse Optimal Control (IOC).\par
+As was mentioned in Section~\ref{Inverse optimal control}, we hypothesize that the objective function is given as an affine parametrical combination of basis cost functions, like in Equation~\ref{eq:AffineParametricRepresentation2}. Those functions will be represented inside this subsection.\par
+Let us assume that $q = (q_1(n), q_2(n), q_3(n)), n \in \{0, 1, \ldots, N-1\}$ is a discrete sampled expert (human) trajectory with $N$ samples and sampling rate $T_s$. The basis cost functions that are considered here are all in the form of the average sum of squares of different biomechanical quantities of our model and are given at the end of the Section~\ref{costfnbasis}.\par
+We will also need to define new quantities which we will not explicitly write down. Namely,
+\begin{itemize}
+    \item The joint torques of the ankle, knee and hip joints as $G_1(n), G_2(n), G_3(n)$ respectively.
+    \item The torque changes, which are the derivatives of the torque with respect to time $\dot{G}_1(n), \dot{G}_2(n), \dot{G}_3(n)$.
+\end{itemize}
+The inverse dynamic model, or simply dynamic model, provides the joint forces and torques as a function of the joint trajectories. Whereas the forward  dynamic model allow to calculate the joint accelerations as a function
+of joint positions, velocities and torques.\par
+Since we have kinematic data at our disposal, as will be seen in Section~\ref{humandata}, we will be using an inverse dynamic model to calculate the torque via a software called SYMORO+ \cite{khalil1997symoro+}, and we will use CasADi as well as the principles of multivariable calculus to calculate the time-derivatives.\par
+The SYMORO+ package takes in the Modified Denavit Hartenberg (MDH) parameters (in detail described inside \cite{craig2009introduction}) as well as the BSIPs to compute the inverse dynamic model. The MDH of our model are given inside Table~\ref{table:MDH}.
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+         \hline
+         $\alpha_1 = 0$ & $d_1 = 0$ & $\theta_1 = 0$ & $r_1 = 0$ \\
+         \hline
+         $\alpha_2 = 0$ & $d_2 = l_1$ & $\theta_2 = q_2$ & $r_2 = 0$ \\
+         \hline
+         $\alpha_3 = 0$ & $d_3 = l_2$ & $\theta_3 = q_3$ & $r_3 = 0$ \\
+         \hline
+         $\alpha_4 = 0$ & $d_4 = l_3$ & $\theta_4 = 0$ & $r_4 = 0$ \\
+         \hline
+    \end{tabular}
+    \caption{Modified Denavit Hartenberg parameters of the model.}
+    \label{table:MDH}
+\end{table}
+
+The cost function basis is given below:
+\begin{align*}
+    f_1(q) &= \frac{1}{N} \sum_{i=0}^{N-1} G_1^2(i) &
+    f_2(q) &= \frac{1}{N} \sum_{i=0}^{N-1} G_2^2(i) &
+    f_3(q) &= \frac{1}{N} \sum_{i=0}^{N-1} G_3^2(i) \\
+    f_4(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{q}_1^2(i) &
+    f_5(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{q}_2^2(i) &
+    f_6(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{q}_3^2(i) \\
+    f_7(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \ddot{q}_1^2(i) &
+    f_8(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \ddot{q}_2^2(i) &
+    f_9(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \ddot{q}_3^2(i) \\
+    f_{10}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{G}_1^2(i) &
+    f_{11}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{G}_2^2(i) &
+    f_{12}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{G}_3^2(i) \\
+    f_{13}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} (G_1(i) \cdot \dot{q}_1(i))^2 &
+    f_{14}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} (G_2(i) \cdot \dot{q}_2(i))^2 &
+    f_{15}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} (G_3(i) \cdot \dot{q}_3(i))^2 \\
+    f_{16}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{x}_h^2(i) &
+    f_{17}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{y}_h^2(i) &
+    f_{18}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{\theta}_h^2(i) \\
+    f_{19}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \ddot{x}_h^2(i) &
+    f_{20}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \ddot{y}_h^2(i) &
+    f_{21}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \ddot{\theta}_h^2(i) \\
+    f_{22}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{x}_{COM}^2(i) &
+    f_{23}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \dot{y}_{COM}^2(i) &
+    & \\
+    f_{24}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \ddot{x}_{COM}^2(i) &
+    f_{25}(q) &= \frac{1}{N} \sum_{i=0}^{N-1} \ddot{y}_{COM}^2(i) &
+    & \\
+\end{align*}
+
+
+
+
+
+
+\subsection{Data acquisition} \label{humandata}
+Structures that were used during acquisition consist of optical motion capture systems, combined with inertial measurement units (IMUs). Optical motion capture systems referred to as \textbf{mocap} systems have become very useful in the movie and animation industry, video-game industry as well as for biomechanical analysis of human motion for medical or sports purposes. Optical systems utilize data captured from multiple image sensors that have been calibrated beforehand, to triangulate the 3D position of a subject. Data acquisition is traditionally implemented using special reflective markers attached to a subject at different locations on the body, which are then tracked by the image sensors, and their 3D positions are determined. For this data, the system used is called Optitrack which uses multiple spatially arranged cameras like shown in Figure~\ref{fig:mocap}.\par
+An IMU consists of a triaxial gyroscope and a triaxial accelerometer as shown in Figure~\ref{fig:IMU}. It measures 3D angular velocity and 3D linear acceleration relatively to the the sensor’s base frame. In theory, the 3D pose, i.e. position and orientation, can be estimated by integrating and double integrating these measurements, respectively. However, the accuracy of IMU’s pose estimation may be jeopardized due to the presence of non-linear and time dependant drifts in sensor data.\par
+The data from these two sensors is fused and from there joint position, velocity and acceleration are estimated for the ankle, knee and hip. Courtesy of prof. Vincent Bonnet for providing the already cleaned up and processed data as well as the estimated BSIPs necessary for the computation of joint torques (see Section~\ref{section:Biomechanical}).\par
+An example of recorded joint trajectories, as well as their corresponding velocities and accelerations are shown inside Figure~\ref{fig:HumanTrajectories}. Each graph, out of the three, represents the position, velocity and acceleration for one of the three joints. These graphs are shown in the order ankle, knee and hip joint.\par
+
+
+\begin{figure}[h!]\label{fig:DataAcquisition}
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{mocap.png}
+        \caption{Optical motion tracking system with spatially arranged cameras.}
+        \label{fig:mocap}
+    \end{subfigure}
+  %
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=\textwidth]{IMU.png}
+    \caption{Inertial measurement unit}
+    \label{fig:IMU}
+  \end{subfigure}
+  \caption{Data acquisition instruments}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Data.jpg}
+    \caption{Human joint trajectories during sit-to-stand task}
+    \label{fig:HumanTrajectories}
+\end{figure}
+
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Spline Interpolation  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%%% Splines
+\section{Data processing and results} 
+The data acquisition procedure provides us with the acquired trajectories values at discrete time samples. These trajectories can be of arbitrary long duration, and thus have many samples, which renders forward optimization with respect to those samples pretty cumbersome. This is why we will use something called spline interpolation or piece-wise polynomial interpolation to reduce the number of optimization variables. Subsequently, inverse optimization and cost function weights retrieval will be performed.
+
+\subsection{Spline interpolation of trajectories} \label{section:Spline}
+
+\indent Let \( y = f(x)\) be a function such that \( f: \mathbb{R} \mapsto \mathbb{R} \), and which we have sampled at \( n+1 \) different points and ordered in pairs \(((x_1, y_1), \ldots, (x_{n+1}, y_{n+1})) \). We can approximate this function as a piece-wise polynomial function of order \(k\) using those sampled \( n+1\) points. This will result in a new function \( S_f^{n,k}(x), \; S_f^{n,k}: \mathbb{R} \mapsto \mathbb{R} \), which is characterized by:
+\begin{itemize}
+    \item The polynomial order \(k \),
+    \item The set of \( n+1 \) samples \(((x_1, y_1), \ldots, (x_{n+1}, y_{n+1})) \),
+    \item The resulting set of \( n \cdot (k+1) \) polynomial coefficients, coming from \( n \) polynomials, each having \( k+1 \) coefficients.
+\end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{spline_points.png}
+    \caption{Example of scattered data points}
+    \label{fig:splinePoints}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{spline_fit.png}
+    \caption{Scattered data points interpolated}
+    \label{fig:splineFit}
+\end{figure}
+\noindent Assuming that our samples are strictly ordered with respect to the independent variable values, meaning that \( x_1 < x_2 < \ldots < x_{n+1} \), we are trying to find the coefficients of the \( n\) polynomials of order \( k \) with which we aim to approximate \(f(x)\). Let \(p_f^{(i)}(x) \) denote the \( i\)-th polynomial, with \(i=1,\ldots,n\). Our function \( S_f^{n,k}(x) \) is then composed of multiple polynomials on different intervals and can be defined as follows:
+\begin{equation} \label{eq:splineFunction}
+S_f^{n,k}(x) =
+\begin{cases}
+&p_f^{(1)}(x), \; x_1 \leq x \leq x_2 \\ 
+&p_f^{(2)}(x), \; x_2 \leq x \leq x_3 \\
+&\ldots                            \\
+&p_f^{(n)}(x), \; x_n \leq x \leq x_{n+1}
+\end{cases}
+\end{equation}
+\noindent The polynomials themselves can be written in the following terms:
+\begin{equation} \label{eq:piecewisePolynomial}
+    \begin{aligned}
+    &p_f^{(1)}(x) = a_k^{(1)} \cdot x^k + a_{k-1}^{(1)} \cdot x^{k-1} + &\ldots + a_1^{(1)} \cdot x + a_0^{(1)} \\ 
+    &p_f^{(2)}(x) = a_k^{(2)} \cdot x^k + a_{k-1}^{(2)} \cdot x^{k-1} + &\ldots + a_1^{(2)} \cdot x + a_0^{(2)} \\
+    &\ldots                                                                                                  \\
+    &p_f^{(n)}(x) = a_k^{(n)} \cdot x^k + a_{k-1}^{(n)} \cdot x^{k-1} + &\ldots + a_1^{(n)} \cdot x + a_0^{(n)}
+    \end{aligned}
+\end{equation}
+where \( a_i^{(j)}\) denotes the \(i\)-th coefficient of the \(j\)-th polynomial.\par
+An illustrative example is given inside Figure~\ref{fig:splinePoints} and Figure~\ref{fig:splineFit} where we have 10 knots and 9 polynomials of order 5.\par
+We can calculate these coefficients of the polynomials from a system of linear equations. Depending on the order of the polynomials, we will have a different number of coefficients to find. In the general case if we have \( n+1 \) points then there are \( n \) polynomials, and as each polynomial has \(k \) coefficients, the total number of coefficients to find will be equal to \( n \cdot (k+1) \). We can formulate a system of linear equations with respect to the unknown coefficients by equating the values of the polynomials to the values of the function at the knot points, as well as equating the first \(k-1\) derivatives of adjacent polynomials to ensure continuity and smoothness of the function and the derivatives (The function will be smooth if \( k \geq 2\), and the first \(k-3\) derivatives will be smooth if \( k \geq 4 \)). We will find that for $k \geq 2$ the system is over determined and thus, we will need to insert additional equations, otherwise known as boundary conditions, to make sure our system is fully determined.\par
+For our example from Figure~\ref{fig:splineFit} where \( n=9\) and \(k=5\) this means we will need \( 9\cdot (5+1) = 54 \) equations to find all the \( 54 \) polynomial coefficients. Each of the 9 polynomials must go through it's two extremities, namely we can equate the value of each polynomial at its neighboring knot points to the value of the function, which accounts for \( 2 \cdot 9 = 18 \) equations. At each of the 8 interior knot points, we can equate the first, second, third and fourth derivatives of its neighboring polynomials, from which we will get \( 4 \cdot 8 = 32 \) equations. This accounts for \( 18 + 32 = 50 \) equations in total, which means we are missing \( 54 - 50 = 4 \) equations. These are the ones we will have to provide in terms of boundary conditions.\par
+In the general case, for each of the \( n\)  polynomials, we can pose 2 equations, saying that the values of the polynomial at its neighboring knot points should be equal to the value of the function at the given knot points. That accounts for \( 2 \cdot n\) equations, which can be formulated as follows.\par
+\begin{equation}\label{eq:splineKnotValues}
+\begin{aligned}
+&\text{For all } i = 1, \ldots, n \\
+&y_i = p_f^{(i)}(x_i) = a_k^{(i)} \cdot x_i^k + a_{k-1}^{(i)} \cdot x_i^{k-1} + \ldots + a_1^{(i)} \cdot x_i + a_0^{(i)} \\
+&y_{i+1} = p_f^{(i)}(x_{i+1}) =a_k^{(i)} \cdot x_{i+1}^k + a_{k-1}^{(i)} \cdot x_{i+1}^{k-1} + \ldots + a_1^{(i)} \cdot x_{i+1} + a_0^{(i)}
+\end{aligned}
+\end{equation}
+The remaining equations concern the equating of the derivatives of adjacent polynomials at the \( n-1 \) interior points, because those are the points where we have two polynomials meeting. For each polynomial, we can equate up to \( k-1\) of its derivatives \footnote{The \(k\)-th derivative of an order \(k\) polynomial is a constant. Equating that constant to the constants of adjacent polynomials at the two neighboring knot points is impossible if those constants are mutually different, and they are in the general case.}. These equations account for \( (n-1) \cdot (k-1)\) equations, since we have \( (k-1)\) equations (one for each derivative) at the \( (n-1) \) interior points.\par
+\begin{equation} \label{eq:splineDerivativeEquations}
+\begin{aligned}
+    &\text{For all interior points, } i = 2,\dots, n \\
+    &\frac{d}{dx}p_f^{(i-1)}(x_{i}) = \frac{d}{dx}p_f^{(i)}(x_{i}) \\
+    &\frac{d^2}{dx^2}p_f^{(i-1)}(x_{i}) = \frac{d^2}{dx^2}p_f^{(i)}(x_{i})\\
+    &\dots \\
+    &\frac{d^{k-1}}{dx^{k-1}}p_f^{(i-1)}(x_{i}) = \frac{d^{k-1}}{dx^{k-1}}p_f^{(i)}(x_{i})
+\end{aligned}
+\end{equation}
+where we can express the \( j\)-th derivative of the \(i\)-th polynomial \( \frac{d^j}{dx^j} p_f^{(i)}(x) \) as follows:
+\begin{equation} \label{eq:polynomialDeriv}
+    \frac{d^j}{dx^j} p_f^{(i)}(x) = \sum_{m = j}^{k} \frac{m\,!}{(m-j)\,!} \cdot a_m^{(i)} \cdot x^{m-j}
+\end{equation}
+
+We have accounted for \( 2\cdot n \) equations from expression \eqref{eq:splineKnotValues} and \( (k-1) \cdot (n-1) \) from expression \eqref{eq:splineDerivativeEquations} which totals \( 2 \cdot n + (k-1) \cdot (n-1) = (k+1) \cdot n - (k-1)\) equations. This means that we need another \( k-1 \) equations for our system to be fully defined. These correspond to the boundary conditions, which usually impose constraints on the derivatives at the first and last knot points.\par
+Let us now reformulate these equations in matrix form. For convenience we will define matrices \( F^{(i)} \) and \( D^{(i)}\) which we will subsequently use. The matrix \( F^{(i)} \) is associated with a single polynomial and is presented in the following equation:
+\begin{equation} \label{eq:splineMatrixF}
+    F^{(i)} = 
+    \begin{bmatrix}
+    1 & x_i & x_i^2 & \ldots & x_i^k \\
+    1 & x_{i+1} & x_{i+1}^2 & \ldots & x_{i+1}^k
+    \end{bmatrix}
+\end{equation}
+\noindent where \( i = 1,\ldots, n \) (one matrix for each polynomial), and the size of the matrix is given by \( \dim \{F^{(i)}\} = 2\times(k+1)\). The matrix \( D^{(i)}\) is associated with a single interior knot, and is presented in the following equation: 
+\begin{equation} \label{eq:splineMatrixD}
+    D^{(i)} = 
+    \begin{bmatrix}
+    0 & 1 & 2 \cdot x_i & \ldots & m \cdot x_i^{m-1} & \dots & k \cdot x_i^{k-1} \\
+    0 & 0 & 2           & \ldots & m \cdot (m-1) \cdot x_i^{m-2} & \dots & k \cdot (k-1) \cdot x_i^{k-2} \\
+      &   &             &        & \ldots                        &       &                                \\
+    0 & 0 & 0           & \ldots & \frac{m\,!}{(m-j)\,!} \cdot x_i^{m-j} & \dots & \frac{k\,!}{(k-1)\,!} \cdot x_i^{k-j} \\
+      &   &             &        & \ldots                        &       &                                \\
+    0 & 0 & 0           & \ldots & 0 & \dots & k\,! \cdot x_i
+    \end{bmatrix}
+\end{equation}
+\noindent where \( i = 2,\ldots, n \) (one matrix for each interior knot point), and the size of the matrix is given by \( \dim \{D^{(i)}\} = (k-1)\times(k+1)\).\par
+The equation \eqref{eq:splineKnotValues} can be reformulated in matrix form using the matrix \( F \) from equation \eqref{eq:splineMatrixF}:
+\begin{equation} \label{eq:matrixSplineKnotValues}
+    F^{(i)}
+    \cdot
+    \begin{bmatrix}
+    a_0^{(i)} \\
+    a_1^{(i)} \\
+    a_2^{(i)} \\
+    \ldots \\
+    a_k^{(i)}
+    \end{bmatrix}
+    = 
+    \begin{bmatrix}
+    y_i \\
+    y_{i+1}
+    \end{bmatrix}
+\end{equation}
+\noindent where the size of the column vector of coefficients is \((k+1)\times 1\) while the right hand side is obviously \( 2 \times 1\). This equation holds for \( i=1,\ldots,n\), in other words, for all polynomials and their coefficients. Meanwhile, all the equations in expression \eqref{eq:splineDerivativeEquations} can be reformulated using the \( D^{(i)} \) matrix from \eqref{eq:splineMatrixD}, and is given below: 
+\begin{equation} \label{eq:matrixSplineDerivativeEquation}
+    \begin{bmatrix}
+    D^{(i)} & -D^{(i)}
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+    a_0^{(i-1)} \\
+    a_1^{(i-1)} \\
+    a_2^{(i-1)} \\
+    \ldots \\
+    a_k^{(i-1)} \\
+    a_0^{(i)} \\
+    a_1^{(i)} \\
+    a_2^{(i)} \\
+    \ldots \\
+    a_k^{(i)} \\
+    \end{bmatrix}
+    = \;
+    \mathcal{O}
+\end{equation}
+where the the concatenated \( D^{(i)} \) matrix clearly has double the columns of \( D^{(i)} \) and is of size \((k-1)\times2\cdot(k+1)\). The column vector is of size \( 2\cdot(k+1)\times 1 \) since it contains the coefficients of two polynomials and the result is the \textbf{zero matrix} \(\mathcal{O}\) which is of size \((k-1)\times 1\). This equation holds for each interior knot point, and as such \( i=2,\ldots,n\).\par
+All that is left is to regroup all those equations given by \eqref{eq:matrixSplineKnotValues} and \eqref{eq:matrixSplineDerivativeEquation} into a single matrix equation. First we will regroup all the variables, polynomial coefficients, into a single column vector \( A \) which is defined in equation \eqref{eq:splineMatrixA}.
+\begin{equation} \label{eq:splineMatrixA}
+    A = 
+    \begin{bmatrix}
+    a_0^{(1)} & \ldots & a_k^{(1)} & a_0^{(2)} & \ldots & a_k^{(2)} & \ldots \ldots & a_0^{(n)} & \ldots & a_k^{(n)}
+    \end{bmatrix}^T
+\end{equation}
+\noindent Next we will define the block-matrix \( C \) in \eqref{eq:splineMatrixC} which is going to be composed of \( F^{(i)} \) and \( D^{(i)} \) matrices, from equations \eqref{eq:splineMatrixF} and \eqref{eq:splineMatrixD} respectively, and whom are going to be arranged in blocks alongside zero matrices \( \mathcal{O}\) of various sizes, so as to fit the blocks. All the block-columns themselves have \(k+1\) implied columns, which correspond to a set of polynomial coefficients from the vector \( A\). The block-rows containing \( F^{(i)} \)'s, themselves have 2 rows, and block-rows containing \( D^{(i)} \)'s have \((k-1)\) rows. Since we have \( n\) block-columns, there will be \( n\cdot(k+1)\) columns in total. As we have \( n\) block-rows with 2 rows, and \( n-1 \) block-rows with \( (k-1)\) rows, there is a total of \( 2\cdot n + (n-1)\cdot(k-1) = (k+1)\cdot n - (k-1))\) rows. Finally, the matrix C is of size \( n\cdot(k+1)-(k-1)\times n\cdot(k+1) \).\par
+\begin{equation} \label{eq:splineMatrixC}
+    C = 
+    \begin{bmatrix}
+        F^{(1)} & \mathcal{O} & \mathcal{O} & \ldots & \mathcal{O} & \mathcal{O} \\
+        D^{(2)} & -D^{(2)} & \mathcal{O} & \ldots & \mathcal{O} & \mathcal{O} \\
+        \mathcal{O} & F^{(2)} & \mathcal{O} & \ldots & \mathcal{O} & \mathcal{O}\\
+        \mathcal{O} & D^{(3)} & -D^{(3)} & \ldots & \mathcal{O} & \mathcal{O}\\
+        \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+        \mathcal{O} & \mathcal{O} & \mathcal{O} & \ldots & F^{(n-1)} & \mathcal{O}\\
+        \mathcal{O} & \mathcal{O} & \mathcal{O} & \ldots & D^{(n)} & -D^{(n)}\\
+        \mathcal{O} & \mathcal{O} & \mathcal{O} & \ldots & \mathcal{O} &F^{(n)}
+    \end{bmatrix}
+\end{equation}
+As said before we have in total \(n\cdot(k+1)-(k-1)\) equations and \( n\cdot(k+1) \) variables, meaning we still require another $(k-1)$  equations to pose. These additional $(k-1)$ equations are what we call boundary conditions. These boundary conditions can take a wide range of different forms, for example, equating the value of the function at another $(k-1)$ points, or equating the value of the function's derivatives of arbitrary order at another $(k-1)$ points. The main point being that we need another $(k-1)$ equations involving the unknown polynomial coefficients.\par
+\begin{equation} \label{eq:CbarSplineMatrix}
+    \bar{C} = \begin{bmatrix}
+    C\\
+    B
+    \end{bmatrix}
+\end{equation}
+Assuming we have defined $(k-1)$ boundary conditions, which are summarized by the matrix $B$ such that $\dim\{B\} = (k-1)\times n\cdot (k+1)$ and such that the newly defined matrix $\bar{C}$ in Equation~\eqref{eq:CbarSplineMatrix} has full rank $\text{rank}\; \bar{C} = n \cdot (k+1)$, as well as the vector $b$ such that $\dim \{b\} = (k-1)\times 1$, we write the Equation~\eqref{eq:SplineBoundaryConditions}. \par
+\begin{equation} \label{eq:SplineBoundaryConditions}
+    B \cdot A = b
+\end{equation}
+Merging Equations~\eqref{eq:matrixSplineKnotValues}, ~\eqref{eq:matrixSplineDerivativeEquation} and~\eqref{eq:SplineBoundaryConditions} while using structures defined in ~\eqref{eq:splineMatrixA}, ~\eqref{eq:splineMatrixC} and ~\eqref{eq:CbarSplineMatrix} we can summarize the problem of spline interpolation by solving the following system given in Equation~\eqref{eq:SplineFinalEquation} with respect to the variable $A$.\par
+\begin{equation} \label{eq:SplineFinalEquation}
+    \bar{C} \cdot A
+    =
+    \begin{bmatrix}
+    C\\
+    B
+    \end{bmatrix}
+    \cdot
+    A
+    =
+    \begin{bmatrix}
+    y_1\\
+    y_2\\
+    \mathcal{O}_{(k-1)\times 1}\\
+    y_2\\
+    y_3\\
+    \mathcal{O}_{(k-1)\times 1}\\
+    \\
+    \vdots
+    \\
+    \mathcal{O}_{(k-1)\times 1}\\
+    y_n\\
+    y_{n+1}\\
+    b_{(k-1)\times 1}
+    \end{bmatrix}
+\end{equation}
+In this equation $y_i$ is the value of the function at the $i$-th knot point, the matrices $\mathcal{O}_{(k-1)}$ are zero matrices of the given dimension, and $b_{(k-1)\times 1}$ is the right hand side of the boundary condition equations.
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Spline Results ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+\subsection{Results of spline interpolation}
+The typical human joint trajectory is given inside Figure~\ref{fig:HumanTrajectories}. We will be using this joint trajectory for demonstration of the interpolation and assessing its performance. Bear in mind that the interpolation uses only the values of the joint trajectories at the knot points. We have tested the quality of the interpolation for a varying number of knot points, and for varying orders of the polynomial interpolation, using the Normalize Root Mean Square Error (NRMSE) as a measure of quality. Assuming there are $N$ samples, the NRMSE of signal $b$ with respect to signal $a$ is calculated using the following formula.
+\begin{equation}
+    \text{NRMSE}_{a,b} = 100 \cdot \frac{\sqrt{\frac{1}{N} \sum_{i=0}^{N-1} (a_i - b_i)^2}}{\sqrt{\frac{1}{N} \sum_{i=0}^{N-1} a_i^2}}
+\end{equation}
+The results shown in Figure~\ref{fig:NRMSEjoint1} are divided in three graphs, of which the first one presents the NRMSE between the interpolation and the original trajectory of the first joint (ankle) for differing number of knot points, and it also has multiple curves which stand for interpolations of different order. The second graph represents the NRMSE between the derivative of our interpolated trajectory and the angular velocity corresponding to the first joint's trajectory, while the third graph represents the NRMSE between the second derivative of our interpolated trajectory and the angular acceleration of the first joint's trajectory. Figure~\ref{fig:NRMSEjoint2} and \ref{fig:NRMSEjoint3} present the same thing in their three graphs, but are concerned with joint number two (knee) and joint number three (hip) respectively.  Figure~\ref{fig:NRMSEmean} is concerned with the mean NRMSE across all three joints. \par
+As the results show, the NRMSE is decreasing as we increase the number of knot points, but also decreases with the order of the polynomial, up to a certain point. The difference between the performance of polynomials of order 3, 5 and 7 gets negligible as we increase the number of knot points, so choosing the simplest alternative seems to be the right choice. However, as we want to ensure smoothness of the acceleration, we are opting to use interpolation of order 5, so that the accelerations have non-zero second derivatives. \par
+We can see visually how the interpolation behaves. Utilizing an interpolation of order 5 with 10 knot points already yields a satisfying result, however with 30 knot points, the interpolation is almost exactly the same function up to the second derivative. The results are shown in Figure~\ref{fig:Interpolation10Knots} and Figure~\ref{fig:Interpolation30Knots}. Both figures contain 9 graphs. The first row of graphs on both figures depicts the interpolation of position, velocity and acceleration for the first (ankle) joint, while the second and third row correspond to the second and third joint (knee and hip). We can visually assess that the interpolation with more knot points yields a better fit.\par
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Joint_1_All.jpg}
+    \caption{NRMSE of position, velocity and acceleration when interpolating the trajectory of the ankle.}
+    \label{fig:NRMSEjoint1}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Joint_2_All.jpg}
+    \caption{NRMSE of position, velocity and acceleration when interpolating the trajectory of the knee.}
+    \label{fig:NRMSEjoint2}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Joint_3_All.jpg}
+    \caption{NRMSE of position, velocity and acceleration when interpolating the trajectory of the hip.}
+    \label{fig:NRMSEjoint3}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Mean_all.jpg}
+    \caption{Mean NRMSE of position, velocity and acceleration across all three joints.}
+    \label{fig:NRMSEmean}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{AllInterpolations_10Knots.jpg}
+    \caption{Interpolating the joint trajectories with 10 knots, for polynomial of order 5.}
+    \label{fig:Interpolation10Knots}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{AllInterpolations_30Knots.jpg}
+    \caption{Interpolating the joint trajectories with 30 knots, for polynomial of order 5.}
+    \label{fig:Interpolation30Knots}
+\end{figure}
+
+
+\newpage
+\subsection{Results of cost function retrieval} \label{results}
+Merging all the tools previously mentioned in this work (Algorithmic Differentiation with CasADi~\ref{section:AD}, Inverse Optimal Control KKT approach~\ref{KKT approach}, Biomechanical model~\ref{section:Biomechanical} and Spline interpolation~\ref{section:Spline}), we will describe the applied procedure. It can be summarized in a few key steps. All numerical values shown in these steps can be arbitrary but are chosen through trial and error in order to get better results.
+\begin{enumerate}
+    \item Load human data and the biomechanical model of the human \footnote{Kindly provided by prof. Vincent Bonnet}.
+    \item Create CasADi symbolic variables, representing the yet unknown values of the joint trajectories at knot points.
+    \item Perform interpolation using those knot points and obtain full-fledged symbolic joint trajectories $q, \dot{q}, \ddot{q}$.
+    \item Use these symbolic trajectories to calculate symbolic values of the basis cost functions.
+    \item Using CasADi's algorithmic differentiation, find the gradients of all the basis cost functions, then render all the basis cost functions and their gradients into CasADi functions.
+    \item Take a real trajectory and calculate the gradients of the cost functions for that trajectory, and then perform IOC according to the Equation~\eqref{eq:ResidualMinimizationMatrixForm}.
+\end{enumerate}
+To test this method, we have performed forward optimal control on an example to see the results of retrieval. The basis of cost functions used is the one presented inside Section~\ref{costfnbasis}, and the numbering of the cost functions used is the same.\par
+The weights were set to be $c_{1:3} = 0.0667$ , $c_{4:6} = 0.1667$, $c_{7:9} = 0.1000$ and $c_{10:25} = 0.0000$, meaning a weighed sum of joint torques, joint velocities and joint accelerations was minimized.
+The result of the forward optimization are the values of knot points of the three joint trajectories that are shown as blue curves inside Figure~\eqref{fig:retrievalsimulation}. The retrieval of weights according to the problem given inside Equation~\ref{eq:ResidualMinimizationMatrixForm} has yielded the set of weights $c_{1:3} = 0.0651$, $c_4 = 0.1684$, $c_5 = 1.609$, $c_6=1.646$, $c_7=0.0976$, $c_{8:9}=0.0977$ and $c_{16}=0.0176$  with the residual of the least square optimization equal to $r  = 1.9677 $ which is fairy low. All the cost functions that were active in the forward optimization have been retrieved with relatively similar weighing factors, however an additional component for the head's global Cartesian velocity in the horizontal direction has been detected with $c_{16}=0.0176$. This is probably due to an existing correlation between this cost function and that of joint velocity.\par
+To see if the retrieved weights produce similar results, forward optimization has once again been performed with the new set of weights. The result of the optimization are the knot points that produce the dotted red trajectories inside Figure~\ref{fig:retrievalsimulation}. The Normalized Root Mean Squared Error (RMSE) between the original and retrieved trajectories is of order $1\cdot 10^{-8}$.\par
+The procedure has been performed on human data with a single subject. The retrieval of weights using the KKT approach has yielded the set of weights given by $c_{16} = 0.0566$ and $c_{17} = 0.9443$. The only functions which the humans seemed to minimize is the head's global Cartesian velocity in the horizontal and vertical directions. To test how well those weights performed and reproduced the human trajectories, forward optimization was performed upon the set of basis cost functions with the weights given and the result are the knot points producing the dotted red trajectories inside Figure~\ref{fig:retrievalhuman}. As can be visually assessed those weights do not reproduce the trajectory perfectly, far from it. The NRMSE that has been calculated between trajectories is equal to $NRMSE_1 = 0.9084$, $NRMSE_2 = 25.0068$ and $NRMSE = 17.9543$, which is fairly large.\par
+It can be concluded that this cost function basis does not represent the cost functions that humans minimize when performing a sit-to-stand task well enough. The experiment has not ended successfully though something can be learned from it. It is necessary to find a cost function basis that has enough descriptive power to represent what objective humans actually tend towards achieving when standing up from a sitting position. The biomechanical cost functions that have been proposed inside this work do not perform well enough.\par
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{RetrievedOptimal.jpg}
+    \caption{Retrieval of a trajectory obtained by doing forward optimal control with a set of arbitrarily selected weights for the basis cost functions.}
+    \label{fig:retrievalsimulation}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{human.jpg}
+    \caption{Retrieval of a human joint trajectory.}
+    \label{fig:retrievalhuman}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion and future works}
+This project includes many different topics and combines them into a single entity, starting with Algorithmic Differentiation in Section~\ref{section:AD}, Inverse Optimal Control in Section~\ref{Inverse optimal control}, Biomechanical modeling of a human body using robotics tools inside Section~\ref{Our approach} and Spline interpolation in Section~\ref{section:Spline}. The overall goal of the project has been to identify which cost functions humans use when performing some everyday task, like the sit-to-stand task. To achieve that goal is neither theoretically straightforward, nor is it practically simple to implement. Theoretical foundations of the inverse optimal control approach based on the Karush-Kuhn-Tucker conditions have been fairly challenging to acquire and to formulate in matrix form in Section~\ref{KKT approach}. The spline interpolation's theoretical side has also been challenging to formulate in matrix terms for the general case of $(n+1)$ points with interpolation of order $k$, and even more difficult to implement in MATLAB code, but has been a pleasure nonetheless. To use the CasADi library efficiently has also been a challenge because of limited resources on the topic.\par
+Though the original goal may not be fully achieved, the groundwork has been laid for future progress in this domain. The inclusion of a more complete basis of biomechanical cost functions by including energetic cost functions, i.e. kinetic and potential energy, and the stability of the human through the position of the Center of Pressure on the human foot may be next step. Also a more complete biomechanical model of the sit-to-stand task taking into account the possible multi-contact environment where the forces under the feet, buttocks and eventually hands are all taken into account is within reach.\par
+Generalizing to more complex models and more complex human tasks, with an increasing number of degrees of freedom and general complexity may eventually be possible. Algorithmic differentiation being very scalable its use in this project has been a great asset, and will prove very useful should more complex models be investigated.\par
+
+
+% List of figures
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+% List of tables
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+% Print Bibliography
+\printbibliography[heading=bibintoc, title={Bibliography}]
+
+\end{document}

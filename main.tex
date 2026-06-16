@@ -1,0 +1,130 @@
+% !TeX program = xelatex
+\documentclass[12pt, a4paper]{article}
+
+% Font i podrška za srpsku ćirilicu (XeLaTeX/LuaLaTeX)
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\usepackage{polyglossia}
+\setmainlanguage{serbianc}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% Za matematičke jednačine
+\usepackage{amsmath}
+\usepackage{amssymb}
+\DeclareMathOperator*{\minimize}{minimize}
+\newcommand{\norm}[1]{\lVert#1\rVert_2}
+\usepackage{multirow} % za više redova u jednoj ćeliji tabele
+
+% Za prikaz koda
+\usepackage{listings}
+
+% Za slike jednu pored druge
+\usepackage{subcaption}
+% Za slike i tekst jedan pored drugog
+\usepackage{wrapfig}
+
+% Hiperlinkovi iz sadržaja
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=red,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=black
+}
+
+% Bibliografija
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=ynt
+]{biblatex}
+\addbibresource{references.bib}
+\usepackage{csquotes}
+
+% Automatski prelazak na novu stranu na početku svake sekcije
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+
+% Početna numeracija stranica je rimska
+\pagenumbering{roman}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NASLOVNA STRANA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+\centering
+\includegraphics[width=0.2\textwidth]{ETF_logo}\par
+\vspace{1cm}
+{\scshape\LARGE Електротехнички факултет\par}
+{\scshape\LARGE Универзитет у Београду\par}
+\vspace{1cm}
+{\scshape\Large Дипломски рад\par}
+\vspace{0.5cm}
+{\huge\bfseries Испитивање границе учења имитацијама у симулационом окружењу за роботско извршавање високо прецизних задатака\par}
+\vspace{2cm}
+{\large\itshape Михајло Стевановић\par}
+{\large\itshape Број индекса: 2022/0315\par}
+\vfill
+Ментор\par
+Проф. др Коста Јовановић\par
+\vfill
+{\large \today \par}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% САДРЖАЈ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% УВОД %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Увод}
+\label{sec:uvod}
+\pagenumbering{arabic}
+% TODO: motivacija, problem visoko precizne manipulacije, ciljevi rada
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ПРЕГЛЕД ЛИТЕРАТУРЕ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Преглед литературе}
+\label{sec:pregled_literature}
+% TODO: učenje imitacijama, ACT, Diffusion Policy, srodni radovi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% МЕТОДОЛОГИЈА %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Методологија}
+\label{sec:metodologija}
+% TODO: formulacija problema, modeli (ACT, Diffusion Policy), oracle politika, dataset
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ЕКСПЕРИМЕНТАЛНА ПОСТАВА %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Експериментална постава}
+\label{sec:eksperimentalna_postava}
+% TODO: simulaciono okruženje, observation/action space, hiperparametri, metrike
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% РЕЗУЛТАТИ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Резултати}
+\label{sec:rezultati}
+% TODO: learning curves, success rate, preciznost, robustnost na šum
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ДИСКУСИЈА %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Дискусија}
+\label{sec:diskusija}
+% TODO: tumačenje rezultata, ograničenja, plafon performansi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ЗАКЉУЧАК %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Закључак}
+\label{sec:zakljucak}
+% TODO: sažetak doprinosa, pravci budućeg rada
+
+% Списак слика
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+
+% Списак табела
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+
+% Литература
+\printbibliography[heading=bibintoc, title={Литература}]
+
+\end{document}
