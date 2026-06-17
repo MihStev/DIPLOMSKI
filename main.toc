@@ -1,10 +1,10 @@
 \xpg@aux {script=cyrillic}{serbian}
 \contentsline {section}{\numberline {1}Увод}{1}{section.1}%
-\contentsline {section}{\numberline {2}Преглед литературе}{1}{section.2}%
-\contentsline {section}{\numberline {3}Методологија}{1}{section.3}%
-\contentsline {section}{\numberline {4}Експериментална постава}{1}{section.4}%
-\contentsline {section}{\numberline {5}Резултати}{1}{section.5}%
-\contentsline {section}{\numberline {6}Дискусија}{1}{section.6}%
-\contentsline {section}{\numberline {7}Закључак}{1}{section.7}%
-\contentsline {section}{Списак слика}{1}{section.7}%
-\contentsline {section}{Списак табела}{1}{section.7}%
+\contentsline {section}{\numberline {2}Преглед литературе}{4}{section.2}%
+\contentsline {section}{\numberline {3}Методологија}{4}{section.3}%
+\contentsline {section}{\numberline {4}Експериментална постава}{4}{section.4}%
+\contentsline {section}{\numberline {5}Резултати}{4}{section.5}%
+\contentsline {section}{\numberline {6}Дискусија}{4}{section.6}%
+\contentsline {section}{\numberline {7}Закључак}{4}{section.7}%
+\contentsline {section}{Списак слика}{4}{section.7}%
+\contentsline {section}{Списак табела}{4}{section.7}%
