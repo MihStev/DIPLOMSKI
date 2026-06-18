@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.3 $
+% $ biblatex bbl format version 3.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,5 +16,343 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{pomerleau1989alvinn}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=4e5f05606e47b1676579799cf7e84220}{%
+           family={Pomerleau},
+           familyi={P\bibinitperiod},
+           given={Dean\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{fullhash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{bibnamehash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{authorbibnamehash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{authornamehash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{authorfullhash}{4e5f05606e47b1676579799cf7e84220}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems (NeurIPS)}
+      \field{title}{{ALVINN}: An Autonomous Land Vehicle In a Neural Network}
+      \field{volume}{2}
+      \field{year}{1989}
+      \field{pages}{305\bibrangedash 313}
+      \range{pages}{9}
+    \endentry
+    \entry{ross2011dagger}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=1e091ec9b01606e483f22db48ddc73ef}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Stéphane},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0c645658cb1f824e42cf7701f1834fbf}{%
+           family={Gordon},
+           familyi={G\bibinitperiod},
+           given={Geoffrey\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=49832523c57a7bf40445f071b2ad2c0a}{%
+           family={Bagnell},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi Andrew},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0181660e70dcba4c04a7ca07a64be22}
+      \strng{fullhash}{f0181660e70dcba4c04a7ca07a64be22}
+      \strng{bibnamehash}{f0181660e70dcba4c04a7ca07a64be22}
+      \strng{authorbibnamehash}{f0181660e70dcba4c04a7ca07a64be22}
+      \strng{authornamehash}{f0181660e70dcba4c04a7ca07a64be22}
+      \strng{authorfullhash}{f0181660e70dcba4c04a7ca07a64be22}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the International Conference on Artificial Intelligence and Statistics (AISTATS)}
+      \field{title}{A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning}
+      \field{volume}{15}
+      \field{year}{2011}
+      \field{pages}{627\bibrangedash 635}
+      \range{pages}{9}
+    \endentry
+    \entry{sanchez2018dlo}{article}{}
+      \name{author}{4}{}{%
+        {{hash=72c1e78a930c9690189d7f6ba2c69bd1}{%
+           family={Sanchez},
+           familyi={S\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=eb50a93d829e0ba36dbd495ac832c34c}{%
+           family={Corrales},
+           familyi={C\bibinitperiod},
+           given={Juan-Antonio},
+           giveni={J\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=98fd816f4d653bff15aacbe3167f7a10}{%
+           family={Bouzgarrou},
+           familyi={B\bibinitperiod},
+           given={Belhassen-Chedli},
+           giveni={B\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=44f1635cfb5a54df291d5e81c713ee99}{%
+           family={Mezouar},
+           familyi={M\bibinitperiod},
+           given={Youcef},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{722e67bbc2a19cc0963928a38550c9cb}
+      \strng{fullhash}{4a26d50f41b1cbef5780d8501ba89157}
+      \strng{bibnamehash}{722e67bbc2a19cc0963928a38550c9cb}
+      \strng{authorbibnamehash}{722e67bbc2a19cc0963928a38550c9cb}
+      \strng{authornamehash}{722e67bbc2a19cc0963928a38550c9cb}
+      \strng{authorfullhash}{4a26d50f41b1cbef5780d8501ba89157}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The International Journal of Robotics Research}
+      \field{number}{7}
+      \field{title}{Robotic manipulation and sensing of deformable objects in domestic and industrial settings: a survey}
+      \field{volume}{37}
+      \field{year}{2018}
+      \field{pages}{688\bibrangedash 716}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.1177/0278364918779698
+      \endverb
+    \endentry
+    \entry{ho2020ddpm}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=2ac2ca10b22e4d13af1767e87495412f}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=31ac0835ffc3ba6d612252522a6a2011}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={Ajay},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e28d4ee199593959d8c29980a64f1974}{%
+           family={Abbeel},
+           familyi={A\bibinitperiod},
+           given={Pieter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{1ef17e0fed8d834b029ebb1c6adf76b4}
+      \strng{fullhash}{1ef17e0fed8d834b029ebb1c6adf76b4}
+      \strng{bibnamehash}{1ef17e0fed8d834b029ebb1c6adf76b4}
+      \strng{authorbibnamehash}{1ef17e0fed8d834b029ebb1c6adf76b4}
+      \strng{authornamehash}{1ef17e0fed8d834b029ebb1c6adf76b4}
+      \strng{authorfullhash}{1ef17e0fed8d834b029ebb1c6adf76b4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems (NeurIPS)}
+      \field{title}{Denoising Diffusion Probabilistic Models}
+      \field{volume}{33}
+      \field{year}{2020}
+      \field{pages}{6840\bibrangedash 6851}
+      \range{pages}{12}
+    \endentry
+    \entry{mandlekar2021robomimic}{inproceedings}{}
+      \name{author}{10}{}{%
+        {{hash=688b1982882af40a326c612e99b7d60b}{%
+           family={Mandlekar},
+           familyi={M\bibinitperiod},
+           given={Ajay},
+           giveni={A\bibinitperiod}}}%
+        {{hash=191294de69066c0731087c6eeba7546d}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Danfei},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9884b8bc72df266d7d30c104ca9b54a3}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Josiah},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ed9f1ec688f77a7c8e8186d79b39e338}{%
+           family={Nasiriany},
+           familyi={N\bibinitperiod},
+           given={Soroush},
+           giveni={S\bibinitperiod}}}%
+        {{hash=147b8560865739e558b0631402b38ee6}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Chen},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f53d93d7937e9d2cb4785e11ef921376}{%
+           family={Kulkarni},
+           familyi={K\bibinitperiod},
+           given={Rohun},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cd00ce5bc45f687c432e52e0fa1a7aa6}{%
+           family={Fei-Fei},
+           familyi={F\bibinithyphendelim F\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e29c20003a517abaaac28852301c03c2}{%
+           family={Savarese},
+           familyi={S\bibinitperiod},
+           given={Silvio},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f86434cb0d86ba7eac5b0e3f3236abf0}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Yuke},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=e0972b1e894c82442b83ba1daf9cb06c}{%
+           family={Martín-Martín},
+           familyi={M\bibinithyphendelim M\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3cd941f1ac9898f068bf5440ed0a38af}
+      \strng{fullhash}{4fd483719536476ac4412fc80b42a4e5}
+      \strng{bibnamehash}{3cd941f1ac9898f068bf5440ed0a38af}
+      \strng{authorbibnamehash}{3cd941f1ac9898f068bf5440ed0a38af}
+      \strng{authornamehash}{3cd941f1ac9898f068bf5440ed0a38af}
+      \strng{authorfullhash}{4fd483719536476ac4412fc80b42a4e5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Conference on Robot Learning (CoRL)}
+      \field{title}{What Matters in Learning from Offline Human Demonstrations for Robot Manipulation}
+      \field{year}{2021}
+    \endentry
+    \entry{song2021ddim}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=78372b7167d001d4c80db2b19d6a76f3}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Jiaming},
+           giveni={J\bibinitperiod}}}%
+        {{hash=58f87d1ad306023b7f8301b2b85c1584}{%
+           family={Meng},
+           familyi={M\bibinitperiod},
+           given={Chenlin},
+           giveni={C\bibinitperiod}}}%
+        {{hash=160929a7e6ceecdf3f7c9a13abd5ea35}{%
+           family={Ermon},
+           familyi={E\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ebc7e264c58ec8ac9b0159b127245547}
+      \strng{fullhash}{ebc7e264c58ec8ac9b0159b127245547}
+      \strng{bibnamehash}{ebc7e264c58ec8ac9b0159b127245547}
+      \strng{authorbibnamehash}{ebc7e264c58ec8ac9b0159b127245547}
+      \strng{authornamehash}{ebc7e264c58ec8ac9b0159b127245547}
+      \strng{authorfullhash}{ebc7e264c58ec8ac9b0159b127245547}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Learning Representations (ICLR)}
+      \field{title}{Denoising Diffusion Implicit Models}
+      \field{year}{2021}
+    \endentry
+    \entry{chi2023diffusionpolicy}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=df2b093090f880615de44c41b24e5a83}{%
+           family={Chi},
+           familyi={C\bibinitperiod},
+           given={Cheng},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e6acb0e0e37d5ca1407d95c9240e659d}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Siyuan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0292e43cebfdbcde9e20aa4fdbe17700}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Yilun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=271e14075f67de88e200f59d1766ac4f}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Zhenjia},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=88123d907f0c54d03563b005be97ba8a}{%
+           family={Cousineau},
+           familyi={C\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=1995579599c113e09459f6c5b512b672}{%
+           family={Burchfiel},
+           familyi={B\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5abaf8ffacdb02cbfe12fca8f3d327cb}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Shuran},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e7c54e991d05a41de60c20885f5f2f58}
+      \strng{fullhash}{336c4aa39f306c23031f7000b7e985a9}
+      \strng{bibnamehash}{e7c54e991d05a41de60c20885f5f2f58}
+      \strng{authorbibnamehash}{e7c54e991d05a41de60c20885f5f2f58}
+      \strng{authornamehash}{e7c54e991d05a41de60c20885f5f2f58}
+      \strng{authorfullhash}{336c4aa39f306c23031f7000b7e985a9}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of Robotics: Science and Systems (RSS)}
+      \field{title}{Diffusion Policy: Visuomotor Policy Learning via Action Diffusion}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.15607/RSS.2023.XIX.026
+      \endverb
+    \endentry
+    \entry{zhao2023act}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=ca261c82abd59f3b483329f40cc75b16}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Tony\bibnamedelima Z.},
+           giveni={T\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=bbba0ccb50436105a4134d24509b62d7}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Vikash},
+           giveni={V\bibinitperiod}}}%
+        {{hash=c9545da54b33744da25943cdf66eadac}{%
+           family={Levine},
+           familyi={L\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=058e82495825ae376c6a96a12169e6ee}{%
+           family={Finn},
+           familyi={F\bibinitperiod},
+           given={Chelsea},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c40d7a33ea959748c3b7bd5eb45befb7}
+      \strng{fullhash}{726ff8121acb6fdea4e815814395a5c2}
+      \strng{bibnamehash}{c40d7a33ea959748c3b7bd5eb45befb7}
+      \strng{authorbibnamehash}{c40d7a33ea959748c3b7bd5eb45befb7}
+      \strng{authornamehash}{c40d7a33ea959748c3b7bd5eb45befb7}
+      \strng{authorfullhash}{726ff8121acb6fdea4e815814395a5c2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of Robotics: Science and Systems (RSS)}
+      \field{title}{Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.15607/RSS.2023.XIX.016
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 

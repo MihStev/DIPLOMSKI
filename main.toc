@@ -1,20 +1,25 @@
-\xpg@aux {script=cyrillic}{serbian}
+\xpginauxfiletrue 
+\selectlanguage *[script=cyrillic]{serbian}
 \contentsline {section}{Захвалница}{i}{Doc-Start}%
 \contentsline {section}{\numberline {1}Увод}{1}{section.1}%
 \contentsline {section}{\numberline {2}Преглед литературе}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Учење имитацијама и клонирање понашања}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Action Chunking with Transformers (ACT)}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Diffusion Policy}{4}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Роботска манипулација деформабилних линеарних објеката}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Роботска манипулација деформабилних линеарних објеката}{5}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Методологија}{6}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Формулација проблема}{6}{subsection.3.1}%
 \contentsline {paragraph}{Простор опсервација.}{6}{subsection.3.1}%
-\contentsline {paragraph}{Простор акција.}{6}{equation.4}%
-\contentsline {paragraph}{Формулација клонирања понашања.}{6}{equation.5}%
-\contentsline {paragraph}{Метрике евалуације.}{6}{equation.5}%
-\contentsline {section}{\numberline {4}Експериментална постава}{8}{section.4}%
-\contentsline {section}{\numberline {5}Резултати}{8}{section.5}%
-\contentsline {section}{\numberline {6}Дискусија}{8}{section.6}%
-\contentsline {section}{\numberline {7}Закључак}{8}{section.7}%
-\contentsline {section}{Списак слика}{8}{section.7}%
-\contentsline {section}{Списак табела}{8}{section.7}%
+\contentsline {paragraph}{Простор акција.}{6}{equation.3.4}%
+\contentsline {paragraph}{Формулација клонирања понашања.}{8}{equation.3.5}%
+\contentsline {paragraph}{Метрике евалуације.}{8}{equation.3.5}%
+\contentsline {subsection}{\numberline {3.2}Имплементација ACT политике}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Имплементација Diffusion Policy}{8}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Експериментална постава}{10}{section.4}%
+\contentsline {section}{\numberline {5}Резултати}{10}{section.5}%
+\contentsline {section}{\numberline {6}Дискусија}{10}{section.6}%
+\contentsline {section}{\numberline {7}Закључак}{10}{section.7}%
+\contentsline {section}{Списак слика}{10}{section.7}%
+\contentsline {section}{Списак табела}{10}{section.7}%
+\contentsline {section}{Литература}{12}{section.7}%
+\xpginauxfilefalse 
