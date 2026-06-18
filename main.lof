@@ -1,6 +1,6 @@
 \xpginauxfiletrue 
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {1}{\ignorespaces Архитектура ACT политике. Прилагођено из~\blx@tocontentsinit {0}\cite {zhao2023act}.}}{4}{figure.caption.1}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Архитектура ACT политике: CVAE кодер (лево) сажима секвенцу акција и позиције зглобова у латентну променљиву $\mathbf {z}$, док трансформерски кодер-декодер (десно) на основу слика камера, позиција зглобова и $\mathbf {z}$ предвиђа секвенцу акција. Преузето из~\blx@tocontentsinit {0}\cite {zhao2023act}.}}{4}{figure.caption.1}%
 \setforeignlanguage {serbian}
 \contentsline {figure}{\numberline {2}{\ignorespaces Архитектура Diffusion Policy. Прилагођено из~\blx@tocontentsinit {0}\cite {chi2023diffusionpolicy}.}}{5}{figure.caption.2}%
 \setforeignlanguage {serbian}

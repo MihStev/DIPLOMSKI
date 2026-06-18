@@ -75,11 +75,12 @@
 \vspace{0.5cm}
 {\huge\bfseries Испитивање границе учења имитацијама у симулационом окружењу за роботско извршавање високо прецизних задатака\par}
 \vspace{2cm}
+{\large\itshape Кандидат\par}
 {\large\itshape Михајло Стевановић\par}
 {\large\itshape Број индекса: 2022/0315\par}
 \vfill
-Ментор\par
-Проф. др Коста Јовановић\par
+{\large\itshape Ментор\par}
+{\large\itshape Проф. др Коста Јовановић\par}
 \vfill
 {\large \today \par}
 \end{titlepage}
@@ -191,11 +192,8 @@ ACT је метода учења имитацијама коју су предл
 
 \begin{figure}[htbp]
     \centering
-    \fbox{\begin{minipage}[c][45mm][c]{0.80\linewidth}
-        \centering\itshape Место за слику: архитектура ACT политике (CVAE кодер и кодер-декодер трансформер)\\[3pt]
-        \footnotesize\upshape (заменити фајлом \texttt{images/act\_arhitektura.pdf})
-    \end{minipage}}
-    \caption{Архитектура ACT политике. Прилагођено из~\cite{zhao2023act}.}
+    \includegraphics[width=\linewidth]{act_arhitektura}
+    \caption{Архитектура ACT политике: CVAE кодер (лево) сажима секвенцу акција и позиције зглобова у латентну променљиву $\mathbf{z}$, док трансформерски кодер-декодер (десно) на основу слика камера, позиција зглобова и $\mathbf{z}$ предвиђа секвенцу акција. Преузето из~\cite{zhao2023act}.}
     \label{fig:act_arch}
 \end{figure}
 
