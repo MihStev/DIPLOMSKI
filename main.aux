@@ -1,7 +1,7 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand*\HyPL@Entry[1]{}
-\abx@aux@refcontext{ynt/global//global/global}
+\abx@aux@refcontext{none/global//global/global}
 \HyPL@Entry{0<</S/r>>}
 \@writefile{toc}{\xpginauxfiletrue }
 \@writefile{lof}{\xpginauxfiletrue }
@@ -68,8 +68,8 @@
 \abx@aux@segm{0}{0}{sanchez2018dlo}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Архитектура Diffusion Policy. Прилагођено из~\blx@tocontentsinit {0}\cite {chi2023diffusionpolicy}.}}{5}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:dp_arch}{{2}{5}{Архитектура Diffusion Policy. Прилагођено из~\cite {chi2023diffusionpolicy}}{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Архитектура Diffusion Policy: слике три камере и проприоцептивни вектор кодирају се у условни вектор опсервације $\mathbf  {O}_t$, којим се FiLM модулацијом условљава мрежа $\boldsymbol  {\epsilon }_\theta $ (1D U-Net); акцијска секвенца настаје итеративним одшумљавањем почетног Гаусовог шума кроз $K$ корака. Прилагођено из~\blx@tocontentsinit {0}\cite {chi2023diffusionpolicy}.}}{5}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:dp_arch}{{2}{5}{Архитектура Diffusion Policy: слике три камере и проприоцептивни вектор кодирају се у условни вектор опсервације $\mathbf {O}_t$, којим се FiLM модулацијом условљава мрежа $\boldsymbol {\epsilon }_\theta $ (1D U-Net); акцијска секвенца настаје итеративним одшумљавањем почетног Гаусовог шума кроз $K$ корака. Прилагођено из~\cite {chi2023diffusionpolicy}}{figure.caption.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Роботска манипулација деформабилних линеарних објеката}{5}{subsection.2.4}\protected@file@percent }
 \newlabel{subsec:dlo}{{2.4}{5}{Роботска манипулација деформабилних линеарних објеката}{subsection.2.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Методологија}{6}{section.3}\protected@file@percent }
@@ -82,46 +82,108 @@
 \newlabel{eq:action_space}{{5}{6}{Простор акција}{equation.3.5}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Ток података кроз систем: oracle политика са приступом координатама порта генерише демонстрације преко машине стања и DiffIK управљача, успешне епизоде се чувају у LeRobot скуп демонстрација, на коме се тренирају ACT и Diffusion Policy политике, а потом евалуирају без привилеговане информације.}}{7}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:pipeline}{{3}{7}{Ток података кроз систем: oracle политика са приступом координатама порта генерише демонстрације преко машине стања и DiffIK управљача, успешне епизоде се чувају у LeRobot скуп демонстрација, на коме се тренирају ACT и Diffusion Policy политике, а потом евалуирају без привилеговане информације}{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Ток података кроз систем: oracle политика са приступом координатама порта генерише демонстрације преко коначног аутомата и DiffIK управљача, успешне епизоде се чувају у LeRobot скуп демонстрација, на коме се тренирају ACT и Diffusion Policy политике, а потом евалуирају без привилеговане информације.}}{7}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:pipeline}{{3}{7}{Ток података кроз систем: oracle политика са приступом координатама порта генерише демонстрације преко коначног аутомата и DiffIK управљача, успешне епизоде се чувају у LeRobot скуп демонстрација, на коме се тренирају ACT и Diffusion Policy политике, а потом евалуирају без привилеговане информације}{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {paragraph}{Формулација клонирања понашања.}{8}{equation.3.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Метрике евалуације.}{8}{equation.3.5}\protected@file@percent }
 \newlabel{eq:success_rate}{{6}{8}{Метрике евалуације}{equation.3.6}{}}
 \newlabel{eq:d_min}{{7}{8}{Метрике евалуације}{equation.3.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Имплементација ACT политике}{8}{subsection.3.2}\protected@file@percent }
 \newlabel{subsec:act_impl}{{3.2}{8}{Имплементација ACT политике}{subsection.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Имплементација Diffusion Policy}{8}{subsection.3.3}\protected@file@percent }
-\newlabel{subsec:dp_impl}{{3.3}{8}{Имплементација Diffusion Policy}{subsection.3.3}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Улазно-излазна шема ACT политике примењене у овом раду.}}{9}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:act_io}{{4}{9}{Улазно-излазна шема ACT политике примењене у овом раду}{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Улазно-излазна шема ACT политике примењене у овом раду: слике три камере (ResNet-18) и проприоцептивни вектор $\mathbf  {s}_t$ (линеарни слој), уз латентну променљиву $\mathbf  {z}$, улазе у трансформерски енкодер--декодер који предвиђа блок од $k$ акција. У фази примене $\mathbf  {z}=\mathbf  {0}$ и примењује се временско усредњавање.}}{9}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:act_io}{{4}{9}{Улазно-излазна шема ACT политике примењене у овом раду: слике три камере (ResNet-18) и проприоцептивни вектор $\mathbf {s}_t$ (линеарни слој), уз латентну променљиву $\mathbf {z}$, улазе у трансформерски енкодер--декодер који предвиђа блок од $k$ акција. У фази примене $\mathbf {z}=\mathbf {0}$ и примењује се временско усредњавање}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Имплементација Дифузионe полисe (Diffusion Policy)}{9}{subsection.3.3}\protected@file@percent }
+\newlabel{subsec:dp_impl}{{3.3}{9}{Имплементација Дифузионe полисe (Diffusion Policy)}{subsection.3.3}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Улазно-излазна шема Diffusion Policy примењене у овом раду.}}{9}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:dp_io}{{5}{9}{Улазно-излазна шема Diffusion Policy примењене у овом раду}{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Експериментална постава}{10}{section.4}\protected@file@percent }
-\newlabel{sec:eksperimentalna_postava}{{4}{10}{Експериментална постава}{section.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Резултати}{10}{section.5}\protected@file@percent }
-\newlabel{sec:rezultati}{{5}{10}{Резултати}{section.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Дискусија}{10}{section.6}\protected@file@percent }
-\newlabel{sec:diskusija}{{6}{10}{Дискусија}{section.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Закључак}{10}{section.7}\protected@file@percent }
-\newlabel{sec:zakljucak}{{7}{10}{Закључак}{section.7}{}}
-\@writefile{toc}{\contentsline {section}{Списак слика}{10}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Списак табела}{10}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Литература}{12}{section.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Улазно-излазна шема Diffusion Policy примењене у овом раду: текућа опсервација $\mathbf  {O}_t$ условљава итеративно одшумљавање које из Гаусовог шума генерише секвенцу од $T_p$ акција; извршава се само првих $T_a$ корака, након чега се поступак понавља са новом опсервацијом (рецедирајући хоризонт).}}{10}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:dp_io}{{5}{10}{Улазно-излазна шема Diffusion Policy примењене у овом раду: текућа опсервација $\mathbf {O}_t$ условљава итеративно одшумљавање које из Гаусовог шума генерише секвенцу од $T_p$ акција; извршава се само првих $T_a$ корака, након чега се поступак понавља са новом опсервацијом (рецедирајући хоризонт)}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Експериментална постава}{11}{section.4}\protected@file@percent }
+\newlabel{sec:eksperimentalna_postava}{{4}{11}{Експериментална постава}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Симулационо окружење}{11}{subsection.4.1}\protected@file@percent }
+\newlabel{subsec:sim_okruzenje}{{4.1}{11}{Симулационо окружење}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Сензори, опсервације и акције}{11}{subsection.4.2}\protected@file@percent }
+\newlabel{subsec:senzori}{{4.2}{11}{Сензори, опсервације и акције}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Хиперпараметри обуке}{11}{subsection.4.3}\protected@file@percent }
+\newlabel{subsec:hiperparametri}{{4.3}{11}{Хиперпараметри обуке}{subsection.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Протокол евалуације}{11}{subsection.4.4}\protected@file@percent }
+\newlabel{subsec:protokol}{{4.4}{11}{Протокол евалуације}{subsection.4.4}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Хиперпараметри ACT политике.}}{12}{table.caption.6}\protected@file@percent }
+\newlabel{tab:act_hparams}{{1}{12}{Хиперпараметри ACT политике}{table.caption.6}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Хиперпараметри Diffusion Policy.}}{12}{table.caption.7}\protected@file@percent }
+\newlabel{tab:dp_hparams}{{2}{12}{Хиперпараметри Diffusion Policy}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}План експеримената}{13}{subsection.4.5}\protected@file@percent }
+\newlabel{subsec:plan_eksperimenata}{{4.5}{13}{План експеримената}{subsection.4.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Независне променљиве.}{13}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Контролисане (фиксне) променљиве.}{13}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Понављања и извештавање.}{13}{subsection.4.5}\protected@file@percent }
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Серије експеримената и одговарајућа истраживачка питања.}}{13}{table.caption.8}\protected@file@percent }
+\newlabel{tab:plan_eksperimenata}{{3}{13}{Серије експеримената и одговарајућа истраживачка питања}{table.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Резултати}{15}{section.5}\protected@file@percent }
+\newlabel{sec:rezultati}{{5}{15}{Резултати}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Криве учења}{15}{subsection.5.1}\protected@file@percent }
+\newlabel{subsec:rez_krive_ucenja}{{5.1}{15}{Криве учења}{subsection.5.1}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Криве учења ACT и Diffusion Policy политика током обуке.}}{15}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:rez_krive_ucenja}{{6}{15}{Криве учења ACT и Diffusion Policy политика током обуке}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Зависност успешности од броја демонстрација (серија А)}{15}{subsection.5.2}\protected@file@percent }
+\newlabel{subsec:rez_serija_a}{{5.2}{15}{Зависност успешности од броја демонстрација (серија А)}{subsection.5.2}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Стопа успешности у функцији броја демонстрација за обуку.}}{15}{table.caption.10}\protected@file@percent }
+\newlabel{tab:rez_serija_a}{{4}{15}{Стопа успешности у функцији броја демонстрација за обуку}{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Поређење ACT и Diffusion Policy (серија Б)}{15}{subsection.5.3}\protected@file@percent }
+\newlabel{subsec:rez_serija_b}{{5.3}{15}{Поређење ACT и Diffusion Policy (серија Б)}{subsection.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Утицај аугментације и шума (серија В)}{15}{subsection.5.4}\protected@file@percent }
+\newlabel{subsec:rez_serija_v}{{5.4}{15}{Утицај аугментације и шума (серија В)}{subsection.5.4}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Стопа успешности у функцији величине скупа демонстрација за ACT и Diffusion Policy.}}{16}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:rez_serija_a}{{7}{16}{Стопа успешности у функцији величине скупа демонстрација за ACT и Diffusion Policy}{figure.caption.11}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Поређење ACT и Diffusion Policy при једнаким условима обуке.}}{16}{table.caption.12}\protected@file@percent }
+\newlabel{tab:rez_serija_b}{{5}{16}{Поређење ACT и Diffusion Policy при једнаким условима обуке}{table.caption.12}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Утицај аугментације и нивоа синтетичког шума на стопу успешности.}}{16}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:rez_serija_v}{{8}{16}{Утицај аугментације и нивоа синтетичког шума на стопу успешности}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Анализа грешака и плафон перформанси (серија Г)}{17}{subsection.5.5}\protected@file@percent }
+\newlabel{subsec:rez_serija_g}{{5.5}{17}{Анализа грешака и плафон перформанси (серија Г)}{subsection.5.5}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Расподела минималне удаљености $d_{\min }$ до циља при најбољој конфигурацији.}}{17}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:rez_serija_g}{{9}{17}{Расподела минималне удаљености $d_{\min }$ до циља при најбољој конфигурацији}{figure.caption.14}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Расподела неуспеха по фазама задатка при најбољој конфигурацији.}}{17}{table.caption.15}\protected@file@percent }
+\newlabel{tab:rez_serija_g}{{6}{17}{Расподела неуспеха по фазама задатка при најбољој конфигурацији}{table.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Дискусија}{18}{section.6}\protected@file@percent }
+\newlabel{sec:diskusija}{{6}{18}{Дискусија}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Закључак}{18}{section.7}\protected@file@percent }
+\newlabel{sec:zakljucak}{{7}{18}{Закључак}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{Списак слика}{18}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Списак табела}{18}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Литература}{20}{section.7}\protected@file@percent }
 \@writefile{toc}{\xpginauxfilefalse }
 \@writefile{lof}{\xpginauxfilefalse }
 \@writefile{lot}{\xpginauxfilefalse }
-\abx@aux@read@bbl@mdfivesum{nohash}
-\abx@aux@read@bblrerun
-\abx@aux@defaultrefcontext{0}{pomerleau1989alvinn}{ynt/global//global/global}
-\abx@aux@defaultrefcontext{0}{ross2011dagger}{ynt/global//global/global}
-\abx@aux@defaultrefcontext{0}{sanchez2018dlo}{ynt/global//global/global}
-\abx@aux@defaultrefcontext{0}{ho2020ddpm}{ynt/global//global/global}
-\abx@aux@defaultrefcontext{0}{mandlekar2021robomimic}{ynt/global//global/global}
-\abx@aux@defaultrefcontext{0}{song2021ddim}{ynt/global//global/global}
-\abx@aux@defaultrefcontext{0}{chi2023diffusionpolicy}{ynt/global//global/global}
-\abx@aux@defaultrefcontext{0}{zhao2023act}{ynt/global//global/global}
-\gdef \@abspage@last{15}
+\abx@aux@read@bbl@mdfivesum{8DD7DC71A118E1695467D292E3B186F0}
+\abx@aux@defaultrefcontext{0}{zhao2023act}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{chi2023diffusionpolicy}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{pomerleau1989alvinn}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ross2011dagger}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{mandlekar2021robomimic}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ho2020ddpm}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{song2021ddim}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{sanchez2018dlo}{none/global//global/global}
+\gdef \@abspage@last{23}

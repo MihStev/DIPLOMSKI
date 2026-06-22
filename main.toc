@@ -14,12 +14,25 @@
 \contentsline {paragraph}{Формулација клонирања понашања.}{8}{equation.3.5}%
 \contentsline {paragraph}{Метрике евалуације.}{8}{equation.3.5}%
 \contentsline {subsection}{\numberline {3.2}Имплементација ACT политике}{8}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Имплементација Diffusion Policy}{8}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Експериментална постава}{10}{section.4}%
-\contentsline {section}{\numberline {5}Резултати}{10}{section.5}%
-\contentsline {section}{\numberline {6}Дискусија}{10}{section.6}%
-\contentsline {section}{\numberline {7}Закључак}{10}{section.7}%
-\contentsline {section}{Списак слика}{10}{section.7}%
-\contentsline {section}{Списак табела}{10}{section.7}%
-\contentsline {section}{Литература}{12}{section.7}%
+\contentsline {subsection}{\numberline {3.3}Имплементација Дифузионe полисe (Diffusion Policy)}{9}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Експериментална постава}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Симулационо окружење}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Сензори, опсервације и акције}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Хиперпараметри обуке}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Протокол евалуације}{11}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}План експеримената}{13}{subsection.4.5}%
+\contentsline {paragraph}{Независне променљиве.}{13}{subsection.4.5}%
+\contentsline {paragraph}{Контролисане (фиксне) променљиве.}{13}{subsection.4.5}%
+\contentsline {paragraph}{Понављања и извештавање.}{13}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Резултати}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Криве учења}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Зависност успешности од броја демонстрација (серија А)}{15}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Поређење ACT и Diffusion Policy (серија Б)}{15}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Утицај аугментације и шума (серија В)}{15}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Анализа грешака и плафон перформанси (серија Г)}{17}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Дискусија}{18}{section.6}%
+\contentsline {section}{\numberline {7}Закључак}{18}{section.7}%
+\contentsline {section}{Списак слика}{18}{section.7}%
+\contentsline {section}{Списак табела}{18}{section.7}%
+\contentsline {section}{Литература}{20}{section.7}%
 \xpginauxfilefalse 
