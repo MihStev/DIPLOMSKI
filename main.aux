@@ -8,12 +8,13 @@
 \@writefile{lot}{\xpginauxfiletrue }
 \@writefile{toc}{\selectlanguage *[script=cyrillic]{serbian}}
 \HyPL@Entry{1<</S/r>>}
-\@writefile{toc}{\contentsline {section}{Захвалница}{i}{Doc-Start}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Предговор}{i}{Doc-Start}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Захвалница}{ii}{Doc-Start}\protected@file@percent }
 \abx@aux@cite{0}{zhao2023act}
 \abx@aux@segm{0}{0}{zhao2023act}
 \abx@aux@cite{0}{chi2023diffusionpolicy}
 \abx@aux@segm{0}{0}{chi2023diffusionpolicy}
-\HyPL@Entry{3<</S/D>>}
+\HyPL@Entry{4<</S/D>>}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Увод}{1}{section.1}\protected@file@percent }
 \newlabel{sec:uvod}{{1}{1}{Увод}{section.1}{}}
 \abx@aux@cite{0}{pomerleau1989alvinn}
@@ -22,10 +23,18 @@
 \abx@aux@segm{0}{0}{ross2011dagger}
 \abx@aux@cite{0}{mandlekar2021robomimic}
 \abx@aux@segm{0}{0}{mandlekar2021robomimic}
+\abx@aux@cite{0}{belkhale2023dataquality}
+\abx@aux@segm{0}{0}{belkhale2023dataquality}
 \abx@aux@cite{0}{zhao2023act}
 \abx@aux@segm{0}{0}{zhao2023act}
 \abx@aux@cite{0}{ross2011dagger}
 \abx@aux@segm{0}{0}{ross2011dagger}
+\abx@aux@cite{0}{vaswani2017attention}
+\abx@aux@segm{0}{0}{vaswani2017attention}
+\abx@aux@cite{0}{he2016resnet}
+\abx@aux@segm{0}{0}{he2016resnet}
+\abx@aux@cite{0}{carion2020detr}
+\abx@aux@segm{0}{0}{carion2020detr}
 \abx@aux@cite{0}{zhao2023act}
 \abx@aux@segm{0}{0}{zhao2023act}
 \abx@aux@cite{0}{zhao2023act}
@@ -45,6 +54,8 @@
 \abx@aux@segm{0}{0}{ho2020ddpm}
 \abx@aux@cite{0}{song2021ddim}
 \abx@aux@segm{0}{0}{song2021ddim}
+\abx@aux@cite{0}{perez2018film}
+\abx@aux@segm{0}{0}{perez2018film}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Архитектура ACT политике: CVAE кодер (лево) сажима секвенцу акција и позиције зглобова у латентну променљиву $\mathbf  {z}$, док трансформерски кодер-декодер (десно) на основу слика камера, позиција зглобова и $\mathbf  {z}$ предвиђа секвенцу акција. Преузето из~\blx@tocontentsinit {0}\cite {zhao2023act}.}}{4}{figure.caption.1}\protected@file@percent }
@@ -54,10 +65,6 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Diffusion Policy}{4}{subsection.2.3}\protected@file@percent }
 \newlabel{subsec:dp}{{2.3}{4}{Diffusion Policy}{subsection.2.3}{}}
 \newlabel{eq:dp_denoising}{{3}{4}{Diffusion Policy}{equation.2.3}{}}
-\abx@aux@cite{0}{chi2023diffusionpolicy}
-\abx@aux@segm{0}{0}{chi2023diffusionpolicy}
-\abx@aux@cite{0}{chi2023diffusionpolicy}
-\abx@aux@segm{0}{0}{chi2023diffusionpolicy}
 \abx@aux@cite{0}{mandlekar2021robomimic}
 \abx@aux@segm{0}{0}{mandlekar2021robomimic}
 \abx@aux@cite{0}{chi2023diffusionpolicy}
@@ -66,10 +73,14 @@
 \abx@aux@segm{0}{0}{sanchez2018dlo}
 \abx@aux@cite{0}{sanchez2018dlo}
 \abx@aux@segm{0}{0}{sanchez2018dlo}
+\abx@aux@cite{0}{spillmann2007corde}
+\abx@aux@segm{0}{0}{spillmann2007corde}
+\abx@aux@cite{0}{spector2021insertionnet}
+\abx@aux@segm{0}{0}{spector2021insertionnet}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Архитектура Diffusion Policy: слике три камере и проприоцептивни вектор кодирају се у условни вектор опсервације $\mathbf  {O}_t$, којим се FiLM модулацијом условљава мрежа $\boldsymbol  {\epsilon }_\theta $ (1D U-Net); акцијска секвенца настаје итеративним одшумљавањем почетног Гаусовог шума кроз $K$ корака. Прилагођено из~\blx@tocontentsinit {0}\cite {chi2023diffusionpolicy}.}}{5}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:dp_arch}{{2}{5}{Архитектура Diffusion Policy: слике три камере и проприоцептивни вектор кодирају се у условни вектор опсервације $\mathbf {O}_t$, којим се FiLM модулацијом условљава мрежа $\boldsymbol {\epsilon }_\theta $ (1D U-Net); акцијска секвенца настаје итеративним одшумљавањем почетног Гаусовог шума кроз $K$ корака. Прилагођено из~\cite {chi2023diffusionpolicy}}{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Архитектура Diffusion Policy. \textbf  {(а)} Општа формулација: политика $\boldsymbol  {\epsilon }_\theta (\mathbf  {O},\mathbf  {A},k)$ условљена опсервацијом $\mathbf  {O}_t$ итеративним одшумљавањем генерише акцијску секвенцу $\mathbf  {A}_t$ дуж хоризонта предвиђања $T_p$. \textbf  {(б)} Коришћена конволуциона варијанта: опсервација $\mathbf  {O}_t$ FiLM модулацијом ($a\,\mathbf  {x}+b$) условљава Conv1D блокове 1D U-Net-а, кроз $K$ корака одшумљавања.}}{5}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:dp_arch}{{2}{5}{Архитектура Diffusion Policy. \textbf {(а)} Општа формулација: политика $\boldsymbol {\epsilon }_\theta (\mathbf {O},\mathbf {A},k)$ условљена опсервацијом $\mathbf {O}_t$ итеративним одшумљавањем генерише акцијску секвенцу $\mathbf {A}_t$ дуж хоризонта предвиђања $T_p$. \textbf {(б)} Коришћена конволуциона варијанта: опсервација $\mathbf {O}_t$ FiLM модулацијом ($a\,\mathbf {x}+b$) условљава Conv1D блокове 1D U-Net-а, кроз $K$ корака одшумљавања}{figure.caption.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Роботска манипулација деформабилних линеарних објеката}{5}{subsection.2.4}\protected@file@percent }
 \newlabel{subsec:dlo}{{2.4}{5}{Роботска манипулација деформабилних линеарних објеката}{subsection.2.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Методологија}{6}{section.3}\protected@file@percent }
@@ -90,12 +101,14 @@
 \newlabel{eq:d_min}{{7}{8}{Метрике евалуације}{equation.3.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Имплементација ACT политике}{8}{subsection.3.2}\protected@file@percent }
 \newlabel{subsec:act_impl}{{3.2}{8}{Имплементација ACT политике}{subsection.3.2}{}}
+\abx@aux@cite{0}{ronneberger2015unet}
+\abx@aux@segm{0}{0}{ronneberger2015unet}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Улазно-излазна шема ACT политике примењене у овом раду: слике три камере (ResNet-18) и проприоцептивни вектор $\mathbf  {s}_t$ (линеарни слој), уз латентну променљиву $\mathbf  {z}$, улазе у трансформерски енкодер--декодер који предвиђа блок од $k$ акција. У фази примене $\mathbf  {z}=\mathbf  {0}$ и примењује се временско усредњавање.}}{9}{figure.caption.4}\protected@file@percent }
 \newlabel{fig:act_io}{{4}{9}{Улазно-излазна шема ACT политике примењене у овом раду: слике три камере (ResNet-18) и проприоцептивни вектор $\mathbf {s}_t$ (линеарни слој), уз латентну променљиву $\mathbf {z}$, улазе у трансформерски енкодер--декодер који предвиђа блок од $k$ акција. У фази примене $\mathbf {z}=\mathbf {0}$ и примењује се временско усредњавање}{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Имплементација Дифузионe полисe (Diffusion Policy)}{9}{subsection.3.3}\protected@file@percent }
-\newlabel{subsec:dp_impl}{{3.3}{9}{Имплементација Дифузионe полисe (Diffusion Policy)}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Имплементација дифузионе политике (Diffusion Policy)}{9}{subsection.3.3}\protected@file@percent }
+\newlabel{subsec:dp_impl}{{3.3}{9}{Имплементација дифузионе политике (Diffusion Policy)}{subsection.3.3}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Улазно-излазна шема Diffusion Policy примењене у овом раду: текућа опсервација $\mathbf  {O}_t$ условљава итеративно одшумљавање које из Гаусовог шума генерише секвенцу од $T_p$ акција; извршава се само првих $T_a$ корака, након чега се поступак понавља са новом опсервацијом (рецедирајући хоризонт).}}{10}{figure.caption.5}\protected@file@percent }
@@ -177,13 +190,21 @@
 \@writefile{toc}{\xpginauxfilefalse }
 \@writefile{lof}{\xpginauxfilefalse }
 \@writefile{lot}{\xpginauxfilefalse }
-\abx@aux@read@bbl@mdfivesum{8DD7DC71A118E1695467D292E3B186F0}
+\abx@aux@read@bbl@mdfivesum{01A80FEFA5F82E7F8A0F68187BE508A6}
 \abx@aux@defaultrefcontext{0}{zhao2023act}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{chi2023diffusionpolicy}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{pomerleau1989alvinn}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{ross2011dagger}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{mandlekar2021robomimic}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{belkhale2023dataquality}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{vaswani2017attention}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{he2016resnet}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{carion2020detr}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{ho2020ddpm}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{song2021ddim}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{perez2018film}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{sanchez2018dlo}{none/global//global/global}
-\gdef \@abspage@last{23}
+\abx@aux@defaultrefcontext{0}{spillmann2007corde}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{spector2021insertionnet}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ronneberger2015unet}{none/global//global/global}
+\gdef \@abspage@last{25}

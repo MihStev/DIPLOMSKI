@@ -1,6 +1,7 @@
 \xpginauxfiletrue 
 \selectlanguage *[script=cyrillic]{serbian}
-\contentsline {section}{Захвалница}{i}{Doc-Start}%
+\contentsline {section}{Предговор}{i}{Doc-Start}%
+\contentsline {section}{Захвалница}{ii}{Doc-Start}%
 \contentsline {section}{\numberline {1}Увод}{1}{section.1}%
 \contentsline {section}{\numberline {2}Преглед литературе}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Учење имитацијама и клонирање понашања}{3}{subsection.2.1}%
@@ -14,7 +15,7 @@
 \contentsline {paragraph}{Формулација клонирања понашања.}{8}{equation.3.5}%
 \contentsline {paragraph}{Метрике евалуације.}{8}{equation.3.5}%
 \contentsline {subsection}{\numberline {3.2}Имплементација ACT политике}{8}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Имплементација Дифузионe полисe (Diffusion Policy)}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Имплементација дифузионе политике (Diffusion Policy)}{9}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Експериментална постава}{11}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Симулационо окружење}{11}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Сензори, опсервације и акције}{11}{subsection.4.2}%

@@ -2366,20 +2366,26 @@
     <bcf:citekey order="3" intorder="1">pomerleau1989alvinn</bcf:citekey>
     <bcf:citekey order="4" intorder="1">ross2011dagger</bcf:citekey>
     <bcf:citekey order="5" intorder="1">mandlekar2021robomimic</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">zhao2023act</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">ross2011dagger</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">zhao2023act</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">zhao2023act</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">zhao2023act</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">chi2023diffusionpolicy</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">ho2020ddpm</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">song2021ddim</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">chi2023diffusionpolicy</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">belkhale2023dataquality</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">zhao2023act</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">ross2011dagger</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">vaswani2017attention</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">he2016resnet</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">carion2020detr</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">zhao2023act</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">zhao2023act</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">zhao2023act</bcf:citekey>
     <bcf:citekey order="15" intorder="1">chi2023diffusionpolicy</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">mandlekar2021robomimic</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">chi2023diffusionpolicy</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">sanchez2018dlo</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">sanchez2018dlo</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">ho2020ddpm</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">song2021ddim</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">perez2018film</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">mandlekar2021robomimic</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">chi2023diffusionpolicy</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">sanchez2018dlo</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">sanchez2018dlo</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">spillmann2007corde</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">spector2021insertionnet</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">ronneberger2015unet</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
