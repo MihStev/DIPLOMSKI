@@ -5,19 +5,19 @@
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {table}{\numberline {1}{\ignorespaces Хиперпараметри ACT политике.}}{12}{table.caption.6}%
+\contentsline {table}{\numberline {1}{\ignorespaces Хиперпараметри ACT политике.}}{13}{table.caption.6}%
 \setforeignlanguage {serbian}
-\contentsline {table}{\numberline {2}{\ignorespaces Хиперпараметри Diffusion Policy.}}{12}{table.caption.7}%
+\contentsline {table}{\numberline {2}{\ignorespaces Хиперпараметри Diffusion Policy.}}{13}{table.caption.7}%
 \setforeignlanguage {serbian}
-\contentsline {table}{\numberline {3}{\ignorespaces Серије експеримената и одговарајућа истраживачка питања.}}{13}{table.caption.8}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {table}{\numberline {4}{\ignorespaces Стопа успешности у функцији броја демонстрација за обуку.}}{15}{table.caption.10}%
+\contentsline {table}{\numberline {3}{\ignorespaces Серије експеримената и одговарајући циљеви рада.}}{14}{table.caption.8}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {table}{\numberline {5}{\ignorespaces Поређење ACT и Diffusion Policy при једнаким условима обуке.}}{16}{table.caption.12}%
+\contentsline {table}{\numberline {4}{\ignorespaces Стопа успешности у функцији броја демонстрација за обуку.}}{17}{table.caption.10}%
+\setforeignlanguage {serbian}
+\setforeignlanguage {serbian}
+\contentsline {table}{\numberline {5}{\ignorespaces Поређење ACT и Diffusion Policy при једнаким условима обуке.}}{17}{table.caption.12}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {table}{\numberline {6}{\ignorespaces Расподела неуспеха по фазама задатка при најбољој конфигурацији.}}{17}{table.caption.15}%
+\contentsline {table}{\numberline {6}{\ignorespaces Збирне метрике евалуације Diffusion Policy ($N=50$ епизода по конфигурацији). Удаљеност за пилот конфигурацију мерена је од врха алата (TCP), а за пун скуп од врха конектора, те апсолутне вредности нису директно упоредиве.}}{19}{table.caption.15}%
 \xpginauxfilefalse 
