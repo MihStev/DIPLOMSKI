@@ -16,11 +16,15 @@
 \contentsline {figure}{\numberline {6}{\ignorespaces Криве учења Diffusion Policy политике (логаритамска ордината): пилот обука на подскупу и обука на пуном скупу демонстрација.}}{16}{figure.caption.9}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {7}{\ignorespaces Стопа успешности у функцији величине скупа демонстрација за ACT и Diffusion Policy.}}{17}{figure.caption.11}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Скалирање прецизности са бројем демонстрација за ACT и Diffusion Policy ($N=50$ епизода по конфигурацији; тачке су медијане, интервали Q1--Q3). (а) Медијана минималне удаљености $d_{\min }$ врх--седиште остаје на платоу $\approx 47$\,mm, готово независно од обима података и архитектуре. (б) Медијана бочног одступања од осе уметања јасно опада са бројем демонстрација, најизраженије код Diffusion Policy. Стопа успешности је $0$ за све конфигурације, те није приказана.}}{17}{figure.caption.11}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {8}{\ignorespaces Утицај аугментације и нивоа синтетичког шума на стопу успешности.}}{18}{figure.caption.13}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Емпиријска расподела (ECDF) најближег приласка $d_{\min }$ врх--седиште за ACT и Diffusion Policy обучене на пуном скупу ($N=50$ епизода). Ниједна крива не досеже праг успешног уметања ($\leq 3$\,mm, осенчено зелено).}}{18}{figure.caption.13}%
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {9}{\ignorespaces Расподела минималне удаљености $d_{\min }$ до циља при најбољој конфигурацији (Diffusion Policy, пун скуп, $N=50$ епизода). Изражен плато заустављања у опсегу $40$--$50$\,mm.}}{18}{figure.caption.14}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Расподела минималне удаљености $d_{\min }$ до циља при најбољој конфигурацији (Diffusion Policy, пун скуп, $N=50$ епизода). Изражен плато заустављања у опсегу $40$--$50$\,mm.}}{19}{figure.caption.14}%
 \setforeignlanguage {serbian}
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {10}{\ignorespaces Дужина епизоде наспрам најближег приласка $d_{\min }$ за ACT и Diffusion Policy (пун скуп, $N=50$). Дуже епизоде приђу ближе седишту.}}{20}{figure.caption.16}%
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {11}{\ignorespaces Режим отказа при најбољим конфигурацијама: репрезентативна епизода заустављања за ACT и Diffusion Policy, три тренутка ($\sim $10\,\%, $\sim $50\,\%, $\sim $95\,\% трајања) из погледа трећег лица. Врх конектора долази до близине порта, али уметање се не иницира.}}{21}{figure.caption.17}%
 \xpginauxfilefalse 

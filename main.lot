@@ -12,12 +12,14 @@
 \contentsline {table}{\numberline {3}{\ignorespaces Серије експеримената и одговарајући циљеви рада.}}{14}{table.caption.8}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {table}{\numberline {4}{\ignorespaces Стопа успешности у функцији броја демонстрација за обуку.}}{17}{table.caption.10}%
+\contentsline {table}{\numberline {4}{\ignorespaces Перформансе у функцији броја демонстрација за обуку ($N=50$ епизода по конфигурацији). Стопа успешности је нула у свим случајевима, па су наведене и мере прецизности: медијана и најмања минимална удаљеност врх--седиште $d_{\min }$ и медијана бочног одступања од осе уметања.}}{17}{table.caption.10}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {table}{\numberline {5}{\ignorespaces Поређење ACT и Diffusion Policy при једнаким условима обуке.}}{17}{table.caption.12}%
+\contentsline {table}{\numberline {5}{\ignorespaces Поређење ACT и Diffusion Policy при једнаким условима обуке.}}{18}{table.caption.12}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {table}{\numberline {6}{\ignorespaces Збирне метрике евалуације Diffusion Policy ($N=50$ епизода по конфигурацији). Удаљеност за пилот конфигурацију мерена је од врха алата (TCP), а за пун скуп од врха конектора, те апсолутне вредности нису директно упоредиве.}}{19}{table.caption.15}%
+\contentsline {table}{\numberline {6}{\ignorespaces Збирне метрике евалуације Diffusion Policy ($N=50$ епизода по конфигурацији). У обе конфигурације $d_{\min }$ и бочно одступање мерени су од врха конектора (\textit {sfp\_tip\_link}) до седишта порта, те су директно упоредиви (пилот конфигурација је накнадно поново евалуирана истом метриком).}}{20}{table.caption.15}%
+\setforeignlanguage {serbian}
+\setforeignlanguage {serbian}
 \xpginauxfilefalse 

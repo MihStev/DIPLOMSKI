@@ -33,11 +33,15 @@
 \contentsline {subsection}{\numberline {5.1}Криве учења}{16}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Зависност успешности од броја демонстрација (серија А)}{16}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Поређење ACT и Diffusion Policy (серија Б)}{17}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Утицај аугментације и шума (серија В)}{17}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Анализа грешака и плафон перформанси (серија Г)}{17}{subsection.5.5}%
-\contentsline {section}{\numberline {6}Дискусија}{20}{section.6}%
-\contentsline {section}{\numberline {7}Закључак}{20}{section.7}%
-\contentsline {section}{Списак слика}{20}{section.7}%
-\contentsline {section}{Списак табела}{20}{section.7}%
-\contentsline {section}{Литература}{22}{section.7}%
+\contentsline {subsection}{\numberline {5.4}Анализа грешака и плафон перформанси (серија Г)}{18}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Дискусија}{22}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Тумачење резултата у односу на циљеве рада}{22}{subsection.6.1}%
+\contentsline {paragraph}{Потребан обим демонстрација (Ц1).}{22}{subsection.6.1}%
+\contentsline {paragraph}{Скалабилност архитектура (Ц2).}{22}{subsection.6.1}%
+\contentsline {paragraph}{Плафон перформанси и његови чиниоци (Ц4).}{22}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Ограничења}{23}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Закључак}{24}{section.7}%
+\contentsline {section}{Списак слика}{24}{section.7}%
+\contentsline {section}{Списак табела}{26}{section.7}%
+\contentsline {section}{Литература}{28}{section.7}%
 \xpginauxfilefalse 
