@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1783136958.19539 "main.bcf" "main.bbl" "main" 1783273908.24909 0
-  "main.bcf" 1783273907.95466 109362 6e72cf998a56b53726e097b93caa68d1 "xelatex"
+["biber main"] 1783341754.52847 "main.bcf" "main.bbl" "main" 1783352992.56978 0
+  "main.bcf" 1783352991.76361 109518 0663a63edd0e0a3e702376397068510b "xelatex"
   "references.bib" 1782210170.76548 5708 4ac0fd6b0e0800d5362ec70092d6481f ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1783273908.016 "main.xdv" "main.pdf" "main" 1783273908.25056 0
-  "main.xdv" 1783273907.9554 746960 ab09eaf31458e98917205caf224208ad "xelatex"
+["xdvipdfmx"] 1783352991.82739 "main.xdv" "main.pdf" "main" 1783352992.5712 0
+  "main.xdv" 1783352991.7655 820596 3aa3a42669e272c3a7baf4de92fdf20b "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1783273906.64585 "main.tex" "main.xdv" "main" 1783273908.24916 0
+["xelatex"] 1783352990.44362 "main.tex" "main.xdv" "main" 1783352992.56984 0
   "/etc/texmf/web2c/texmf.cnf" 1781778846.11717 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -256,18 +256,20 @@
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1781778855 9169515 5d8d8f8456048cff5f417a41ed66e4cb ""
   "ETF_logo.png" 1781778309.90367 2200 bcb4e754995468f3ce36f2205067c021 ""
   "images/act_arhitektura.png" 1781790454.06584 399786 2959e3f156fef91f0b2622e6806574ef ""
-  "images/rez_ecdf_dmin.pdf" 1783273668.46645 23965 88b10ad38fb291f551ebd80b5de0f2cb ""
-  "images/rez_len_vs_dmin.pdf" 1783273668.51891 22008 0dd15e245a4e6e2db0e5ce7d6e9e56cf ""
+  "images/dp_arhitektura.png" 1783288051.25062 932918 3479b2e85c7dd345ac915261533c3e5c ""
+  "images/rez_compute.pdf" 1783351806.87257 49078 258ac4fd97c1af47bea8d27f8522fbeb ""
+  "images/rez_ecdf_dmin.pdf" 1783341849.64614 26616 6458a524b999044db40e3b989f215a26 ""
+  "images/rez_len_vs_dmin.pdf" 1783341849.70476 26174 4a82ea1af781ba7a98070f4b5cd0b6b0 ""
   "images/rez_montaza_otkaza.pdf" 1783273804.65854 758092 167cc106696ae397757bf76602df01d9 ""
-  "images/rez_serija_a.pdf" 1783271967.04964 31104 6001e51e7515ccdabeffb50ecd045aba ""
-  "main.aux" 1783273907.95192 33057 781a22a149cc3f24d41f7dc1016f9439 "xelatex"
-  "main.bbl" 1783136958.53287 27755 01a80fefa5f82e7f8a0f68187be508a6 "biber main"
-  "main.lof" 1783273907.95527 7137 f87752a0092dc48a5f7f47de9eec2f79 "xelatex"
-  "main.lot" 1783273907.95527 2264 919afbe19647641a8e9638cf8c60fb67 "xelatex"
-  "main.out" 1783273907.95266 7876 511755880a4367f0751f6478d6207c48 "xelatex"
-  "main.run.xml" 1783273907.95527 2341 dbb4b2ebb97043eec16d9ba2a9f7194e "xelatex"
-  "main.tex" 1783273894.57028 116356 63e962b18b300235fa9cdcd3d1903257 ""
-  "main.toc" 1783273907.95527 4548 c12aadc9c5bc9063d991a47b5f4baf52 "xelatex"
+  "images/rez_serija_a.pdf" 1783341682.3241 31343 d721b3bcca9179e264fc89a2677665fe ""
+  "main.aux" 1783352991.76025 40454 fc6db7f5505004b61a7e8c0bbb3f3220 "xelatex"
+  "main.bbl" 1783341754.85246 27755 678c25911974363ed6e895cc5eaff1f0 "biber main"
+  "main.lof" 1783352991.7654 9019 1444e3b8398ad868868c68ebdd3cbbc0 "xelatex"
+  "main.lot" 1783352991.7654 3956 1f4529930894b0e2ead5546da6817fef "xelatex"
+  "main.out" 1783352991.76225 8198 916f05cc96c4d1264eda4482f8aa6b08 "xelatex"
+  "main.run.xml" 1783352991.7654 2341 dbb4b2ebb97043eec16d9ba2a9f7194e "xelatex"
+  "main.tex" 1783352941.01947 123105 bd7dbb2423ca9ce4c97c292c365e24ae ""
+  "main.toc" 1783352991.7654 4677 bb67839715839a92e409eb01166e18e3 "xelatex"
   (generated)
   "main.aux"
   "main.bcf"

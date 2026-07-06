@@ -24,21 +24,22 @@
 \contentsline {subsection}{\numberline {4.1}Симулационо окружење}{12}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Сензори, опсервације и акције}{12}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Хиперпараметри обуке}{12}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Протокол евалуације}{12}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}План експеримената}{14}{subsection.4.5}%
-\contentsline {paragraph}{Независне променљиве.}{14}{subsection.4.5}%
-\contentsline {paragraph}{Контролисане (фиксне) променљиве.}{14}{subsection.4.5}%
-\contentsline {paragraph}{Понављања и извештавање.}{14}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.4}Рачунарски ресурси и трошак обуке}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Протокол евалуације}{14}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}План експеримената}{15}{subsection.4.6}%
+\contentsline {paragraph}{Независне променљиве.}{15}{subsection.4.6}%
+\contentsline {paragraph}{Контролисане (фиксне) променљиве.}{15}{subsection.4.6}%
+\contentsline {paragraph}{Понављања и извештавање.}{15}{subsection.4.6}%
 \contentsline {section}{\numberline {5}Резултати}{16}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Криве учења}{16}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Зависност успешности од броја демонстрација (серија А)}{16}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Зависност успешности од броја демонстрација (серија А)}{17}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Поређење ACT и Diffusion Policy (серија Б)}{17}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Анализа грешака и плафон перформанси (серија Г)}{18}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.4}Анализа грешака и плафон перформанси (серија Г)}{19}{subsection.5.4}%
 \contentsline {section}{\numberline {6}Дискусија}{22}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Тумачење резултата у односу на циљеве рада}{22}{subsection.6.1}%
 \contentsline {paragraph}{Потребан обим демонстрација (Ц1).}{22}{subsection.6.1}%
 \contentsline {paragraph}{Скалабилност архитектура (Ц2).}{22}{subsection.6.1}%
-\contentsline {paragraph}{Плафон перформанси и његови чиниоци (Ц4).}{22}{subsection.6.1}%
+\contentsline {paragraph}{Плафон перформанси и његови чиниоци (Ц3).}{22}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Ограничења}{23}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Закључак}{24}{section.7}%
 \contentsline {section}{Списак слика}{24}{section.7}%

@@ -15,6 +15,20 @@
   off-axis @ closest [mm]: mean 46.5  median 41.2  min 6.1  max 107.2
   дужина епизоде [корака]: mean 1378  median 617  min 272  max 3600
 
+### DP · 10000 демонстрација   (N=50)
+  Стопа успешности:        1/50  (2.0%)
+  failed_stationary    49/50  (98.0%)
+  time_out             0/50  (0.0%)
+
+  closest tip->seat [mm]:  mean 40.7  median 46.7  std 15.7  min 2.0  max 115.0
+     квартили Q1/Q3:       29.0 / 47.3 mm
+     удео епизода <= 20 mm: 8%
+     удео епизода <= 30 mm: 30%
+     удео епизода <= 40 mm: 36%
+     удео епизода <= 50 mm: 94%
+  off-axis @ closest [mm]: mean 18.1  median 11.9  min 0.9  max 111.3
+  дужина епизоде [корака]: mean 690  median 712  min 277  max 1685
+
 ### DP · 30290 демонстрација   (N=50)
   Стопа успешности:        0/50  (0.0%)
   failed_stationary    50/50  (100.0%)
@@ -42,6 +56,20 @@
      удео епизода <= 50 mm: 62%
   off-axis @ closest [mm]: mean 37.5  median 27.7  min 2.6  max 100.6
   дужина епизоде [корака]: mean 778  median 564  min 263  max 3328
+
+### ACT · 10000 демонстрација   (N=50)
+  Стопа успешности:        0/50  (0.0%)
+  failed_stationary    42/50  (84.0%)
+  time_out             8/50  (16.0%)
+
+  closest tip->seat [mm]:  mean 47.6  median 47.2  std 19.9  min 20.0  max 99.0
+     квартили Q1/Q3:       33.1 / 54.5 mm
+     удео епизода <= 20 mm: 2%
+     удео епизода <= 30 mm: 16%
+     удео епизода <= 40 mm: 42%
+     удео епизода <= 50 mm: 68%
+  off-axis @ closest [mm]: mean 38.7  median 32.9  min 4.7  max 98.9
+  дужина епизоде [корака]: mean 1093  median 580  min 283  max 3600
 
 ### ACT · 30290 демонстрација   (N=50)
   Стопа успешности:        0/50  (0.0%)

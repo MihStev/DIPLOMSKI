@@ -60,8 +60,6 @@
 \abx@aux@segm{0}{0}{ho2020ddpm}
 \abx@aux@cite{0}{song2021ddim}
 \abx@aux@segm{0}{0}{song2021ddim}
-\abx@aux@cite{0}{perez2018film}
-\abx@aux@segm{0}{0}{perez2018film}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Архитектура ACT политике: CVAE кодер (лево) сажима секвенцу акција и позиције зглобова у латентну променљиву $\mathbf  {z}$, док трансформерски кодер-декодер (десно) на основу слика камера, позиција зглобова и $\mathbf  {z}$ предвиђа секвенцу акција. Преузето из~\blx@tocontentsinit {0}\cite {zhao2023act}.}}{4}{figure.caption.1}\protected@file@percent }
@@ -71,6 +69,12 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Diffusion Policy}{4}{subsection.2.3}\protected@file@percent }
 \newlabel{subsec:dp}{{2.3}{4}{Diffusion Policy}{subsection.2.3}{}}
 \newlabel{eq:dp_denoising}{{3}{4}{Diffusion Policy}{equation.2.3}{}}
+\abx@aux@cite{0}{perez2018film}
+\abx@aux@segm{0}{0}{perez2018film}
+\abx@aux@cite{0}{chi2023diffusionpolicy}
+\abx@aux@segm{0}{0}{chi2023diffusionpolicy}
+\abx@aux@cite{0}{chi2023diffusionpolicy}
+\abx@aux@segm{0}{0}{chi2023diffusionpolicy}
 \abx@aux@cite{0}{mandlekar2021robomimic}
 \abx@aux@segm{0}{0}{mandlekar2021robomimic}
 \abx@aux@cite{0}{chi2023diffusionpolicy}
@@ -83,6 +87,12 @@
 \abx@aux@segm{0}{0}{spillmann2007corde}
 \abx@aux@cite{0}{spector2021insertionnet}
 \abx@aux@segm{0}{0}{spector2021insertionnet}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Архитектура Diffusion Policy. \textbf  {Лево} је општа формулација: политика $\boldsymbol  {\epsilon }_\theta (\mathbf  {O},\mathbf  {A},k)$ узима последњих $T_o$ корака опсервације $\mathbf  {O}_t$ и итеративним одшумљавањем зашумљене секвенце ($\mathbf  {A}_t^K\!\to \!\mathbf  {A}_t^0$, кроз $K$ корака) генерише акције дуж хоризонта предвиђања $T_p$, од којих се извршава првих $T_a$. \textbf  {У средини} је конволуциона варијанта (\mbox  {Conv-DP}): опсервација $\mathbf  {O}_t$ FiLM модулацијом ($a\,\mathbf  {x}+b$) условљава Conv1D слојеве мреже за одшумљавање. \textbf  {Десно} је трансформерска варијанта (\mbox  {Trans-DP}): ембединг опсервације улази у унакрсну пажњу сваког декодерског блока уз каузално маскирање пажње. Преузето из~\blx@tocontentsinit {0}\cite {chi2023diffusionpolicy}.}}{5}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:dp_arch}{{2}{5}{Архитектура Diffusion Policy. \textbf {Лево} је општа формулација: политика $\boldsymbol {\epsilon }_\theta (\mathbf {O},\mathbf {A},k)$ узима последњих $T_o$ корака опсервације $\mathbf {O}_t$ и итеративним одшумљавањем зашумљене секвенце ($\mathbf {A}_t^K\!\to \!\mathbf {A}_t^0$, кроз $K$ корака) генерише акције дуж хоризонта предвиђања $T_p$, од којих се извршава првих $T_a$. \textbf {У средини} је конволуциона варијанта (\mbox {Conv-DP}): опсервација $\mathbf {O}_t$ FiLM модулацијом ($a\,\mathbf {x}+b$) условљава Conv1D слојеве мреже за одшумљавање. \textbf {Десно} је трансформерска варијанта (\mbox {Trans-DP}): ембединг опсервације улази у унакрсну пажњу сваког декодерског блока уз каузално маскирање пажње. Преузето из~\cite {chi2023diffusionpolicy}}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Роботска манипулација деформабилних линеарних објеката}{5}{subsection.2.4}\protected@file@percent }
+\newlabel{subsec:dlo}{{2.4}{5}{Роботска манипулација деформабилних линеарних објеката}{subsection.2.4}{}}
 \abx@aux@cite{0}{mandlekar2021robomimic}
 \abx@aux@segm{0}{0}{mandlekar2021robomimic}
 \abx@aux@cite{0}{belkhale2023dataquality}
@@ -91,12 +101,6 @@
 \abx@aux@segm{0}{0}{zhao2023act}
 \abx@aux@cite{0}{chi2023diffusionpolicy}
 \abx@aux@segm{0}{0}{chi2023diffusionpolicy}
-\@writefile{lof}{\setforeignlanguage {serbian}}
-\@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Архитектура Diffusion Policy. \textbf  {(а)} Општа формулација: политика $\boldsymbol  {\epsilon }_\theta (\mathbf  {O},\mathbf  {A},k)$ условљена опсервацијом $\mathbf  {O}_t$ итеративним одшумљавањем генерише акцијску секвенцу $\mathbf  {A}_t$ дуж хоризонта предвиђања $T_p$. \textbf  {(б)} Коришћена конволуциона варијанта: опсервација $\mathbf  {O}_t$ FiLM модулацијом ($a\,\mathbf  {x}+b$) условљава Conv1D блокове 1D U-Net-а, кроз $K$ корака одшумљавања.}}{5}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:dp_arch}{{2}{5}{Архитектура Diffusion Policy. \textbf {(а)} Општа формулација: политика $\boldsymbol {\epsilon }_\theta (\mathbf {O},\mathbf {A},k)$ условљена опсервацијом $\mathbf {O}_t$ итеративним одшумљавањем генерише акцијску секвенцу $\mathbf {A}_t$ дуж хоризонта предвиђања $T_p$. \textbf {(б)} Коришћена конволуциона варијанта: опсервација $\mathbf {O}_t$ FiLM модулацијом ($a\,\mathbf {x}+b$) условљава Conv1D блокове 1D U-Net-а, кроз $K$ корака одшумљавања}{figure.caption.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Роботска манипулација деформабилних линеарних објеката}{5}{subsection.2.4}\protected@file@percent }
-\newlabel{subsec:dlo}{{2.4}{5}{Роботска манипулација деформабилних линеарних објеката}{subsection.2.4}{}}
 \abx@aux@cite{0}{ross2011dagger}
 \abx@aux@segm{0}{0}{ross2011dagger}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Синтеза прегледа и позиционирање рада}{6}{subsection.2.5}\protected@file@percent }
@@ -123,8 +127,8 @@
 \abx@aux@segm{0}{0}{ronneberger2015unet}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Улазно-излазна шема ACT политике примењене у овом раду: слике три камере (ResNet-18) и проприоцептивни вектор $\mathbf  {s}_t$ (линеарни слој), уз латентну променљиву $\mathbf  {z}$, улазе у трансформерски енкодер--декодер који предвиђа блок од $k$ акција. У фази примене $\mathbf  {z}=\mathbf  {0}$ и примењује се временско усредњавање.}}{10}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:act_io}{{4}{10}{Улазно-излазна шема ACT политике примењене у овом раду: слике три камере (ResNet-18) и проприоцептивни вектор $\mathbf {s}_t$ (линеарни слој), уз латентну променљиву $\mathbf {z}$, улазе у трансформерски енкодер--декодер који предвиђа блок од $k$ акција. У фази примене $\mathbf {z}=\mathbf {0}$ и примењује се временско усредњавање}{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Улазно-излазна шема ACT политике примењене у овом раду: слике три камере (ResNet-18) и проприоцептивни вектор $\mathbf  {s}_t$ (линеарни слој), уз латентну променљиву $\mathbf  {z}$, улазе у трансформерски кодер-декодер који предвиђа блок од $k$ акција. У фази примене $\mathbf  {z}=\mathbf  {0}$ и примењује се временско усредњавање.}}{10}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:act_io}{{4}{10}{Улазно-излазна шема ACT политике примењене у овом раду: слике три камере (ResNet-18) и проприоцептивни вектор $\mathbf {s}_t$ (линеарни слој), уз латентну променљиву $\mathbf {z}$, улазе у трансформерски кодер-декодер који предвиђа блок од $k$ акција. У фази примене $\mathbf {z}=\mathbf {0}$ и примењује се временско усредњавање}{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Имплементација дифузионе политике (Diffusion Policy)}{10}{subsection.3.3}\protected@file@percent }
 \newlabel{subsec:dp_impl}{{3.3}{10}{Имплементација дифузионе политике (Diffusion Policy)}{subsection.3.3}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
@@ -139,75 +143,85 @@
 \newlabel{subsec:senzori}{{4.2}{12}{Сензори, опсервације и акције}{subsection.4.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Хиперпараметри обуке}{12}{subsection.4.3}\protected@file@percent }
 \newlabel{subsec:hiperparametri}{{4.3}{12}{Хиперпараметри обуке}{subsection.4.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Протокол евалуације}{12}{subsection.4.4}\protected@file@percent }
-\newlabel{subsec:protokol}{{4.4}{12}{Протокол евалуације}{subsection.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Рачунарски ресурси и трошак обуке}{12}{subsection.4.4}\protected@file@percent }
+\newlabel{subsec:racunarski_resursi}{{4.4}{12}{Рачунарски ресурси и трошак обуке}{subsection.4.4}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Хиперпараметри ACT политике.}}{13}{table.caption.6}\protected@file@percent }
-\newlabel{tab:act_hparams}{{1}{13}{Хиперпараметри ACT политике}{table.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Хиперпараметри ACT политике. Број корака обуке усклађен је на $\approx 4$ епохе за сваку величину скупа ($N_{\mathrm  {demo}}=1\,000/10\,000/30\,290$).}}{13}{table.caption.6}\protected@file@percent }
+\newlabel{tab:act_hparams}{{1}{13}{Хиперпараметри ACT политике. Број корака обуке усклађен је на $\approx 4$ епохе за сваку величину скупа ($N_{\mathrm {demo}}=1\,000/10\,000/30\,290$)}{table.caption.6}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Хиперпараметри Diffusion Policy.}}{13}{table.caption.7}\protected@file@percent }
-\newlabel{tab:dp_hparams}{{2}{13}{Хиперпараметри Diffusion Policy}{table.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}План експеримената}{14}{subsection.4.5}\protected@file@percent }
-\newlabel{subsec:plan_eksperimenata}{{4.5}{14}{План експеримената}{subsection.4.5}{}}
-\@writefile{toc}{\contentsline {paragraph}{Независне променљиве.}{14}{subsection.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Контролисане (фиксне) променљиве.}{14}{subsection.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Понављања и извештавање.}{14}{subsection.4.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Хиперпараметри Diffusion Policy. Средњи и пун скуп ($10\,000$/$30\,290$) тренирани су $\approx 1{,}56$ епохе, док је пилот ($1\,000$) обучен краће ($\approx 0{,}6$ епоха, batch $32$).}}{13}{table.caption.7}\protected@file@percent }
+\newlabel{tab:dp_hparams}{{2}{13}{Хиперпараметри Diffusion Policy. Средњи и пун скуп ($10\,000$/$30\,290$) тренирани су $\approx 1{,}56$ епохе, док је пилот ($1\,000$) обучен краће ($\approx 0{,}6$ епоха, batch $32$)}{table.caption.7}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Серије експеримената и одговарајући циљеви рада.}}{14}{table.caption.8}\protected@file@percent }
-\newlabel{tab:plan_eksperimenata}{{3}{14}{Серије експеримената и одговарајући циљеви рада}{table.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Трошак обуке по конфигурацији (RTX 5090). Број корака усклађен је по броју епоха над скупом; проток је измерен као просечан број корака оптимизације у секунди.}}{14}{table.caption.8}\protected@file@percent }
+\newlabel{tab:compute}{{3}{14}{Трошак обуке по конфигурацији (RTX 5090). Број корака усклађен је по броју епоха над скупом; проток је измерен као просечан број корака оптимизације у секунди}{table.caption.8}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Просечна искоришћеност графичке картице током обуке на пуном скупу. Diffusion Policy (без аугментације) држи картицу засићеном ($\approx 97\,\%$), док је ACT (са аугментацијом на процесору) ограничен пропусношћу декодовања и аугментације ($\approx 66\,\%$).}}{14}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:compute}{{6}{14}{Просечна искоришћеност графичке картице током обуке на пуном скупу. Diffusion Policy (без аугментације) држи картицу засићеном ($\approx 97\,\%$), док је ACT (са аугментацијом на процесору) ограничен пропусношћу декодовања и аугментације ($\approx 66\,\%$)}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Протокол евалуације}{14}{subsection.4.5}\protected@file@percent }
+\newlabel{subsec:protokol}{{4.5}{14}{Протокол евалуације}{subsection.4.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}План експеримената}{15}{subsection.4.6}\protected@file@percent }
+\newlabel{subsec:plan_eksperimenata}{{4.6}{15}{План експеримената}{subsection.4.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Независне променљиве.}{15}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Контролисане (фиксне) променљиве.}{15}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Понављања и извештавање.}{15}{subsection.4.6}\protected@file@percent }
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Серије експеримената и одговарајући циљеви рада.}}{15}{table.caption.10}\protected@file@percent }
+\newlabel{tab:plan_eksperimenata}{{4}{15}{Серије експеримената и одговарајући циљеви рада}{table.caption.10}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Резултати}{16}{section.5}\protected@file@percent }
 \newlabel{sec:rezultati}{{5}{16}{Резултати}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Криве учења}{16}{subsection.5.1}\protected@file@percent }
 \newlabel{subsec:rez_krive_ucenja}{{5.1}{16}{Криве учења}{subsection.5.1}{}}
-\newlabel{fig:rez_kriva_pilot}{{6a}{16}{Пилот ($1\,000$ демонстрација)}{figure.caption.9}{}}
-\newlabel{sub@fig:rez_kriva_pilot}{{a}{16}{Пилот ($1\,000$ демонстрација)}{figure.caption.9}{}}
-\newlabel{fig:rez_kriva_full}{{6b}{16}{Пун скуп ($30\,290$ демонстрација)}{figure.caption.9}{}}
-\newlabel{sub@fig:rez_kriva_full}{{b}{16}{Пун скуп ($30\,290$ демонстрација)}{figure.caption.9}{}}
+\newlabel{fig:kriva_dp}{{7a}{16}{Diffusion Policy}{figure.caption.11}{}}
+\newlabel{sub@fig:kriva_dp}{{a}{16}{Diffusion Policy}{figure.caption.11}{}}
+\newlabel{fig:kriva_act}{{7b}{16}{ACT}{figure.caption.11}{}}
+\newlabel{sub@fig:kriva_act}{{b}{16}{ACT}{figure.caption.11}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Криве учења Diffusion Policy политике (логаритамска ордината): пилот обука на подскупу и обука на пуном скупу демонстрација.}}{16}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:rez_krive_ucenja}{{6}{16}{Криве учења Diffusion Policy политике (логаритамска ордината): пилот обука на подскупу и обука на пуном скупу демонстрација}{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Зависност успешности од броја демонстрација (серија А)}{16}{subsection.5.2}\protected@file@percent }
-\newlabel{subsec:rez_serija_a}{{5.2}{16}{Зависност успешности од броја демонстрација (серија А)}{subsection.5.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Криве учења (лог--лог скала) за три величине скупа демонстрација. (а) Код Diffusion Policy финални губитак јасно опада са обимом података ($\approx 0{,}015 \to 0{,}007 \to 0{,}006$); ординату чини дифузиони средњеквадратни губитак уз помоћни губитак фазе. (б) Код ACT-а финални губитак ($L_1$ + помоћни губитак фазе) конвергира ка блиском платоу ($\approx 0{,}122 \to 0{,}114 \to 0{,}112$), уз тек благо снижење са обимом података. Апсолутне вредности две ординате нису међусобно упоредиве (различит састав губитка).}}{16}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:rez_krive_ucenja}{{7}{16}{Криве учења (лог--лог скала) за три величине скупа демонстрација. (а) Код Diffusion Policy финални губитак јасно опада са обимом података ($\approx 0{,}015 \to 0{,}007 \to 0{,}006$); ординату чини дифузиони средњеквадратни губитак уз помоћни губитак фазе. (б) Код ACT-а финални губитак ($L_1$ + помоћни губитак фазе) конвергира ка блиском платоу ($\approx 0{,}122 \to 0{,}114 \to 0{,}112$), уз тек благо снижење са обимом података. Апсолутне вредности две ординате нису међусобно упоредиве (различит састав губитка)}{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Зависност успешности од броја демонстрација (серија А)}{17}{subsection.5.2}\protected@file@percent }
+\newlabel{subsec:rez_serija_a}{{5.2}{17}{Зависност успешности од броја демонстрација (серија А)}{subsection.5.2}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Перформансе у функцији броја демонстрација за обуку ($N=50$ епизода по конфигурацији). Стопа успешности је нула у свим случајевима, па су наведене и мере прецизности: медијана и најмања минимална удаљеност врх--седиште $d_{\min }$ и медијана бочног одступања од осе уметања.}}{17}{table.caption.10}\protected@file@percent }
-\newlabel{tab:rez_serija_a}{{4}{17}{Перформансе у функцији броја демонстрација за обуку ($N=50$ епизода по конфигурацији). Стопа успешности је нула у свим случајевима, па су наведене и мере прецизности: медијана и најмања минимална удаљеност врх--седиште $d_{\min }$ и медијана бочног одступања од осе уметања}{table.caption.10}{}}
-\@writefile{lof}{\setforeignlanguage {serbian}}
-\@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Скалирање прецизности са бројем демонстрација за ACT и Diffusion Policy ($N=50$ епизода по конфигурацији; тачке су медијане, интервали Q1--Q3). (а) Медијана минималне удаљености $d_{\min }$ врх--седиште остаје на платоу $\approx 47$\,mm, готово независно од обима података и архитектуре. (б) Медијана бочног одступања од осе уметања јасно опада са бројем демонстрација, најизраженије код Diffusion Policy. Стопа успешности је $0$ за све конфигурације, те није приказана.}}{17}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:rez_serija_a}{{7}{17}{Скалирање прецизности са бројем демонстрација за ACT и Diffusion Policy ($N=50$ епизода по конфигурацији; тачке су медијане, интервали Q1--Q3). (а) Медијана минималне удаљености $d_{\min }$ врх--седиште остаје на платоу $\approx 47$\,mm, готово независно од обима података и архитектуре. (б) Медијана бочног одступања од осе уметања јасно опада са бројем демонстрација, најизраженије код Diffusion Policy. Стопа успешности је $0$ за све конфигурације, те није приказана}{figure.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Перформансе у функцији броја демонстрација за обуку ($N=50$ епизода по тачки, једно семе евалуације ради упоредивости кроз $N$; пуне политике додатно су евалуиране преко три семена, Табела~\ref {tab:rez_serija_b}). Стопа успешности је веома ниска у целом опсегу, па су наведене и мере прецизности: медијана и најмања минимална удаљеност врх--седиште $d_{\min }$ и медијана бочног одступања од осе уметања. Најмање $d_{\min }$ од $2{,}0$\,mm (DP, $10\,000$) одговара једном успешном уметању.}}{17}{table.caption.12}\protected@file@percent }
+\newlabel{tab:rez_serija_a}{{5}{17}{Перформансе у функцији броја демонстрација за обуку ($N=50$ епизода по тачки, једно семе евалуације ради упоредивости кроз $N$; пуне политике додатно су евалуиране преко три семена, Табела~\ref {tab:rez_serija_b}). Стопа успешности је веома ниска у целом опсегу, па су наведене и мере прецизности: медијана и најмања минимална удаљеност врх--седиште $d_{\min }$ и медијана бочног одступања од осе уметања. Најмање $d_{\min }$ од $2{,}0$\,mm (DP, $10\,000$) одговара једном успешном уметању}{table.caption.12}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Поређење ACT и Diffusion Policy (серија Б)}{17}{subsection.5.3}\protected@file@percent }
 \newlabel{subsec:rez_serija_b}{{5.3}{17}{Поређење ACT и Diffusion Policy (серија Б)}{subsection.5.3}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Поређење ACT и Diffusion Policy при једнаким условима обуке.}}{18}{table.caption.12}\protected@file@percent }
-\newlabel{tab:rez_serija_b}{{5}{18}{Поређење ACT и Diffusion Policy при једнаким условима обуке}{table.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Скалирање прецизности са бројем демонстрација за ACT и Diffusion Policy ($N=50$ епизода по конфигурацији; тачке су медијане, интервали Q1--Q3). (а) Медијана минималне удаљености $d_{\min }$ врх--седиште остаје на платоу $\approx 47$\,mm, готово независно од обима података и архитектуре. (б) Медијана бочног одступања од осе уметања јасно опада са бројем демонстрација, најизраженије код Diffusion Policy. Стопа успешности је веома ниска у свим тачкама (пилот $0\,\%$, пуне политике реда $1\,\%$), те није приказана.}}{18}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:rez_serija_a}{{8}{18}{Скалирање прецизности са бројем демонстрација за ACT и Diffusion Policy ($N=50$ епизода по конфигурацији; тачке су медијане, интервали Q1--Q3). (а) Медијана минималне удаљености $d_{\min }$ врх--седиште остаје на платоу $\approx 47$\,mm, готово независно од обима података и архитектуре. (б) Медијана бочног одступања од осе уметања јасно опада са бројем демонстрација, најизраженије код Diffusion Policy. Стопа успешности је веома ниска у свим тачкама (пилот $0\,\%$, пуне политике реда $1\,\%$), те није приказана}{figure.caption.13}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Емпиријска расподела (ECDF) најближег приласка $d_{\min }$ врх--седиште за ACT и Diffusion Policy обучене на пуном скупу ($N=50$ епизода). Ниједна крива не досеже праг успешног уметања ($\leq 3$\,mm, осенчено зелено).}}{18}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:rez_ecdf}{{8}{18}{Емпиријска расподела (ECDF) најближег приласка $d_{\min }$ врх--седиште за ACT и Diffusion Policy обучене на пуном скупу ($N=50$ епизода). Ниједна крива не досеже праг успешног уметања ($\leq 3$\,mm, осенчено зелено)}{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Анализа грешака и плафон перформанси (серија Г)}{18}{subsection.5.4}\protected@file@percent }
-\newlabel{subsec:rez_serija_g}{{5.4}{18}{Анализа грешака и плафон перформанси (серија Г)}{subsection.5.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Поређење ACT и Diffusion Policy обучених на пуном скупу, преко три семена евалуације ($150$ епизода по архитектури). Стопа успешности дата је као средња вредност $\pm $ стандардна девијација преко семена; метрике прецизности су над обједињеним епизодама.}}{18}{table.caption.14}\protected@file@percent }
+\newlabel{tab:rez_serija_b}{{6}{18}{Поређење ACT и Diffusion Policy обучених на пуном скупу, преко три семена евалуације ($150$ епизода по архитектури). Стопа успешности дата је као средња вредност $\pm $ стандардна девијација преко семена; метрике прецизности су над обједињеним епизодама}{table.caption.14}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Расподела минималне удаљености $d_{\min }$ до циља при најбољој конфигурацији (Diffusion Policy, пун скуп, $N=50$ епизода). Изражен плато заустављања у опсегу $40$--$50$\,mm.}}{19}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:rez_serija_g}{{9}{19}{Расподела минималне удаљености $d_{\min }$ до циља при најбољој конфигурацији (Diffusion Policy, пун скуп, $N=50$ епизода). Изражен плато заустављања у опсегу $40$--$50$\,mm}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Емпиријска расподела (ECDF) најближег приласка $d_{\min }$ врх--седиште за ACT и Diffusion Policy обучене на пуном скупу, обједињено преко три семена ($N=150$ епизода по архитектури). Тек мали удео епизода (реда $1\,\%$) досеже праг успешног уметања ($\leq 3$\,mm, осенчено зелено).}}{19}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:rez_ecdf}{{9}{19}{Емпиријска расподела (ECDF) најближег приласка $d_{\min }$ врх--седиште за ACT и Diffusion Policy обучене на пуном скупу, обједињено преко три семена ($N=150$ епизода по архитектури). Тек мали удео епизода (реда $1\,\%$) досеже праг успешног уметања ($\leq 3$\,mm, осенчено зелено)}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Анализа грешака и плафон перформанси (серија Г)}{19}{subsection.5.4}\protected@file@percent }
+\newlabel{subsec:rez_serija_g}{{5.4}{19}{Анализа грешака и плафон перформанси (серија Г)}{subsection.5.4}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Збирне метрике евалуације Diffusion Policy ($N=50$ епизода по конфигурацији). У обе конфигурације $d_{\min }$ и бочно одступање мерени су од врха конектора (\textit  {sfp\_tip\_link}) до седишта порта, те су директно упоредиви (пилот конфигурација је накнадно поново евалуирана истом метриком).}}{20}{table.caption.15}\protected@file@percent }
-\newlabel{tab:rez_serija_g}{{6}{20}{Збирне метрике евалуације Diffusion Policy ($N=50$ епизода по конфигурацији). У обе конфигурације $d_{\min }$ и бочно одступање мерени су од врха конектора (\textit {sfp\_tip\_link}) до седишта порта, те су директно упоредиви (пилот конфигурација је накнадно поново евалуирана истом метриком)}{table.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Расподела минималне удаљености $d_{\min }$ до циља при најбољој конфигурацији (Diffusion Policy, пун скуп, $N=50$ епизода). Изражен плато заустављања у опсегу $40$--$50$\,mm.}}{20}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:rez_serija_g}{{10}{20}{Расподела минималне удаљености $d_{\min }$ до циља при најбољој конфигурацији (Diffusion Policy, пун скуп, $N=50$ епизода). Изражен плато заустављања у опсегу $40$--$50$\,mm}{figure.caption.16}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Дужина епизоде наспрам најближег приласка $d_{\min }$ за ACT и Diffusion Policy (пун скуп, $N=50$). Дуже епизоде приђу ближе седишту.}}{20}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:rez_len_vs_dmin}{{10}{20}{Дужина епизоде наспрам најближег приласка $d_{\min }$ за ACT и Diffusion Policy (пун скуп, $N=50$). Дуже епизоде приђу ближе седишту}{figure.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Збирне метрике евалуације Diffusion Policy ($N=50$ епизода, семе $0$). У обе конфигурације $d_{\min }$ и бочно одступање мерени су од врха конектора (\textit  {sfp\_tip\_link}) до седишта порта, те су директно упоредиви (пилот конфигурација је накнадно поново евалуирана истом метриком). Приказана стопа успешности односи се на семе $0$; преко три семена пуна политика остварује $1{,}3\,\%$ (види Табелу~\ref {tab:rez_serija_b}).}}{20}{table.caption.17}\protected@file@percent }
+\newlabel{tab:rez_serija_g}{{7}{20}{Збирне метрике евалуације Diffusion Policy ($N=50$ епизода, семе $0$). У обе конфигурације $d_{\min }$ и бочно одступање мерени су од врха конектора (\textit {sfp\_tip\_link}) до седишта порта, те су директно упоредиви (пилот конфигурација је накнадно поново евалуирана истом метриком). Приказана стопа успешности односи се на семе $0$; преко три семена пуна политика остварује $1{,}3\,\%$ (види Табелу~\ref {tab:rez_serija_b})}{table.caption.17}{}}
 \@writefile{lof}{\setforeignlanguage {serbian}}
 \@writefile{lot}{\setforeignlanguage {serbian}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Режим отказа при најбољим конфигурацијама: репрезентативна епизода заустављања за ACT и Diffusion Policy, три тренутка ($\sim $10\,\%, $\sim $50\,\%, $\sim $95\,\% трајања) из погледа трећег лица. Врх конектора долази до близине порта, али уметање се не иницира.}}{21}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:rez_montaza}{{11}{21}{Режим отказа при најбољим конфигурацијама: репрезентативна епизода заустављања за ACT и Diffusion Policy, три тренутка ($\sim $10\,\%, $\sim $50\,\%, $\sim $95\,\% трајања) из погледа трећег лица. Врх конектора долази до близине порта, али уметање се не иницира}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Дужина епизоде наспрам најближег приласка $d_{\min }$ за ACT и Diffusion Policy (пун скуп, $N=50$). Дуже епизоде приђу ближе седишту.}}{21}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:rez_len_vs_dmin}{{11}{21}{Дужина епизоде наспрам најближег приласка $d_{\min }$ за ACT и Diffusion Policy (пун скуп, $N=50$). Дуже епизоде приђу ближе седишту}{figure.caption.18}{}}
+\@writefile{lof}{\setforeignlanguage {serbian}}
+\@writefile{lot}{\setforeignlanguage {serbian}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Режим отказа при најбољим конфигурацијама: репрезентативна епизода заустављања за ACT и Diffusion Policy, три тренутка ($\sim $10\,\%, $\sim $50\,\%, $\sim $95\,\% трајања) из погледа трећег лица. Врх конектора долази до близине порта, али уметање се не иницира.}}{21}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:rez_montaza}{{12}{21}{Режим отказа при најбољим конфигурацијама: репрезентативна епизода заустављања за ACT и Diffusion Policy, три тренутка ($\sim $10\,\%, $\sim $50\,\%, $\sim $95\,\% трајања) из погледа трећег лица. Врх конектора долази до близине порта, али уметање се не иницира}{figure.caption.19}{}}
 \abx@aux@cite{0}{mandlekar2021robomimic}
 \abx@aux@segm{0}{0}{mandlekar2021robomimic}
 \abx@aux@cite{0}{belkhale2023dataquality}
@@ -219,7 +233,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Тумачење резултата у односу на циљеве рада}{22}{subsection.6.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Потребан обим демонстрација (Ц1).}{22}{subsection.6.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Скалабилност архитектура (Ц2).}{22}{subsection.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Плафон перформанси и његови чиниоци (Ц4).}{22}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Плафон перформанси и његови чиниоци (Ц3).}{22}{subsection.6.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Ограничења}{23}{subsection.6.2}\protected@file@percent }
 \abx@aux@cite{0}{ross2011dagger}
 \abx@aux@segm{0}{0}{ross2011dagger}
@@ -231,7 +245,7 @@
 \@writefile{toc}{\xpginauxfilefalse }
 \@writefile{lof}{\xpginauxfilefalse }
 \@writefile{lot}{\xpginauxfilefalse }
-\abx@aux@read@bbl@mdfivesum{01A80FEFA5F82E7F8A0F68187BE508A6}
+\abx@aux@read@bbl@mdfivesum{678C25911974363ED6E895CC5EAFF1F0}
 \abx@aux@defaultrefcontext{0}{zhao2023act}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{chi2023diffusionpolicy}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{pomerleau1989alvinn}{none/global//global/global}
