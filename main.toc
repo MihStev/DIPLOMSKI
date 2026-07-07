@@ -8,8 +8,8 @@
 \contentsline {subsection}{\numberline {1.3}Структура рада}{2}{subsection.1.3}%
 \contentsline {section}{\numberline {2}Преглед литературе}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Учење имитацијама и клонирање понашања}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Action Chunking with Transformers (ACT)}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Diffusion Policy}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.2}Груписање акција трансформерима (ACT)}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Дифузиона политика (DP)}{4}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Роботска манипулација деформабилних линеарних објеката}{5}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Синтеза прегледа и позиционирање рада}{6}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Методологија}{7}{section.3}%
@@ -19,7 +19,7 @@
 \contentsline {paragraph}{Формулација клонирања понашања.}{9}{equation.3.5}%
 \contentsline {paragraph}{Метрике евалуације.}{9}{equation.3.5}%
 \contentsline {subsection}{\numberline {3.2}Имплементација ACT политике}{9}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Имплементација дифузионе политике (Diffusion Policy)}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Имплементација дифузионе политике}{11}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Експериментална постава}{12}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Симулационо окружење}{12}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Сензори, опсервације и акције}{12}{subsection.4.2}%
@@ -33,7 +33,7 @@
 \contentsline {section}{\numberline {5}Резултати}{16}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Криве учења}{16}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Зависност успешности од броја демонстрација (серија А)}{17}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Поређење ACT и Diffusion Policy (серија Б)}{17}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Поређење ACT и DP (серија Б)}{17}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Анализа грешака и плафон перформанси (серија В)}{19}{subsection.5.4}%
 \contentsline {section}{\numberline {6}Дискусија}{23}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Тумачење резултата у односу на циљеве рада}{23}{subsection.6.1}%
@@ -43,6 +43,6 @@
 \contentsline {subsection}{\numberline {6.2}Ограничења}{24}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Закључак}{25}{section.7}%
 \contentsline {section}{Списак слика}{25}{section.7}%
-\contentsline {section}{Списак табела}{27}{section.7}%
-\contentsline {section}{Литература}{29}{section.7}%
+\contentsline {section}{Списак табела}{26}{section.7}%
+\contentsline {section}{Литература}{28}{section.7}%
 \xpginauxfilefalse 

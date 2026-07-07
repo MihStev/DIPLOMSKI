@@ -1,35 +1,35 @@
 \xpginauxfiletrue 
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {1}{\ignorespaces Архитектура ACT политике: кодер CVAE-а (лево) сажима секвенцу акција и позиције зглобова у латентну променљиву $\mathbf {z}$, док трансформерски кодер-декодер (десно) на основу слика камера, позиција зглобова и $\mathbf {z}$ предвиђа секвенцу акција. Преузето из~\blx@tocontentsinit {0}\cite {zhao2023act}.}}{4}{figure.caption.1}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Архитектура ACT политике}}{4}{figure.caption.1}%
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {2}{\ignorespaces Архитектура Diffusion Policy. \textbf {Лево} је општа формулација: политика $\boldsymbol {\epsilon }_\theta (\mathbf {O},\mathbf {A},k)$ узима последњих $T_o$ корака опсервације $\mathbf {O}_t$ и итеративним одшумљавањем зашумљене секвенце ($\mathbf {A}_t^K\!\to \!\mathbf {A}_t^0$, кроз $K$ корака) генерише акције дуж хоризонта предвиђања $T_p$, од којих се извршава првих $T_a$. \textbf {У средини} је конволуциона варијанта (\mbox {Conv-DP}): опсервација $\mathbf {O}_t$ FiLM модулацијом ($a\,\mathbf {x}+b$) условљава Conv1D слојеве мреже за одшумљавање. \textbf {Десно} је трансформерска варијанта (\mbox {Trans-DP}): векторска репрезентација (енгл.\ \textit {embedding}) опсервације улази у унакрсну пажњу сваког декодерског блока уз каузално маскирање пажње. Преузето из~\blx@tocontentsinit {0}\cite {chi2023diffusionpolicy}.}}{5}{figure.caption.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Архитектура Diffusion Policy}}{5}{figure.caption.2}%
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {3}{\ignorespaces Ток података кроз систем: oracle политика са приступом координатама порта генерише демонстрације преко машине стања и DiffIK контролера, успешне епизоде се чувају у LeRobot скуп демонстрација, на коме се тренирају ACT и Diffusion Policy политике, а потом евалуирају без привилеговане информације.}}{8}{figure.caption.3}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Ток података кроз систем}}{8}{figure.caption.3}%
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {4}{\ignorespaces Улазно-излазна шема ACT политике примењене у овом раду: слике три камере (ResNet-18) и проприоцептивни вектор $\mathbf {s}_t$ (линеарни слој), уз латентну променљиву $\mathbf {z}$, улазе у трансформерски кодер-декодер који предвиђа блок од $k$ акција. Испрекидано је приказана помоћна глава за класификацију фазе, активна само у обуци (губитак $0{,}1\cdot $CE), чији циљеви (ПРИЛАЗАК/ПОРАВНАЊЕ/УМЕТАЊЕ) потичу из машине стања oracle политике. У фази примене $\mathbf {z}=\mathbf {0}$ и примењује се временско усредњавање.}}{10}{figure.caption.4}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Улазно-излазна шема ACT политике}}{10}{figure.caption.4}%
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {5}{\ignorespaces Детаљна архитектура и ток података Diffusion Policy примењене у овом раду. Слике три камере и проприоцептивно стање (за $n_{\mathrm {obs}}=2$ корака) кодирају се дељеним ResNet-18 backbone-ом са просторним softmax-ом (32 тачке) у условни вектор $\mathbf {O}_t$. Мрежа за одшумљавање ($1$D U-Net $\boldsymbol {\epsilon }_\theta $) условљена је FiLM модулацијом из $\mathbf {O}_t$ и синусоидном векторском репрезентацијом корака дифузије $t$, и предвиђа шум $\hat {\boldsymbol {\epsilon }}$ додат на зашумљену акцијску секвенцу $\mathbf {a}_t$. У обуци се минимизује средња квадратна грешка предвиђеног шума уз помоћни губитак фазе; у примени се поступак понавља $100$ пута (DDPM) да би се из чистог шума генерисала секвенца од $T_p=16$ акција, од којих се извршава првих $T_a=8$ (рецедирајући хоризонт).}}{11}{figure.caption.5}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {5}{\ignorespaces Детаљна архитектура Diffusion Policy}}{11}{figure.caption.5}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {6}{\ignorespaces Просечна искоришћеност графичке картице током обуке на пуном скупу. Diffusion Policy (без аугментације) држи картицу засићеном ($\approx 97\,\%$), док је ACT (са аугментацијом на процесору) ограничен пропусношћу декодовања и аугментације ($\approx 66\,\%$).}}{14}{figure.caption.9}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {7}{\ignorespaces Криве учења (лог–лог скала) за три величине скупа демонстрација. (а) Код Diffusion Policy финални губитак јасно опада са обимом података ($\approx 0{,}015 \to 0{,}007 \to 0{,}006$); ординату чини дифузиони средњеквадратни губитак уз помоћни губитак фазе. (б) Код ACT-а финални губитак ($L_1$ + помоћни губитак фазе) конвергира ка блиском платоу ($\approx 0{,}122 \to 0{,}114 \to 0{,}112$), уз тек благо снижење са обимом података. Апсолутне вредности две ординате нису међусобно упоредиве (различит састав губитка).}}{16}{figure.caption.11}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Искоришћеност GPU током обуке}}{14}{figure.caption.9}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {8}{\ignorespaces Скалирање прецизности са бројем демонстрација за ACT и Diffusion Policy ($N=50$ епизода по конфигурацији; тачке су медијане, интервали Q1--Q3). (а) Медијана минималне удаљености $d_{\min }$ врх–лежиште остаје на платоу $\approx 47$\,mm, готово независно од обима података и архитектуре. (б) Медијана бочног одступања од осе уметања јасно опада са бројем демонстрација, најизраженије код Diffusion Policy. Стопа успешности је веома ниска у свим тачкама (пилот $0\,\%$, пуне политике реда $1\,\%$), те није приказана.}}{18}{figure.caption.13}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Криве учења за три величине скупа демонстрација}}{16}{figure.caption.11}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {9}{\ignorespaces Емпиријска расподела (ECDF) најближег приласка $d_{\min }$ врх–лежиште за ACT и Diffusion Policy обучене на пуном скупу, обједињено преко три \textit {seed}-а ($N=150$ епизода по архитектури). Тек мали удео епизода (реда $1\,\%$) досеже праг успешног уметања ($\leq 3$\,mm, осенчено зелено).}}{19}{figure.caption.15}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {10}{\ignorespaces QR код ка видео-снимку успешно изведеног уметања SFP конектора у порт (Diffusion Policy; једна од ретких успешних епизода из одељка~\ref {subsec:rez_serija_v}). Снимак приказује епизоду из погледа трећег лица, а затим исту епизоду из три камере политике.}}{20}{figure.caption.16}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {11}{\ignorespaces Расподела минималне удаљености $d_{\min }$ до циља при најбољој конфигурацији (Diffusion Policy, пун скуп, $N=50$ епизода). Изражен плато заустављања у опсегу $40$–$50$\,mm.}}{20}{figure.caption.17}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Скалирање прецизности са бројем демонстрација}}{18}{figure.caption.13}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {12}{\ignorespaces Дужина епизоде наспрам најближег приласка $d_{\min }$ за ACT и Diffusion Policy (пун скуп, $N=50$). Дуже епизоде приђу ближе лежишту.}}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {9}{\ignorespaces ECDF најближег приласка $d_{\min }$}}{19}{figure.caption.15}%
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {13}{\ignorespaces Режим отказа при најбољим конфигурацијама: репрезентативна епизода заустављања за ACT и Diffusion Policy, три тренутка ($\sim $10\,\%, $\sim $50\,\%, $\sim $95\,\% трајања) из погледа трећег лица. Врх конектора долази до близине порта, али уметање се не иницира.}}{22}{figure.caption.20}%
+\contentsline {figure}{\numberline {10}{\ignorespaces QR код ка видео-снимку успешног уметања}}{20}{figure.caption.16}%
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {11}{\ignorespaces Расподела $d_{\min }$ при најбољој конфигурацији}}{20}{figure.caption.17}%
+\setforeignlanguage {serbian}
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {12}{\ignorespaces Дужина епизоде наспрам приласка $d_{\min }$}}{21}{figure.caption.19}%
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {13}{\ignorespaces Режим отказа при најбољим конфигурацијама}}{22}{figure.caption.20}%
 \xpginauxfilefalse 

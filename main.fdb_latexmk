@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1783341754.52847 "main.bcf" "main.bbl" "main" 1783368809.54198 0
-  "main.bcf" 1783368808.73173 109518 0663a63edd0e0a3e702376397068510b "xelatex"
+["biber main"] 1783341754.52847 "main.bcf" "main.bbl" "main" 1783422409.39981 0
+  "main.bcf" 1783422408.59624 109518 0663a63edd0e0a3e702376397068510b "xelatex"
   "references.bib" 1782210170.76548 5708 4ac0fd6b0e0800d5362ec70092d6481f ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1783368808.79081 "main.xdv" "main.pdf" "main" 1783368809.54339 0
-  "main.xdv" 1783368808.733 850524 65dce1cfb04be3b6510f2158fdd196fc "xelatex"
+["xdvipdfmx"] 1783422408.65402 "main.xdv" "main.pdf" "main" 1783422409.40125 0
+  "main.xdv" 1783422408.5978 798692 b65a6b2a4e7803b1b498f9fd70509714 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1783368807.38043 "main.tex" "main.xdv" "main" 1783368809.54204 0
+["xelatex"] 1783422407.26 "main.tex" "main.xdv" "main" 1783422409.39987 0
   "/etc/texmf/web2c/texmf.cnf" 1781778846.11717 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -263,14 +263,14 @@
   "images/rez_len_vs_dmin.pdf" 1783362048.07324 23298 4b582853a77b594f2794ae5b8bfc89e6 ""
   "images/rez_montaza_otkaza.pdf" 1783362262.94408 1376900 6fa7ff929c863224254ca937aeb3007c ""
   "images/rez_serija_a.pdf" 1783362053.31326 28366 6891fcf756749eaaea37c810e215f4d3 ""
-  "main.aux" 1783368808.72873 43604 bb2484e996c354a4dfd483443f104309 "xelatex"
+  "main.aux" 1783422408.59466 24696 66e2e907f0ca17fde1245ae388edc04c "xelatex"
   "main.bbl" 1783341754.85246 27755 678c25911974363ed6e895cc5eaff1f0 "biber main"
-  "main.lof" 1783368808.733 9979 c4c77b46a39895c7d4371c4f4e07dd84 "xelatex"
-  "main.lot" 1783368808.733 4029 b4fbf801c92940deeb47c48aee3e07ed "xelatex"
-  "main.out" 1783368808.73089 8198 f213dd33bc5b12c338bae93358a918f1 "xelatex"
-  "main.run.xml" 1783368808.733 2341 dbb4b2ebb97043eec16d9ba2a9f7194e "xelatex"
-  "main.tex" 1783368805.89266 126849 421b6ea9bd89e7e1dba123d3cf836174 ""
-  "main.toc" 1783368808.733 4677 d3a5aeead2c3e9ffacb24b66d965b9ec "xelatex"
+  "main.lof" 1783422408.5978 2490 5cfe8123be9e5ce0fa0eabd6a0685c2e "xelatex"
+  "main.lot" 1783422408.5978 2007 0515c32f597005cf66e94bc9debac8c7 "xelatex"
+  "main.out" 1783422408.59466 8187 2391b0954e68dfa2a777a82702c5acb1 "xelatex"
+  "main.run.xml" 1783422408.5978 2341 dbb4b2ebb97043eec16d9ba2a9f7194e "xelatex"
+  "main.tex" 1783422405.7993 128361 832c3fc6919f085b0bb6e4e59cc600a3 ""
+  "main.toc" 1783422408.5978 4695 d642c550bfb192c26dc49432a814b2b2 "xelatex"
   (generated)
   "main.aux"
   "main.bcf"
