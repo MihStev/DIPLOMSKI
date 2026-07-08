@@ -1,35 +1,13 @@
-\xpginauxfiletrue 
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {1}{\ignorespaces Архитектура ACT политике}}{4}{figure.caption.1}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {2}{\ignorespaces Архитектура Diffusion Policy}}{5}{figure.caption.2}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {3}{\ignorespaces Ток података кроз систем}}{8}{figure.caption.3}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {4}{\ignorespaces Улазно-излазна шема ACT политике}}{10}{figure.caption.4}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {5}{\ignorespaces Детаљна архитектура Diffusion Policy}}{11}{figure.caption.5}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {6}{\ignorespaces Искоришћеност GPU током обуке}}{14}{figure.caption.9}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {7}{\ignorespaces Криве учења за три величине скупа демонстрација}}{16}{figure.caption.11}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {8}{\ignorespaces Скалирање прецизности са бројем демонстрација}}{18}{figure.caption.13}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {9}{\ignorespaces ECDF најближег приласка $d_{\min }$}}{19}{figure.caption.15}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {10}{\ignorespaces QR код ка видео-снимку успешног уметања}}{20}{figure.caption.16}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {11}{\ignorespaces Расподела $d_{\min }$ при најбољој конфигурацији}}{20}{figure.caption.17}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {12}{\ignorespaces Дужина епизоде наспрам приласка $d_{\min }$}}{21}{figure.caption.19}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {13}{\ignorespaces Режим отказа при најбољим конфигурацијама}}{22}{figure.caption.20}%
-\xpginauxfilefalse 
+\contentsline {figure}{\numberline {1}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Архитектура ACT политике}}{4}{figure.caption.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Архитектура \textit {Diffusion Policy}}}{5}{figure.caption.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Ток података кроз систем}}{8}{figure.caption.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Улазно-излазна шема ACT политике}}{11}{figure.caption.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Детаљна архитектура \textit {Diffusion Policy}}}{12}{figure.caption.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Искоришћеност GPU током обуке}}{15}{figure.caption.9}%
+\contentsline {figure}{\numberline {7}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Криве учења за три величине скупа демонстрација}}{17}{figure.caption.11}%
+\contentsline {figure}{\numberline {8}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Скалирање прецизности са бројем демонстрација}}{19}{figure.caption.13}%
+\contentsline {figure}{\numberline {9}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces ECDF најближег приласка $d_{\min }$}}{20}{figure.caption.15}%
+\contentsline {figure}{\numberline {10}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces QR код ка видео-снимку успешног уметања}}{21}{figure.caption.16}%
+\contentsline {figure}{\numberline {11}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Расподела $d_{\min }$ при најбољој конфигурацији}}{21}{figure.caption.17}%
+\contentsline {figure}{\numberline {12}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Дужина епизоде наспрам приласка $d_{\min }$}}{22}{figure.caption.19}%
+\contentsline {figure}{\numberline {13}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Режим отказа при најбољим конфигурацијама}}{23}{figure.caption.20}%

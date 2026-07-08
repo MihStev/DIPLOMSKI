@@ -1,29 +1,7 @@
-\xpginauxfiletrue 
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {table}{\numberline {1}{\ignorespaces Хиперпараметри ACT политике. Број корака обуке усклађен је на $\approx 4$ епохе за сваку величину скупа ($N_{\mathrm {demo}}=1\,000/10\,000/30\,290$).}}{13}{table.caption.6}%
-\setforeignlanguage {serbian}
-\contentsline {table}{\numberline {2}{\ignorespaces Хиперпараметри Diffusion Policy. Средњи и пун скуп ($10\,000$/$30\,290$) тренирани су $\approx 1{,}56$ епохе, док је пилот ($1\,000$) обучен краће ($\approx 0{,}6$ епоха, batch $32$).}}{13}{table.caption.7}%
-\setforeignlanguage {serbian}
-\contentsline {table}{\numberline {3}{\ignorespaces Трошак обуке по конфигурацији}}{14}{table.caption.8}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {table}{\numberline {4}{\ignorespaces Серије експеримената и одговарајући циљеви рада.}}{15}{table.caption.10}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {table}{\numberline {5}{\ignorespaces Перформансе у функцији броја демонстрација}}{17}{table.caption.12}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {table}{\numberline {6}{\ignorespaces Поређење ACT и Diffusion Policy (пун скуп)}}{18}{table.caption.14}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\contentsline {table}{\numberline {7}{\ignorespaces Збирне метрике евалуације Diffusion Policy}}{20}{table.caption.18}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
-\xpginauxfilefalse 
+\contentsline {table}{\numberline {1}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Хиперпараметри ACT политике. Број корака обуке усклађен је на $\approx 4$ епохе за сваку величину скупа ($N_{\mathrm {demo}}=1\,000/10\,000/30\,290$).}}{14}{table.caption.6}%
+\contentsline {table}{\numberline {2}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Хиперпараметри \textit {Diffusion Policy}. Средњи и пун скуп ($10\,000$/$30\,290$) тренирани су $\approx 1{,}56$ епохе, док је пилот ($1\,000$) обучен краће ($\approx 0{,}6$ епоха, \textit {batch} $32$).}}{14}{table.caption.7}%
+\contentsline {table}{\numberline {3}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Трошак обуке по конфигурацији}}{15}{table.caption.8}%
+\contentsline {table}{\numberline {4}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Серије експеримената и одговарајући циљеви рада.}}{16}{table.caption.10}%
+\contentsline {table}{\numberline {5}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Перформансе у функцији броја демонстрација}}{18}{table.caption.12}%
+\contentsline {table}{\numberline {6}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Поређење ACT и \textit {Diffusion Policy} (пун скуп)}}{19}{table.caption.14}%
+\contentsline {table}{\numberline {7}{\ignorespaces \xpg@aux {script=cyrillic}{serbian}\ignorespaces Збирне метрике евалуације \textit {Diffusion Policy}}}{21}{table.caption.18}%
