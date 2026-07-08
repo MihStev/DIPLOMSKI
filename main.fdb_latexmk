@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1783549180.11588 "main.bcf" "main.bbl" "main" 1783549192.03827 0
-  "main.bcf" 1783549190.42372 110368 c4ae7910cc1ff1f6f3c0f8350d58ee2c "xelatex"
+["biber main"] 1783549180.11588 "main.bcf" "main.bbl" "main" 1783551632.66221 0
+  "main.bcf" 1783551630.84421 110368 c4ae7910cc1ff1f6f3c0f8350d58ee2c "xelatex"
   "references.bib" 1782384588.39181 5850 47483055d31da44c1f941447d79d4af9 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1783549190.72173 "main.xdv" "main.pdf" "main" 1783549192.06229 0
-  "main.xdv" 1783549190.42572 801772 64cc9bd6685807b6768dcadc9ec0ac25 "xelatex"
+["xdvipdfmx"] 1783551631.18216 "main.xdv" "main.pdf" "main" 1783551632.6872 0
+  "main.xdv" 1783551630.84722 801612 7cf6b726fe6c1d719b09e28d5d1bb6c3 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1783549187.74628 "main.tex" "main.xdv" "main" 1783549192.0388 0
+["xelatex"] 1783551627.10907 "main.tex" "main.xdv" "main" 1783551632.66278 0
   "C:/Users/mihas/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1770749415.57123 27176672 c619a04de630eca1437417a053b9f5cf ""
   "C:/Users/mihas/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768654 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "C:/Users/mihas/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -254,14 +254,14 @@
   "images/rez_len_vs_dmin.pdf" 1783369898.62474 23298 4b582853a77b594f2794ae5b8bfc89e6 ""
   "images/rez_montaza_otkaza.pdf" 1783369898.63125 1376900 6fa7ff929c863224254ca937aeb3007c ""
   "images/rez_serija_a.pdf" 1783369898.63225 28366 6891fcf756749eaaea37c810e215f4d3 ""
-  "main.aux" 1783549190.41022 25388 3aa1be4346f0f3a4ee3bc9acd4f01982 "xelatex"
+  "main.aux" 1783551630.82621 25388 3aa1be4346f0f3a4ee3bc9acd4f01982 "xelatex"
   "main.bbl" 1783549181.59695 30524 9e4062bd72255acbe451ab8f8339e4b3 "biber main"
-  "main.lof" 1783549190.42572 2508 88013249a640bddf54afeb113c892915 "xelatex"
-  "main.lot" 1783549190.42572 1751 5437cff8ab5dc79493c92213f34d78a5 "xelatex"
-  "main.out" 1783549190.41972 8187 2391b0954e68dfa2a777a82702c5acb1 "xelatex"
-  "main.run.xml" 1783549190.42572 2341 dbb4b2ebb97043eec16d9ba2a9f7194e "xelatex"
-  "main.tex" 1783549070.58821 131002 f588e13f1e78549e6747f310adee4a09 ""
-  "main.toc" 1783549190.42572 4642 60501071e86c1e31204fcb09f1bb1eeb "xelatex"
+  "main.lof" 1783551630.84722 2508 88013249a640bddf54afeb113c892915 "xelatex"
+  "main.lot" 1783551630.84722 1751 5437cff8ab5dc79493c92213f34d78a5 "xelatex"
+  "main.out" 1783551630.83521 8187 2391b0954e68dfa2a777a82702c5acb1 "xelatex"
+  "main.run.xml" 1783551630.84621 2341 dbb4b2ebb97043eec16d9ba2a9f7194e "xelatex"
+  "main.tex" 1783551613.12231 131049 cc40937ed41fba32efd667dae4686149 ""
+  "main.toc" 1783551630.84621 4642 60501071e86c1e31204fcb09f1bb1eeb "xelatex"
   (generated)
   "main.aux"
   "main.bcf"
