@@ -20,31 +20,31 @@
 \contentsline {paragraph}{Формулација клонирања понашања.}{9}{equation.3.5}%
 \contentsline {paragraph}{Метрике евалуације.}{9}{equation.3.5}%
 \contentsline {subsection}{\numberline {3.2}Имплементација \textit {ACT} политике}{9}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Имплементација дифузионе политике}{11}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Експериментална постава}{12}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Симулационо окружење}{12}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Сензори, опсервације и акције}{12}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Скуп демонстрација}{12}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Хиперпараметри обуке}{13}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Рачунарски ресурси и трошак обуке}{13}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Протокол евалуације}{14}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}План експеримената}{15}{subsection.4.7}%
-\contentsline {paragraph}{Независне променљиве.}{15}{subsection.4.7}%
-\contentsline {paragraph}{Контролисане (фиксне) променљиве.}{16}{subsection.4.7}%
-\contentsline {paragraph}{Понављања и извештавање.}{16}{subsection.4.7}%
-\contentsline {section}{\numberline {5}Резултати}{17}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Криве учења}{17}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Зависност успешности од броја демонстрација (серија А)}{18}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Поређење \textit {ACT} и \textit {DP} (серија Б)}{18}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Анализа грешака и плато перформанси (серија В)}{20}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Дискусија}{24}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Тумачење резултата у односу на циљеве рада}{24}{subsection.6.1}%
-\contentsline {paragraph}{Потребан обим демонстрација (Ц1).}{24}{subsection.6.1}%
-\contentsline {paragraph}{Скалабилност архитектура (Ц2).}{24}{subsection.6.1}%
-\contentsline {paragraph}{Плато перформанси и његови чиниоци (Ц3).}{24}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Ограничења}{25}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Закључак}{26}{section.7}%
-\contentsline {section}{Списак слика}{26}{section.7}%
-\contentsline {section}{Списак табела}{27}{section.7}%
-\contentsline {section}{Литература}{29}{section.7}%
+\contentsline {subsection}{\numberline {3.3}Имплементација дифузионе политике}{10}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Експериментална постава}{13}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Симулационо окружење}{13}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Сензори, опсервације и акције}{13}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Скуп демонстрација}{13}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Хиперпараметри обуке}{14}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Рачунарски ресурси и трошак обуке}{14}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Протокол евалуације}{15}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}План експеримената}{16}{subsection.4.7}%
+\contentsline {paragraph}{Независне променљиве.}{16}{subsection.4.7}%
+\contentsline {paragraph}{Контролисане (фиксне) променљиве.}{17}{subsection.4.7}%
+\contentsline {paragraph}{Понављања и извештавање.}{17}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Резултати}{18}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Криве учења}{18}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Зависност успешности од броја демонстрација (серија А)}{19}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Поређење \textit {ACT} и \textit {DP} (серија Б)}{19}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Анализа грешака и плато перформанси (серија В)}{21}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Дискусија}{25}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Тумачење резултата у односу на циљеве рада}{25}{subsection.6.1}%
+\contentsline {paragraph}{Потребан обим демонстрација (Ц1).}{25}{subsection.6.1}%
+\contentsline {paragraph}{Скалабилност архитектура (Ц2).}{25}{subsection.6.1}%
+\contentsline {paragraph}{Плато перформанси и његови чиниоци (Ц3).}{25}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Ограничења}{26}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Закључак}{27}{section.7}%
+\contentsline {section}{Списак слика}{27}{section.7}%
+\contentsline {section}{Списак табела}{28}{section.7}%
+\contentsline {section}{Литература}{30}{section.7}%
 \xpginauxfilefalse 

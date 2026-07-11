@@ -6,32 +6,32 @@
 \setforeignlanguage {serbian}
 \contentsline {figure}{\numberline {3}{\ignorespaces Ток података кроз систем}}{8}{figure.caption.3}%
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {4}{\ignorespaces Улазно-излазна шема \textit {ACT} политике}}{10}{figure.caption.4}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Улазно-излазна шема \textit {ACT} политике}}{11}{figure.caption.4}%
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {5}{\ignorespaces Детаљна архитектура \textit {Diffusion Policy}}}{11}{figure.caption.5}%
-\setforeignlanguage {serbian}
-\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {5}{\ignorespaces Детаљна архитектура \textit {Diffusion Policy}}}{12}{figure.caption.5}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {6}{\ignorespaces Искоришћеност GPU током обуке}}{15}{figure.caption.11}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {7}{\ignorespaces Криве учења за три величине скупа демонстрација}}{17}{figure.caption.13}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Искоришћеност GPU током обуке}}{16}{figure.caption.11}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {8}{\ignorespaces Скалирање прецизности са бројем демонстрација}}{19}{figure.caption.15}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Криве учења за три величине скупа демонстрација}}{18}{figure.caption.13}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {9}{\ignorespaces ECDF најближег приласка $d_{\min }$}}{20}{figure.caption.17}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {10}{\ignorespaces QR код ка видео-снимку успешног уметања}}{21}{figure.caption.18}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {11}{\ignorespaces Расподела $d_{\min }$ при најбољој конфигурацији}}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Скалирање прецизности са бројем демонстрација}}{20}{figure.caption.15}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {12}{\ignorespaces Дужина епизоде наспрам приласка $d_{\min }$}}{22}{figure.caption.21}%
+\contentsline {figure}{\numberline {9}{\ignorespaces ECDF најближег приласка $d_{\min }$}}{21}{figure.caption.17}%
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {13}{\ignorespaces Режим отказа при најбољим конфигурацијама}}{23}{figure.caption.22}%
+\contentsline {figure}{\numberline {10}{\ignorespaces QR код ка видео-снимку успешног уметања}}{22}{figure.caption.18}%
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {11}{\ignorespaces Расподела $d_{\min }$ при најбољој конфигурацији}}{22}{figure.caption.19}%
+\setforeignlanguage {serbian}
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {12}{\ignorespaces Дужина епизоде наспрам приласка $d_{\min }$}}{23}{figure.caption.21}%
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {13}{\ignorespaces Режим отказа при најбољим конфигурацијама}}{24}{figure.caption.22}%
 \xpginauxfilefalse 
