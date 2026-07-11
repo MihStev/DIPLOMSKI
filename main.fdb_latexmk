@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1783425459.00263 "main.bcf" "main.bbl" "main" 1783780983.73339 0
-  "main.bcf" 1783780982.92497 109518 0663a63edd0e0a3e702376397068510b "xelatex"
+["biber main"] 1783425459.00263 "main.bcf" "main.bbl" "main" 1783782676.98715 0
+  "main.bcf" 1783782676.18094 109518 0663a63edd0e0a3e702376397068510b "xelatex"
   "references.bib" 1782210170.76548 5708 4ac0fd6b0e0800d5362ec70092d6481f ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1783780982.98944 "main.xdv" "main.pdf" "main" 1783780983.73483 0
-  "main.xdv" 1783780982.9262 832368 532c644025c66c8cf5e7123b9cf81b70 "xelatex"
+["xdvipdfmx"] 1783782676.24006 "main.xdv" "main.pdf" "main" 1783782676.98858 0
+  "main.xdv" 1783782676.18208 833812 7eac6c33efbd648a86b3c233603cf14b "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1783780981.56097 "main.tex" "main.xdv" "main" 1783780983.73345 0
+["xelatex"] 1783782674.81541 "main.tex" "main.xdv" "main" 1783782676.98721 0
   "/etc/texmf/web2c/texmf.cnf" 1781778846.11717 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -264,14 +264,14 @@
   "images/rez_len_vs_dmin.pdf" 1783362048.07324 23298 4b582853a77b594f2794ae5b8bfc89e6 ""
   "images/rez_montaza_otkaza.pdf" 1783362262.94408 1376900 6fa7ff929c863224254ca937aeb3007c ""
   "images/rez_serija_a.pdf" 1783362053.31326 28366 6891fcf756749eaaea37c810e215f4d3 ""
-  "main.aux" 1783780982.92197 26007 fcc59eaae10ec0bb1edeaa267a2c18f0 "xelatex"
+  "main.aux" 1783782676.17794 26361 595dc68666af816f2e818bf5df47e791 "xelatex"
   "main.bbl" 1783425459.38269 27755 678c25911974363ed6e895cc5eaff1f0 "biber main"
-  "main.lof" 1783780982.9262 2551 44857875695895c58dbb98800e3d4b6b "xelatex"
-  "main.lot" 1783780982.9262 2428 69c82e7625d8db895d315d76122d698c "xelatex"
-  "main.out" 1783780982.92397 8569 db1a634fb12012e57070122587690812 "xelatex"
-  "main.run.xml" 1783780982.9262 2341 dbb4b2ebb97043eec16d9ba2a9f7194e "xelatex"
-  "main.tex" 1783780963.66805 134493 2c0975cc7b5a87b545109faba29fa336 ""
-  "main.toc" 1783780982.9262 4869 f824df1cace4c789731934442279bda2 "xelatex"
+  "main.lof" 1783782676.18208 2591 1fa9d60414d82380d65d0f3f27ec5023 "xelatex"
+  "main.lot" 1783782676.18208 2478 00626794a2d8c94838c95bc17408d390 "xelatex"
+  "main.out" 1783782676.17994 8569 db1a634fb12012e57070122587690812 "xelatex"
+  "main.run.xml" 1783782676.18208 2341 dbb4b2ebb97043eec16d9ba2a9f7194e "xelatex"
+  "main.tex" 1783782600.83559 136005 09188218999a17846f93e46b8b96b780 ""
+  "main.toc" 1783782676.18208 4919 321e7ee9a24c1ed86b01d5fd334c4bab "xelatex"
   (generated)
   "main.aux"
   "main.bcf"

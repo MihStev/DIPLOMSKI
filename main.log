@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.6.18)  11 JUL 2026 16:43
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.6.18)  11 JUL 2026 17:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1546,10 +1546,10 @@ File: images/act_arhitektura.png Graphic file (type bmp)
 File: images/dp_arhitektura.png Graphic file (type bmp)
 <images/dp_arhitektura.png>
 
-Underfull \hbox (badness 3713) in paragraph at lines 324--324
-[]\TU/TimesNewRoman(1)/m/n/12 Слика 2: |Архитектура Diffusion Policy. \TU/Times
-NewRoman(0)/b/n/12 Лево \TU/TimesNewRoman(1)/m/n/12 је општа формулација: полит
-ика
+Underfull \hbox (badness 3803) in paragraph at lines 324--324
+[]\TU/TimesNewRoman(1)/m/n/12 Слика 2: |Архитектура \TU/TimesNewRoman(1)/m/it/1
+2 Diffusion Policy\TU/TimesNewRoman(1)/m/n/12 . \TU/TimesNewRoman(0)/b/n/12 Лев
+о \TU/TimesNewRoman(1)/m/n/12 је општа формулација: политика
  []
 
 [5] [6] [7
@@ -1612,14 +1612,7 @@ File: images/rez_montaza_otkaza.pdf Graphic file (type pdf)
 
  [27
 
-] (./main.lot
-Overfull \hbox (0.33803pt too wide) in paragraph at lines 12--12
- [][] [][][]\TU/TimesNewRoman(1)/m/n/12 Хиперпараметри Diffusion Policy. Средњи
- и пун скуп ($\OT1/cmr/m/n/12 10 000$\TU/TimesNewRoman(1)/m/n/12 /$\OT1/cmr/m/n
-/12 30 290$\TU/TimesNewRoman(1)/m/n/12 ) тре- 
- []
-
-)
+] (./main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
@@ -1649,12 +1642,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48374 strings out of 476132
- 1120228 string characters out of 5796520
- 2045712 words of memory out of 5000000
- 69587 multiletter control sequences out of 15000+600000
- 570499 words of font info for 142 fonts, out of 8000000 for 9000
+ 48380 strings out of 476132
+ 1120495 string characters out of 5796520
+ 2045772 words of memory out of 5000000
+ 69590 multiletter control sequences out of 15000+600000
+ 570523 words of font info for 145 fonts, out of 8000000 for 9000
  682 hyphenation exceptions out of 8191
- 84i,20n,131p,975b,5445s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,20n,131p,975b,5447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (36 pages, 832368 bytes).
+Output written on main.xdv (36 pages, 833812 bytes).
