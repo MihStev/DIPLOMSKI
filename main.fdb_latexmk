@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1783425459.00263 "main.bcf" "main.bbl" "main" 1783777380.43324 0
-  "main.bcf" 1783777379.63077 109518 0663a63edd0e0a3e702376397068510b "xelatex"
+["biber main"] 1783425459.00263 "main.bcf" "main.bbl" "main" 1783780983.73339 0
+  "main.bcf" 1783780982.92497 109518 0663a63edd0e0a3e702376397068510b "xelatex"
   "references.bib" 1782210170.76548 5708 4ac0fd6b0e0800d5362ec70092d6481f ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1783777379.6906 "main.xdv" "main.pdf" "main" 1783777380.4347 0
-  "main.xdv" 1783777379.63173 832304 e4e561de95e511ffd161a68c615d2b77 "xelatex"
+["xdvipdfmx"] 1783780982.98944 "main.xdv" "main.pdf" "main" 1783780983.73483 0
+  "main.xdv" 1783780982.9262 832368 532c644025c66c8cf5e7123b9cf81b70 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1783777378.27988 "main.tex" "main.xdv" "main" 1783777380.4333 0
+["xelatex"] 1783780981.56097 "main.tex" "main.xdv" "main" 1783780983.73345 0
   "/etc/texmf/web2c/texmf.cnf" 1781778846.11717 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -191,6 +191,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-unicode.def" 1609451401 3786 1f89d14780f0ad89ab94652b37f4e9b8 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx" 1678141846 4629 cda468e8a0b1cfa0f61872e171037a4b ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/serbianc.lbx" 1643926307 33871 17c9a4cc1bfd17c177810cb02cc3bccf ""
+  "/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty" 1579038678 6078 f1cb470c9199e7110a27851508ed7a5c ""
   "/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty" 1696191071 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
   "/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty" 1696191071 72619 ee90b6612147680fd73c3b1406a74245 ""
   "/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty" 1690576852 12494 0c0cdb824278a4d51cefeb2e79901315 ""
@@ -263,14 +264,14 @@
   "images/rez_len_vs_dmin.pdf" 1783362048.07324 23298 4b582853a77b594f2794ae5b8bfc89e6 ""
   "images/rez_montaza_otkaza.pdf" 1783362262.94408 1376900 6fa7ff929c863224254ca937aeb3007c ""
   "images/rez_serija_a.pdf" 1783362053.31326 28366 6891fcf756749eaaea37c810e215f4d3 ""
-  "main.aux" 1783777379.62777 26007 fcc59eaae10ec0bb1edeaa267a2c18f0 "xelatex"
+  "main.aux" 1783780982.92197 26007 fcc59eaae10ec0bb1edeaa267a2c18f0 "xelatex"
   "main.bbl" 1783425459.38269 27755 678c25911974363ed6e895cc5eaff1f0 "biber main"
-  "main.lof" 1783777379.63173 2551 44857875695895c58dbb98800e3d4b6b "xelatex"
-  "main.lot" 1783777379.63173 2428 69c82e7625d8db895d315d76122d698c "xelatex"
-  "main.out" 1783777379.62877 8569 db1a634fb12012e57070122587690812 "xelatex"
-  "main.run.xml" 1783777379.63173 2341 dbb4b2ebb97043eec16d9ba2a9f7194e "xelatex"
-  "main.tex" 1783777351.59487 134329 060ff2245adea09ab964b055f4bd5ead ""
-  "main.toc" 1783777379.63173 4869 f824df1cace4c789731934442279bda2 "xelatex"
+  "main.lof" 1783780982.9262 2551 44857875695895c58dbb98800e3d4b6b "xelatex"
+  "main.lot" 1783780982.9262 2428 69c82e7625d8db895d315d76122d698c "xelatex"
+  "main.out" 1783780982.92397 8569 db1a634fb12012e57070122587690812 "xelatex"
+  "main.run.xml" 1783780982.9262 2341 dbb4b2ebb97043eec16d9ba2a9f7194e "xelatex"
+  "main.tex" 1783780963.66805 134493 2c0975cc7b5a87b545109faba29fa336 ""
+  "main.toc" 1783780982.9262 4869 f824df1cace4c789731934442279bda2 "xelatex"
   (generated)
   "main.aux"
   "main.bcf"
