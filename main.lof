@@ -13,23 +13,25 @@
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {6}{\ignorespaces Искоришћеност GPU током обуке}}{14}{figure.caption.9}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {7}{\ignorespaces Криве учења за три величине скупа демонстрација}}{16}{figure.caption.11}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Искоришћеност GPU током обуке}}{15}{figure.caption.11}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {8}{\ignorespaces Скалирање прецизности са бројем демонстрација}}{18}{figure.caption.13}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Криве учења за три величине скупа демонстрација}}{17}{figure.caption.13}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {9}{\ignorespaces ECDF најближег приласка $d_{\min }$}}{19}{figure.caption.15}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {10}{\ignorespaces QR код ка видео-снимку успешног уметања}}{20}{figure.caption.16}%
-\setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {11}{\ignorespaces Расподела $d_{\min }$ при најбољој конфигурацији}}{20}{figure.caption.17}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Скалирање прецизности са бројем демонстрација}}{19}{figure.caption.15}%
 \setforeignlanguage {serbian}
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {12}{\ignorespaces Дужина епизоде наспрам приласка $d_{\min }$}}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {9}{\ignorespaces ECDF најближег приласка $d_{\min }$}}{20}{figure.caption.17}%
 \setforeignlanguage {serbian}
-\contentsline {figure}{\numberline {13}{\ignorespaces Режим отказа при најбољим конфигурацијама}}{22}{figure.caption.20}%
+\contentsline {figure}{\numberline {10}{\ignorespaces QR код ка видео-снимку успешног уметања}}{21}{figure.caption.18}%
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {11}{\ignorespaces Расподела $d_{\min }$ при најбољој конфигурацији}}{21}{figure.caption.19}%
+\setforeignlanguage {serbian}
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {12}{\ignorespaces Дужина епизоде наспрам приласка $d_{\min }$}}{22}{figure.caption.21}%
+\setforeignlanguage {serbian}
+\contentsline {figure}{\numberline {13}{\ignorespaces Режим отказа при најбољим конфигурацијама}}{23}{figure.caption.22}%
 \xpginauxfilefalse 
