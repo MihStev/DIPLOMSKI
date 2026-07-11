@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.6.18)  11 JUL 2026 15:29
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.6.18)  11 JUL 2026 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1501,21 +1501,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ] [4]
-Underfull \hbox (badness 3158) in paragraph at lines 159--159
-[]\TU/TimesNewRoman(1)/m/it/12 AI for Industry Challenge \TU/TimesNewRoman(1)/m
-/n/12 — такмичење у оквиру ког је рад
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 162--162
-[]\TU/TimesNewRoman(1)/m/it/12 Conditional Variational Autoencoder \TU/TimesNew
-Roman(1)/m/n/12 — условни варијациони
+[]\TU/TimesNewRoman(1)/m/it/12 Conditional Variational Autoencoder\TU/TimesNewR
+oman(1)/m/n/12 , условни варијациони
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 164--164
-[]\TU/TimesNewRoman(1)/m/it/12 Differential Inverse Kinematics \TU/TimesNewRoma
-n(1)/m/n/12 — диференцијална инверзна
+[]\TU/TimesNewRoman(1)/m/it/12 Differential Inverse Kinematics\TU/TimesNewRoman
+(1)/m/n/12 , диференцијална инверзна
  []
 
 [5
@@ -1643,4 +1637,4 @@ Here is how much of TeX's memory you used:
  682 hyphenation exceptions out of 8191
  84i,20n,131p,975b,5445s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (36 pages, 832748 bytes).
+Output written on main.xdv (36 pages, 832772 bytes).
